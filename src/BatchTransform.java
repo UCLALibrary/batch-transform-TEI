@@ -6,7 +6,7 @@ import javax.xml.transform.TransformerFactory;
 import javax.xml.transform.stream.StreamResult;
 import javax.xml.transform.stream.StreamSource;
 
-public class HelloWorld {
+public class BatchTransform {
 
 	public static void main(String[] args) {
 		// TODO Auto-generated method stub
