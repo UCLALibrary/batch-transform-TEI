@@ -1,2 +1,2 @@
 # batch-transform-TEI
-Java project to bathc transform TEI xml for StGallMss
+Java project to batch transform TEI xml for StGallMss
