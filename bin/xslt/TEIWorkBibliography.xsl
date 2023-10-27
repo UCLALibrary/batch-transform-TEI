@@ -2,12 +2,12 @@
 <xsl:stylesheet xmlns:xsl="http://www.w3.org/1999/XSL/Transform" version="1.0"
     xmlns:tei="http://www.tei-c.org/ns/1.0">
 
-    <xsl:param name="count" />
+   
     <!-- below commented-out by RMP; only for testing -->
     <!-- <xsl:param name="count" select="1"></xsl:param> -->
     <xsl:param name="fileId" />
     <xsl:output method="html" />
-    <xsl:include href="TEIBibliography.xsl" />
+    <!--xsl:include href="TEIBibliography.xsl" /-->
     <!-- <xsl:param name="count" select="8"></xsl:param>lisa needs to delete before uploading to
     subversion -->
 
@@ -16,55 +16,24 @@
     <!-- edited by Lisa McAulay, June - July 2010 -->
     <!-- some edits by Richard Pollard, 10/2010 -->
 
-    <xsl:template match="/">
-
-        <table class="textAndImage">
-            <tr>
-                <td>
-
-                    <!-- sub nav table for left view frame-->
-                    <table width="100%" border="0" cellspacing="5" cellpadding="5">
-                        <tr>
-                            <td width="33%" class="subnav_off">
-                                <a href="javascript:void(0)" onclick="performXSLTTransformation('TEIManuscriptContents.xsl');">
-        Contents</a>
-                            </td>                            <!-- href="/stgallmss/viewFile.do?xmlstylesheet=TEIManuscriptBiblio.xsl&amp;fileId={$fileId}"-->
-                            <td width="33%" class="subnav_off">
-                                <a href="javascript:void(0)" onclick="performXSLTTransformation('TEIManuscriptBiblio.xsl');">Codicological
-        Bibliography</a>
-                            </td>
-                            <!-- href="/stgallmss/viewFile.do?xmlstylesheet=TEIManuscriptDesc.xsl&amp;imageark={tei:TEI/tei:text/tei:body/tei:msDesc/tei:physDesc/tei:collation/@ark}&amp;fileId={$fileId}"-->
-                            <td class="subnav_off">
-                                <a href="javascript:void(0)" onclick="performXSLTTransformation('TEIManuscriptDesc.xsl');">Codicological
-        Description</a>
-                            </td>
-                        </tr>
-                    </table>
-                    <!-- sub nav table for left view frame END  -->
-
-                </td>
-            </tr>
-
-            <tr>
-                <td align="left" valign="top">
-
+    <xsl:template match="/" name="generateWorkBibliography">
+		 <xsl:param name="count" />
+       
                     <DIV class="tan_divider">
 
                         <!-- heading information; manuscript number, etc. -->
 
                         <span>
-                            <xsl:value-of select="tei:TEI/tei:text/tei:body/tei:msDesc/tei:msIdentifier/tei:repository" />
-        :                            <xsl:value-of select="tei:TEI/tei:text/tei:body/tei:msDesc/tei:msIdentifier/tei:idno" />
-                            <br />
+                           
                             <b>
-                                <xsl:value-of select="tei:TEI/tei:text/tei:body/tei:msDesc/tei:msContents/tei:msItem[@n=$count]/tei:locus" />
+                                <xsl:value-of select="tei:locus" />
                             </b>
                             <!--href="{tei:TEI/tei:text/tei:body/tei:msDesc/tei:msContents/tei:msItem[@n=$count]/tei:locus/@facs}" -->
-        :                            <a target="_top" href="javascript:void(0)" onclick="performXSLTTransformation('TEIWorkContents.xsl','{$count}');">
+        :                           
                                 <i>
-                                    <xsl:value-of select="tei:TEI/tei:text/tei:body/tei:msDesc/tei:msContents/tei:msItem[@n=$count]/tei:title" />
+                                    <xsl:value-of select="tei:title" />
                                 </i>
-                            </a>                            <!--
+                                                  <!--
                             this link takes you to the transcription page(TEITranscription.xsl)-->
                         </span>
                         <p>
@@ -72,7 +41,7 @@
                             <ol style="list-style-type:none" id="WorkBibiliography">
 
                                 <!-- for each listBibl element under the msItem, do the following -->
-                                <xsl:for-each select="tei:TEI/tei:text/tei:body/tei:msDesc/tei:msContents/tei:msItem[@n=$count]/tei:listBibl">
+                                <xsl:for-each select="tei:listBibl">
                                     <li>
                                         <xsl:if test="tei:nobib">
                                             <xsl:text>See </xsl:text>
@@ -109,9 +78,7 @@
                         <br />
                         <br />
                     </DIV>
-                </td>
-            </tr>
-        </table>
+             
 
     </xsl:template>
 

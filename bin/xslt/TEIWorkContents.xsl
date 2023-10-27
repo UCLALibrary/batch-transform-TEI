@@ -4,74 +4,48 @@
 <!-- edited by Richard Pollard to include bibliography 10/2010 -->
 <xsl:stylesheet xmlns:xsl="http://www.w3.org/1999/XSL/Transform" version="1.0"
     xmlns:tei="http://www.tei-c.org/ns/1.0">
-    <xsl:param name="count" />
-    <xsl:param name="fileId" />
-    <xsl:param name="ark" />
+   
+   
     <!-- line below only used for testing 
         <xsl:param name="count" select="4"/>  -->
-    <xsl:include href="TEIBibliography.xsl" />
+    <!--xsl:include href="TEIBibliography.xsl" /-->
     <xsl:output method="html" />
-    <xsl:template match="/">
+    <xsl:template match="/" name="generateWorkContent">
+	 <xsl:param name="count" />
 
-
-        <table width="95%" border="0" align="center" cellpadding="3" cellspacing="0" bgcolor="#ffffff">
-
-            <tr>
-                <td class="title">
-                    <xsl:value-of select="tei:TEI/tei:text/tei:body/tei:msDesc/tei:msIdentifier/tei:repository"></xsl:value-of>
-        :                    <xsl:value-of select="tei:TEI/tei:text/tei:body/tei:msDesc/tei:msIdentifier/tei:idno"></xsl:value-of>
-                </td>
-            </tr>
-            <tr>
-                <td>
-                    <!-- sub nav table for left view frame-->
-                    <table width="100%" border="0" cellspacing="5" cellpadding="5">
-                        <tr>
-                            <td width="33%" class="subnav_off">
-                                <a href="javascript:void(0)" onclick="performXSLTTransformation('TEIManuscriptContents.xsl');">
-        Manuscript Contents</a>
-                            </td>                            <!-- href="/stgallmss/viewFile.do?xmlstylesheet=TEIManuscriptBiblio.xsl&amp;fileId={$fileId}"-->
-                            <td width="33%" class="subnav_off">
-                                <a href="javascript:void(0)" onclick="performXSLTTransformation('TEIManuscriptBiblio.xsl');">
-        Manuscript Codicological
-                                    Bibliography</a>
-                            </td>
-                            <!-- href="/stgallmss/viewFile.do?xmlstylesheet=TEIManuscriptDesc.xsl&amp;imageark={tei:TEI/tei:text/tei:body/tei:msDesc/tei:physDesc/tei:collation/@ark}&amp;fileId={$fileId}"-->
-                            <td class="subnav_off">
-                                <a href="javascript:void(0)" onclick="performXSLTTransformation('TEIManuscriptDesc.xsl');">Manuscript
-        Description</a>
-                            </td>
-                        </tr>
-                    </table>
-                    <!-- sub nav table for left view frame END  -->
-
-                </td>
-            </tr>
-
-            <tr>
-                <td align="left" valign="top">
-
-                    <!-- Contents for left view frame copy paste the DIV tag section to add more
+       
+			
+           
+			<div class="flex-container">
+		    <div class="work-title">
+		       <!-- Contents for left view frame copy paste the DIV tag section to add more
                     content.
-    The page numbers to the right are under span tags--> [                    <xsl:value-of select="$count" />
-]                    <b>
-                        <xsl:value-of select="tei:TEI/tei:text/tei:body/tei:msDesc/tei:msContents/tei:msItem[@n = $count]/tei:locus" />
-                    </b>
-        :                    <i>
-                        <xsl:value-of select="tei:TEI/tei:text/tei:body/tei:msDesc/tei:msContents/tei:msItem[@n = $count]/tei:title" />
-                    </i>
+    The page numbers to the right are under span tags--><span> [                    <xsl:value-of select="$count" />
+]                    
+                        <xsl:value-of select="tei:locus" />
+                    </span>
+         <span>:                 
+			 
+                        <xsl:value-of select="tei:title" />
+                    </span>
 
                     <br />
+		   	 </div>
+			</div>
+          
+              
+
+                    
 
 
-                    <DIV class="tan_divider">
+                    <div class="contents">
                         <br />
                         <!--<img src="images/icon_content.jpg" width="20" height="20" alt="Content" />:-->
-
-                        <tr>
-                            <td align="left" valign="top">                                <!-- Book-Level -->
-                                <xsl:for-each select="tei:TEI/tei:text/tei:body/tei:msDesc/tei:msContents/tei:msItem[@n = $count]/tei:msItem">
+						
+                       		                     <!-- Book-Level -->
+                                <xsl:for-each select="tei:msItem">
                                     <xsl:if test="tei:workGroupHeading">
+										<div class="work-group-heading">
                                         <p>
                                             <h4>[                                                <b>
                                                     <xsl:value-of select="tei:workGroupHeading/tei:locus" />
@@ -90,12 +64,12 @@
 
                                             </h4>
                                         </p>
+                                        </div>
                                     </xsl:if>
 
-                                    <DIV class="tan_divider">
+                                    <div class="work-item">
 
-                                        <xsl:value-of select="$count" />
-_<xsl:value-of select="position()" />
+                                        <xsl:value-of select="$count" />_<xsl:value-of select="position()" />
                                     <xsl:text></xsl:text>
 
 
@@ -174,7 +148,7 @@ _<xsl:value-of select="position()" />
                                             <xsl:if test="count(tei:listBibl/tei:head[. = 'Related Texts'] | tei:listBibl/tei:head[. = 'Bibliography'] | tei:listBibl/tei:head[. = 'Editions'] |  tei:listBibl/tei:head[. = 'Translation'] | tei:listBibl/tei:head[. = 'Edition and Bibliography'] | tei:listBibl/tei:head[. = 'Edition']/following-sibling::tei:biblStruct) > 0">
                                                 <!-- href="/stgallmss/viewFile.do?xmlstylesheet=TEISubWorkBibliography.xsl&amp;count={@n}&amp;fileId={$fileId}"-->
                                                 <a style="" href="javascript:void(0)" onclick="performXSLTTransformation('TEISubWorkBibliography.xsl','{@n}');">
-                                                    <img src="images/icon_bibliography.jpg" width="20" height="20" alt="Bibliography" />
+                                                    <img src="../images/icon_bibliography.jpg" width="20" height="20" alt="Bibliography" />
                                                 </a>
                                                 <xsl:text></xsl:text>
                                             </xsl:if>
@@ -186,33 +160,29 @@ _<xsl:value-of select="position()" />
                                         <!-- /stgallmss/viewItem.do?xmlstylesheet=TEIWorkSubContents.xsl&amp;count={@n}&amp;pageArk={tei:locus/@facs}&amp;fileId={$fileId} -->
 
                                         <a target="_top" style="border-style:none" href="javascript:void(0)" onclick="performXSLTTransformation('TEIWorkSubContents.xsl','{@n}', '{tei:locus/@facs}');">
-                                            <img src="/images/icon_content.jpg" width="20" height="20" alt="Content" style="" />
+                                            <img src="../images/icon_content.jpg" width="20" height="20" alt="Content" style="" />
                                         </a>
                                         <xsl:text></xsl:text>
                                     </xsl:if>
                                     <!-- href="/stgallmss/viewItem.do?xmlstylesheet=TEITranscription.xsl&amp;count={@n}&amp;pageArk={tei:locus/@facs}&amp;fileId={$fileId}" -->
                                     <a target="_top" style="" href="javascript:void(0)" onclick="performXSLTTransformation('TEITranscription.xsl','{@n}', '{tei:locus/@facs}');">
-                                        <img src="/images/icon_text.jpg" width="20" height="20" alt="Text" style="" />
+                                        <img src="../images/icon_text.jpg" width="20" height="20" alt="Text" style="" />
                                     </a>
                                     <xsl:text></xsl:text>
                                     <br />
-                                </DIV>
+                                </div>
 
 
                             </xsl:for-each>
                             <!-- </ul> -->
-                        </td>
-                    </tr>
+                      
 
-
-                </DIV>
+                </div>
 
                 <!-- Content table for left view frame END-->
                 <br />
                 <br />
-            </td>
-        </tr>
-    </table>
+
 
 </xsl:template>
 
