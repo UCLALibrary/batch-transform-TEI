@@ -5,8 +5,13 @@
 <!-- edited by Richard Pollard, 10/2010 -->
 <xsl:stylesheet xmlns:xsl="http://www.w3.org/1999/XSL/Transform" version="1.0"
     xmlns:tei="http://www.tei-c.org/ns/1.0">
-    <xsl:param name="fileId" />
-    <xsl:param name="countContent" select="1" />
+     <xsl:include href="TEIManuscriptBiblio.xsl" />
+      <xsl:include href="TEIManuscriptDesc.xsl" />
+      <xsl:include href="TEIWorkBibliography.xsl" />
+      <xsl:include href="TEIWorkContents.xsl" />
+      <xsl:include href="TEITranscription.xsl" />
+    <!--xsl:param name="fileId" />
+    <xsl:param name="countContent" select="1" /-->
     <xsl:output method="html" />
     <xsl:template match="/">
         <xsl:variable name="checkBibliography" />
@@ -14,69 +19,127 @@
          <html>
       <head>
         <!-- Include your CSS file here -->
-        <link rel="stylesheet" type="text/css" href="../styles/stgallmss.css" />
+       
+        <style>
+	        /* Add your CSS styles here */
+	        .container {
+	            display: flex;
+	            flex-direction: column;
+	            align-items: center;
+	            text-align: center;
+	            margin: 20px;
+	            
+	        }
+	
+	        .title {
+	            font-size: 24px;
+	            font-weight: bold;
+	            margin: 20px 0;
+	        }
+	        .work-title {
+	        	font-size: 14px;
+	            font-weight: bold;
+	        }
+	
+	        .subnav {
+	            display: flex;
+	            justify-content: space-between;
+	            width: 100%;
+	        }
+	
+	        .subnav-item {
+	            flex: 1;
+	            background-color: #f0f0f0;
+	            padding: 10px;
+	            border: 1px solid #ccc;
+	        }
+	
+	        .subnav-item:hover {
+	            background-color: #e0e0e0;
+	        }
+			
+			.flex-container {
+			    display: flex;
+			    flex-direction: row;
+			    align-items: center;
+			    justify-content: flex-start;
+			    margin: 20px;
+			}
+
+			.title {
+			    display: flex;
+			    flex-direction: row;
+			    align-items: center;
+			}
+			.contents {
+				display: flex;
+			    flex-direction: column;
+			   
+			    justify-content: flex-start;
+			    margin: 20px;
+			}
+			.sub-links {
+			 	display: flex;
+			    flex-direction: row;
+			    justify-content: flex-start;
+    			align-items: center;
+    			gap: 8px;
+			}
+			.work-item-content {
+				display: none;
+			}
+			.work-item-bibliography {
+				display: none;
+			}
+			.work-item-transcription {
+				display: none
+			}
+			.manuscript-bibliography {
+				display: none;
+			}
+			.manuscript-description{
+				display: none;
+			}
+	        /* Add more styles as needed */
+    	</style>
       </head>
       <body>
         <!-- Your other HTML content generation here -->
-     
+        <div class="flex-container">
+		    <div class="title">
+		        <xsl:value-of select="tei:TEI/tei:text/tei:body/tei:msDesc/tei:msIdentifier/tei:repository"/>
+		        :
+		        <xsl:value-of select="tei:TEI/tei:text/tei:body/tei:msDesc/tei:msIdentifier/tei:idno"/>
+		    </div>
+		</div>
+        <div class="container">
 
-        <table width="95%" border="0" align="center" cellpadding="3" cellspacing="0" bgcolor="#ffffff">
-            <!-- manuscript  repository and idno-->
-            <tr>
-                <td class="title">
-                    <xsl:value-of select="tei:TEI/tei:text/tei:body/tei:msDesc/tei:msIdentifier/tei:repository"></xsl:value-of>
-        :                    <xsl:value-of select="tei:TEI/tei:text/tei:body/tei:msDesc/tei:msIdentifier/tei:idno"></xsl:value-of>
-                </td>
-            </tr>
-            <!-- manuscript  repository and idno end-->
-            <tr>
-                <td>
-
-                    <!-- sub nav table for left view frame-->
-                    <table width="100%" border="0" cellspacing="5" cellpadding="5">
-                        <tr>
-                            <td width="33%" class="subnav_on">Manuscript Contents</td>
-                            <!-- href="/stgallmss/viewFile.do?xmlstylesheet=TEIManuscriptBiblio.xsl&amp;fileId={$fileId}"-->
-                            <td width="33%" class="subnav_off">
-                                <a href="javascript:void(0)" onclick="performXSLTTransformation('TEIManuscriptBiblio.xsl');">Manuscript
-        Codicological
-                                    Bibliography</a>
-                            </td>
-                            <!-- href="/stgallmss/viewFile.do?xmlstylesheet=TEIManuscriptDesc.xsl&amp;imageark={tei:TEI/tei:text/tei:body/tei:msDesc/tei:physDesc/tei:collation/@ark}&amp;fileId={$fileId}"-->
-                            <td class="subnav_off">
-                                <a href="javascript:void(0)" onclick="performXSLTTransformation('TEIManuscriptDesc.xsl');">Manuscript
-        Codicological
-                                    Description</a>
-                            </td>
-                        </tr>
-                    </table>
-                    <!-- sub nav table for left view frame END  -->
-
-                </td>
-            </tr>
-
-            <tr width="100%">
-                <td align="left" valign="top" width="100%">
-
-                    <!-- Contents for left view frame copy paste the DIV tag section to add more
-                    content.
-                                The page numbers to the right are under span tags-->
-                    <!-- manuscripts which dont have  table of contents-->
-                    <xsl:if test="tei:TEI/tei:text/tei:body/tei:msDesc/tei:msContents/tei:mini">
+	        <div class="subnav">
+	            <div class="subnav-item">Manuscript Contents</div>
+	            <div class="subnav-item"><a href="javascript:void(0)" onclick="performXSLTTransformation('TEIManuscriptBiblio.xsl');">Manuscript Codicological Bibliography</a></div>
+	            <div class="subnav-item"><a href="javascript:void(0)" onclick="performXSLTTransformation('TEIManuscriptDesc.xsl');">Manuscript Codicological Description</a></div>
+	        </div>
+    	</div>
+    	
+    	<div class="contents">
+			<xsl:if test="tei:TEI/tei:text/tei:body/tei:msDesc/tei:msContents/tei:mini">
+			<div class="temp-contents">
                         <b>
                             <xsl:text>Temporary Summary of Contents:</xsl:text>
                         </b>
                         <br></br>
                         <br></br>
                         <xsl:copy-of select="tei:TEI/tei:text/tei:body/tei:msDesc/tei:msContents/tei:mini" />
-                    </xsl:if>
+                </div>
+               </xsl:if>
                     <!-- manuscripts which dont have  table of contents end-->
                     <!-- workGroup -->
 
                     <xsl:for-each select="tei:TEI/tei:text/tei:body/tei:msDesc/tei:msContents/tei:msItem">
-
+						
                         <xsl:if test="tei:workGroupHeading">
-                            <p> heading for workGroupHeading <h4>[                                <b>
+							<div class="work-group-heading">
+                            <p>  <h4>[                                <b>
                                     <xsl:value-of select="tei:workGroupHeading/tei:locus" />
                                 </b>
         ]                                <xsl:choose>
@@ -91,9 +154,9 @@
 
                             </h4>
                         </p>
+                        </div>
                     </xsl:if>
-
-                    <DIV class="tan_divider">
+                     <div class="work-item">
 
                         <xsl:value-of select="position()" />
  .                        <xsl:variable name="locusFacs" select="normalize-space(tei:locus/@target)" />
@@ -154,16 +217,17 @@
                         </ul>
 
                         <!-- rubric,incipit, explicit end-->
-
+						<div class="sub-links">
                         <!-- Bibliography -->
                         <xsl:if test="count(tei:listBibl) > 0">
                             <xsl:if test="count(tei:listBibl/tei:head[. = 'Related Texts'] | tei:listBibl/tei:head[. = 'Bibliography'] | tei:listBibl/tei:head[. = 'Editions']  |  tei:listBibl/tei:head[. = 'Edition']   | tei:listBibl/tei:head[. = 'Edition and Bibliography']  |   tei:listBibl/tei:head[. = 'Translation'])  > 0">
                                 <xsl:if test="count(tei:listBibl/tei:head[. = 'Related Texts'] | tei:listBibl/tei:head[. = 'Bibliography'] | tei:listBibl/tei:head[. = 'Editions'] |  tei:listBibl/tei:head[. = 'Translation'] | tei:listBibl/tei:head[. = 'Edition and Bibliography'] | tei:listBibl/tei:head[. = 'Edition']/following-sibling::tei:biblStruct) > 0">
                                     <!-- href="/stgallmss/viewFile.do?xmlstylesheet=TEIWorkBibliography.xsl&amp;count={@n}&amp;fileId={$fileId}" -->
                                     <a style="" href="javascript:void(0)" onclick="performXSLTTransformation('TEIWorkBibliography.xsl','{@n}');">
-                                        <img src="../images/icon_bibliography.jpg" width="20" height="20" alt="Bibliography" />
+                                        Bibliograpghy
                                     </a>
                                     <xsl:text></xsl:text>
+                                   
                                 </xsl:if>
                             </xsl:if>
 
@@ -174,9 +238,10 @@
 
                             <!-- href="{$locusFacs}" locusFacs its th msitem target variable created in this xslt-->
                             <a target="_top" style="border-style:none" href="javascript:void(0)" onclick="performXSLTTransformation('TEIWorkContents.xsl','{@n}');">
-                                <img src="../images/icon_content.jpg" width="20" height="20" alt="Content" style="" />
+                                Content
                             </a>
                             <xsl:text></xsl:text>
+                           
                         </xsl:if>
                         <!-- Transcription  -->
                         <xsl:choose>
@@ -185,9 +250,10 @@
 
                                 <xsl:variable name="transcriptionFacs" select="normalize-space(tei:locus/@facs)" />
                                 <a target="_top" style="" href="javascript:void(0)" onclick="performXSLTTransformation('TEITranscription.xsl','{@n}','{$transcriptionFacs}')">
-                                    <img src="../images/icon_text.jpg" width="20" height="20" alt="Text" style="" />
+                                   Text
                                 </a>
                                 <xsl:text></xsl:text>
+                                 <div class="work-item-transcription"> </div>
                             </xsl:when>
 
                             <!-- editionArk needs to be added above -->
@@ -195,21 +261,76 @@
 
                                 <xsl:variable name="transcriptionFacs" select="normalize-space(tei:locus/@facs)" />
                                 <a target="_top" style="" href="javascript:void(0)" onclick="performXSLTTransformation('TEITranscription.xsl','{@n}','{$transcriptionFacs}')">
-                                    <img src="../images/icon_text.jpg" width="20" height="20" alt="Text" style="" />
+                                   Text
                                 </a>
                                 <xsl:text></xsl:text>
+                                
                             </xsl:otherwise>
                         </xsl:choose>
-                        <br />
+                        </div>
+                         <xsl:if test="count(tei:listBibl) > 0">
+                            <xsl:if test="count(tei:listBibl/tei:head[. = 'Related Texts'] | tei:listBibl/tei:head[. = 'Bibliography'] | tei:listBibl/tei:head[. = 'Editions']  |  tei:listBibl/tei:head[. = 'Edition']   | tei:listBibl/tei:head[. = 'Edition and Bibliography']  |   tei:listBibl/tei:head[. = 'Translation'])  > 0">
+                                <xsl:if test="count(tei:listBibl/tei:head[. = 'Related Texts'] | tei:listBibl/tei:head[. = 'Bibliography'] | tei:listBibl/tei:head[. = 'Editions'] |  tei:listBibl/tei:head[. = 'Translation'] | tei:listBibl/tei:head[. = 'Edition and Bibliography'] | tei:listBibl/tei:head[. = 'Edition']/following-sibling::tei:biblStruct) > 0">
+                         <div class="work-item-bibliography"> 
+							
+                        
+							 <xsl:call-template name="generateWorkBibliography">
+								<xsl:with-param name="count" select = "@n" />
+							</xsl:call-template>
+									</div>
+                                </xsl:if>
+                            </xsl:if>
+                         </xsl:if>
+                          <xsl:if test="count(tei:msItem) > 0">
+                         <div class="work-item-content"> 
+							<xsl:call-template name="generateWorkContent">
+  								<xsl:with-param name="count" select="@n" />
+							</xsl:call-template>
+						</div>
+						</xsl:if>
+						 <xsl:choose>
+                            <!-- dont remember why this condition was tested -->
+                            <xsl:when test="count(tei:msItem) = 0">
 
-                    </DIV>
+                                <xsl:variable name="transcriptionFacs" select="normalize-space(tei:locus/@facs)" />
+                               
+                                
+                                <div class="work-item-transcription">
+									<xsl:call-template name="generateWorkTranscription">
+		  								<xsl:with-param name="count" select="@n" />
+		  								<xsl:with-param name="ark" select="$transcriptionFacs" />
+									</xsl:call-template>
+							 </div>
+                                 </xsl:when> 
 
+                            <!-- editionArk needs to be added above -->
+                            <xsl:otherwise>
+								 <xsl:variable name="transcriptionFacs" select="normalize-space(tei:locus/@facs)" />
+								 <div class="work-item-transcription">
+							<xsl:call-template name="generateWorkTranscription">
+  								<xsl:with-param name="count" select="@n" />
+  								<xsl:with-param name="ark" select="$transcriptionFacs" />
+							</xsl:call-template>
+							 </div>
+								</xsl:otherwise>
+                        </xsl:choose>
+
+                               
+						
+            <br />
+
+                   
+				</div>
 
                 </xsl:for-each>
-                <!-- work end -->
-            </td>
-        </tr>
-    </table>
+    	</div>    	
+    	
+    	<div class="contents manuscript-bibliography"> 
+			<xsl:call-template name="generateManuscriptBibliography" />
+		</div>
+    	<div class="contents manuscript-description">
+			<xsl:call-template name="generateManuscriptDescription" />
+		</div>
     </body>
     </html>
 

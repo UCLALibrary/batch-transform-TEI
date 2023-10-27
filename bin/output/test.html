@@ -1,30 +1,136 @@
 <html xmlns:tei="http://www.tei-c.org/ns/1.0">
     <head>
         <META http-equiv="Content-Type" content="text/html; charset=UTF-8">
-        <link rel="stylesheet" type="text/css" href="../styles/stgallmss.css">
+        <style>
+	        /* Add your CSS styles here */
+	        .container {
+	            display: flex;
+	            flex-direction: column;
+	            align-items: center;
+	            text-align: center;
+	            margin: 20px;
+	            
+	        }
+	
+	        .title {
+	            font-size: 24px;
+	            font-weight: bold;
+	            margin: 20px 0;
+	        }
+	        .work-title {
+	        	font-size: 14px;
+	            font-weight: bold;
+	        }
+	
+	        .subnav {
+	            display: flex;
+	            justify-content: space-between;
+	            width: 100%;
+	        }
+	
+	        .subnav-item {
+	            flex: 1;
+	            background-color: #f0f0f0;
+	            padding: 10px;
+	            border: 1px solid #ccc;
+	        }
+	
+	        .subnav-item:hover {
+	            background-color: #e0e0e0;
+	        }
+			
+			.flex-container {
+			    display: flex;
+			    flex-direction: row;
+			    align-items: center;
+			    justify-content: flex-start;
+			    margin: 20px;
+			}
+
+			.title {
+			    display: flex;
+			    flex-direction: row;
+			    align-items: center;
+			}
+			.contents {
+				display: flex;
+			    flex-direction: column;
+			   
+			    justify-content: flex-start;
+			    margin: 20px;
+			}
+			.sub-links {
+			 	display: flex;
+			    flex-direction: row;
+			    justify-content: flex-start;
+    			align-items: center;
+    			gap: 8px;
+			}
+			.work-item-content {
+				display: none;
+			}
+			.work-item-bibliography {
+				display: none;
+			}
+			.manuscript-bibliography {
+				display: none;
+			}
+			.manuscript-description{
+				display: none;
+			}
+	        /* Add more styles as needed */
+    	</style>
     </head>
     <body>
-        <table width="95%" border="0" align="center" cellpadding="3" cellspacing="0" bgcolor="#ffffff">
-            <tr>
-                <td class="title">
-        :                    </td>
-            </tr>
-            <tr>
-                <td>
-                    <table width="100%" border="0" cellspacing="5" cellpadding="5">
-                        <tr>
-                            <td width="33%" class="subnav_on">Manuscript Contents</td><td width="33%" class="subnav_off"><a href="javascript:void(0)" onclick="performXSLTTransformation('TEIManuscriptBiblio.xsl');">Manuscript
-        Codicological
-                                    Bibliography</a></td><td class="subnav_off"><a href="javascript:void(0)" onclick="performXSLTTransformation('TEIManuscriptDesc.xsl');">Manuscript
-        Codicological
-                                    Description</a></td>
-                        </tr>
-                    </table>
-                </td>
-            </tr>
-            <tr width="100%">
-                <td align="left" valign="top" width="100%"></td>
-            </tr>
-        </table>
+        <div class="flex-container">
+            <div class="title">
+		        :
+		        </div>
+        </div>
+        <div class="container">
+            <div class="subnav">
+                <div class="subnav-item">Manuscript Contents</div>
+                <div class="subnav-item">
+                    <a href="javascript:void(0)" onclick="performXSLTTransformation('TEIManuscriptBiblio.xsl');">Manuscript Codicological Bibliography</a>
+                </div>
+                <div class="subnav-item">
+                    <a href="javascript:void(0)" onclick="performXSLTTransformation('TEIManuscriptDesc.xsl');">Manuscript Codicological Description</a>
+                </div>
+            </div>
+        </div>
+        <div class="contents"></div>
+        <div class="contents manuscript-bibliography">
+            <br>
+            <br>
+        </div>
+        <div class="contents manuscript-description">
+            <div class="manuscript-desc">
+                <p>
+                    <b>Extent: </b> 
+                </p>
+                <p>
+                    <b>Dimensions: </b>
+                </p>
+                <p></p>
+                <p>
+                    <b>Page Layout: </b> 
+                </p>
+                <p>
+                    <b>Script and Hand(s): </b> 
+                </p>
+                <p>
+                    <b>Additional Information:</b> 
+                </p>
+                <p>
+                    <b>Date: </b> 
+                </p>
+                <p>
+                    <b>Origin: </b> 
+                </p>
+                <br>
+            </div>
+            <br>
+            <br>
+        </div>
     </body>
 </html>
