@@ -2,107 +2,113 @@
     <head>
         <META http-equiv="Content-Type" content="text/html; charset=UTF-8">
         <style>
-	        /* Add your CSS styles here */
-	        .container {
-	            display: flex;
-	            flex-direction: column;
-	            align-items: center;
-	            text-align: center;
-	            margin: 20px;
-	            
-	        }
-	
-	        .title {
-	            font-size: 24px;
-	            font-weight: bold;
-	            margin: 20px 0;
-	        }
-	        .work-title {
-	        	font-size: 14px;
-	            font-weight: bold;
-	        }
-	
-	        .subnav {
-	            display: flex;
-	            justify-content: space-between;
-	            width: 100%;
-	        }
-	
-	        .subnav-item {
-	            flex: 1;
-	            background-color: #f0f0f0;
-	            padding: 10px;
-	            border: 1px solid #ccc;
-	        }
-	
-	        .subnav-item:hover {
-	            background-color: #e0e0e0;
-	        }
-			
-			.flex-container {
-			    display: flex;
-			    flex-direction: row;
-			    align-items: center;
-			    justify-content: flex-start;
-			    margin: 20px;
-			}
+					/* Add your CSS styles here */
+					.container {
+					display: flex;
+					flex-direction: column;
+					align-items: center;
+					text-align: center;
+					margin: 20px;
 
-			.title {
-			    display: flex;
-			    flex-direction: row;
-			    align-items: center;
-			}
-			.contents {
-				display: flex;
-			    flex-direction: column;
-			   
-			    justify-content: flex-start;
-			    margin: 20px;
-			}
-			.sub-links {
-			 	display: flex;
-			    flex-direction: row;
-			    justify-content: flex-start;
-    			align-items: center;
-    			gap: 8px;
-			}
-			.work-item-content {
-				display: none;
-			}
-			.work-item-bibliography {
-				display: none;
-			}
-			.manuscript-bibliography {
-				display: none;
-			}
-			.manuscript-description{
-				display: none;
-			}
-	        /* Add more styles as needed */
-    	</style>
+					}
+
+					.title {
+					font-size: 24px;
+					font-weight: bold;
+					margin: 20px 0;
+					}
+					.work-title {
+					font-size: 14px;
+					font-weight: bold;
+					}
+
+					.subnav {
+					display: flex;
+					justify-content: space-between;
+					width: 100%;
+					}
+
+					.subnav-item {
+					flex: 1;
+					background-color: #f0f0f0;
+					padding: 10px;
+					border: 1px solid #ccc;
+					}
+
+					.subnav-item:hover {
+					background-color: #e0e0e0;
+					}
+
+					.flex-container {
+					display: flex;
+					flex-direction: row;
+					align-items: center;
+					justify-content: flex-start;
+					margin: 20px;
+					}
+
+					.title {
+					display: flex;
+					flex-direction: row;
+					align-items: center;
+					}
+					.contents {
+					display: flex;
+					flex-direction: column;
+
+					justify-content: flex-start;
+					margin: 20px;
+					}
+					.sub-links {
+					display: flex;
+					flex-direction: row;
+					justify-content: flex-start;
+					align-items: center;
+					gap: 8px;
+					}
+					.work-item-content {
+
+					}
+					.work-item-bibliography {
+
+					}
+					.work-item-transcription {
+
+					}
+					.manuscript-bibliography {
+
+					}
+					.manuscript-description{
+
+					}
+					.toggleDiv {
+					display: none;
+					}
+					.toggleDivWorkItem{
+					display: none;
+					}
+					#manuscript-contents {
+					display: flex;
+					}
+					/* Add more styles as needed */
+				</style>
     </head>
     <body>
         <div class="flex-container">
             <div class="title">Naples, Biblioteca Nazionale
-		        :
-		        Ms. IV.G.68</div>
+						: Ms. IV.G.68</div>
         </div>
         <div class="container">
             <div class="subnav">
-                <div class="subnav-item">Manuscript Contents</div>
                 <div class="subnav-item">
-                    <a href="javascript:void(0)" onclick="performXSLTTransformation('TEIManuscriptBiblio.xsl');">Manuscript Codicological Bibliography</a>
-                </div>
-                <div class="subnav-item">
-                    <a href="javascript:void(0)" onclick="performXSLTTransformation('TEIManuscriptDesc.xsl');">Manuscript Codicological Description</a>
+                    <h3>Manuscript Contents</h3>
                 </div>
             </div>
         </div>
-        <div class="contents">
-            <div class="work-item">
-                1
- .                        <a target="_top" href="https://digital.library.ucla.edu/catalog/xds49200zz-89112?cv=0">Eugenius Toletanus, Carmen VI ['Contra Ebrietatem']</a><span>
-        &nbsp; f.
+        <div id="manuscript-contents" class="contents toggleDiv">
+            <div class="work-item ">
+                1 . <a target="_top" href="https://digital.library.ucla.edu/catalog/xds49200zz-89112?cv=0">Eugenius Toletanus, Carmen VI ['Contra Ebrietatem']</a><span>
+							&nbsp; f.
                             1r</span>
                 <ul style="list-style-type:none">
                     <li>
@@ -113,14 +119,14 @@
                     </li>
                 </ul>
                 <div class="sub-links">
-                    <a style="" href="javascript:void(0)" onclick="performXSLTTransformation('TEIWorkBibliography.xsl','1');">
-                                        Bibliograpghy
-                                    </a><a target="_top" style="" href="javascript:void(0)" onclick="performXSLTTransformation('TEITranscription.xsl','1','p21198-zz00294sff')">
-                                   Text
-                                </a>
+                    <a href="#" class="toggleLinkWorkItem" data-target="work-item-bibliograghy-1">
+							Bibliograpghy
+											</a><a href="#" class="toggleLinkWorkItem" data-target="work-item-transcription-1">
+							Text
+										</a>
                     <div class="work-item-transcription"></div>
                 </div>
-                <div class="work-item-bibliography">
+                <div id="work-item-bibliograghy-1" class="work-item-bibliography toggleDivWorkItem">
                     <DIV class="tan_divider">
                         <span><b>f.
                             1r</b>
@@ -154,8 +160,7 @@
                         <br>
                     </DIV>
                 </div>
-                                                Arkp21198-zz00294sff
-                <div class="work-item-transcription">
+                <div id="work-item-transcription-1" class="work-item-transcription toggleDivWorkItem">
                     <div class="tan_divider">
                         <br>
                         <div class="transcriptionSource"></div>
@@ -163,10 +168,9 @@
                 </div>
                 <br>
             </div>
-            <div class="work-item">
-                2
- .                        <a target="_top" href="https://digital.library.ucla.edu/catalog/xds49200zz-89112?cv=1">[Commentarius anonynmi in Boetii Consolationem Philosophiae]</a><span>
-        &nbsp; f.
+            <div class="work-item ">
+                2 . <a target="_top" href="https://digital.library.ucla.edu/catalog/xds49200zz-89112?cv=1">[Commentarius anonynmi in Boetii Consolationem Philosophiae]</a><span>
+							&nbsp; f.
                             1v</span>
                 <ul style="list-style-type:none">
                     <li>
@@ -182,14 +186,14 @@
                     </li>
                 </ul>
                 <div class="sub-links">
-                    <a style="" href="javascript:void(0)" onclick="performXSLTTransformation('TEIWorkBibliography.xsl','2');">
-                                        Bibliograpghy
-                                    </a><a target="_top" style="" href="javascript:void(0)" onclick="performXSLTTransformation('TEITranscription.xsl','2','p21198-zz00294sgz')">
-                                   Text
-                                </a>
+                    <a href="#" class="toggleLinkWorkItem" data-target="work-item-bibliograghy-2">
+							Bibliograpghy
+											</a><a href="#" class="toggleLinkWorkItem" data-target="work-item-transcription-2">
+							Text
+										</a>
                     <div class="work-item-transcription"></div>
                 </div>
-                <div class="work-item-bibliography">
+                <div id="work-item-bibliograghy-2" class="work-item-bibliography toggleDivWorkItem">
                     <DIV class="tan_divider">
                         <span><b>f.
                             1v</b>
@@ -223,8 +227,7 @@
                         <br>
                     </DIV>
                 </div>
-                                                Arkp21198-zz00294sgz
-                <div class="work-item-transcription">
+                <div id="work-item-transcription-2" class="work-item-transcription toggleDivWorkItem">
                     <div class="tan_divider">
                         <br>
                         <div class="transcriptionSource"></div>
@@ -232,10 +235,9 @@
                 </div>
                 <br>
             </div>
-            <div class="work-item">
-                3
- .                        <a target="_top" href="https://digital.library.ucla.edu/catalog/xds49200zz-89112?cv=2">Lupus Servatus, De metris Boetii libellus</a><span>
-        &nbsp; f.
+            <div class="work-item ">
+                3 . <a target="_top" href="https://digital.library.ucla.edu/catalog/xds49200zz-89112?cv=2">Lupus Servatus, De metris Boetii libellus</a><span>
+							&nbsp; f.
                             2r&ndash;4r</span>
                 <ul style="list-style-type:none">
                     <li>
@@ -250,14 +252,14 @@
                     </li>
                 </ul>
                 <div class="sub-links">
-                    <a style="" href="javascript:void(0)" onclick="performXSLTTransformation('TEIWorkBibliography.xsl','3');">
-                                        Bibliograpghy
-                                    </a><a target="_top" style="" href="javascript:void(0)" onclick="performXSLTTransformation('TEITranscription.xsl','3','p21198-zz00294shg')">
-                                   Text
-                                </a>
+                    <a href="#" class="toggleLinkWorkItem" data-target="work-item-bibliograghy-3">
+							Bibliograpghy
+											</a><a href="#" class="toggleLinkWorkItem" data-target="work-item-transcription-3">
+							Text
+										</a>
                     <div class="work-item-transcription"></div>
                 </div>
-                <div class="work-item-bibliography">
+                <div id="work-item-bibliograghy-3" class="work-item-bibliography toggleDivWorkItem">
                     <DIV class="tan_divider">
                         <span><b>f.
                             2r&ndash;4r</b>
@@ -290,8 +292,7 @@
                         <br>
                     </DIV>
                 </div>
-                                                Arkp21198-zz00294shg
-                <div class="work-item-transcription">
+                <div id="work-item-transcription-3" class="work-item-transcription toggleDivWorkItem">
                     <div class="tan_divider">
                         <br>
                         <div class="transcriptionSource"></div>
@@ -299,10 +300,9 @@
                 </div>
                 <br>
             </div>
-            <div class="work-item">
-                4
- .                        <a target="_top" href="https://digital.library.ucla.edu/catalog/xds49200zz-89112?cv=6">Vita Boethii I</a><span>
-        &nbsp; f.
+            <div class="work-item ">
+                4 . <a target="_top" href="https://digital.library.ucla.edu/catalog/xds49200zz-89112?cv=6">Vita Boethii I</a><span>
+							&nbsp; f.
                             4r-v</span>
                 <ul style="list-style-type:none">
                     <li>
@@ -313,14 +313,14 @@
                     </li>
                 </ul>
                 <div class="sub-links">
-                    <a style="" href="javascript:void(0)" onclick="performXSLTTransformation('TEIWorkBibliography.xsl','4');">
-                                        Bibliograpghy
-                                    </a><a target="_top" style="" href="javascript:void(0)" onclick="performXSLTTransformation('TEITranscription.xsl','4','p21198-zz00294snj')">
-                                   Text
-                                </a>
+                    <a href="#" class="toggleLinkWorkItem" data-target="work-item-bibliograghy-4">
+							Bibliograpghy
+											</a><a href="#" class="toggleLinkWorkItem" data-target="work-item-transcription-4">
+							Text
+										</a>
                     <div class="work-item-transcription"></div>
                 </div>
-                <div class="work-item-bibliography">
+                <div id="work-item-bibliograghy-4" class="work-item-bibliography toggleDivWorkItem">
                     <DIV class="tan_divider">
                         <span><b>f.
                             4r-v</b>
@@ -347,8 +347,7 @@
                         <br>
                     </DIV>
                 </div>
-                                                Arkp21198-zz00294snj
-                <div class="work-item-transcription">
+                <div id="work-item-transcription-4" class="work-item-transcription toggleDivWorkItem">
                     <div class="tan_divider">
                         <br>
                         <div class="transcriptionSource"></div>
@@ -356,10 +355,9 @@
                 </div>
                 <br>
             </div>
-            <div class="work-item">
-                5
- .                        <a target="_top" href="https://digital.library.ucla.edu/catalog/xds49200zz-89112?cv=7">Anicius Manlius Severinus Boethius, De Consolatione Philosophiae</a><span>
-        &nbsp; f.
+            <div class="work-item ">
+                5 . <a target="_top" href="https://digital.library.ucla.edu/catalog/xds49200zz-89112?cv=7">Anicius Manlius Severinus Boethius, De Consolatione Philosophiae</a><span>
+							&nbsp; f.
                             4v&ndash;92r</span>
                 <ul style="list-style-type:none">
                     <li>
@@ -377,15 +375,15 @@
                     </li>
                 </ul>
                 <div class="sub-links">
-                    <a style="" href="javascript:void(0)" onclick="performXSLTTransformation('TEIWorkBibliography.xsl','5');">
-                                        Bibliograpghy
-                                    </a><a target="_top" style="border-style:none" href="javascript:void(0)" onclick="performXSLTTransformation('TEIWorkContents.xsl','5');">
-                                Content
-                            </a><a target="_top" style="" href="javascript:void(0)" onclick="performXSLTTransformation('TEITranscription.xsl','5','p21198-zz00294sp2')">
-                                   Text
-                                </a>
+                    <a href="#" class="toggleLinkWorkItem" data-target="work-item-bibliograghy-5">
+							Bibliograpghy
+											</a><a href="#" class="toggleLinkWorkItem" data-target="work-item-content-5">
+										Content
+									</a><a href="#" class="toggleLinkWorkItem" data-target="work-item-transcription-5">
+							Text
+										</a>
                 </div>
-                <div class="work-item-bibliography">
+                <div id="work-item-bibliograghy-5" class="work-item-bibliography toggleDivWorkItem">
                     <DIV class="tan_divider">
                         <span><b>f.
                             4v&ndash;92r</b>
@@ -435,7 +433,7 @@
                         <br>
                     </DIV>
                 </div>
-                <div class="work-item-content">
+                <div id="work-item-content-5" class="work-item-content toggleDivWorkItem">
                     <div class="flex-container">
                         <div class="work-title">
                             <span> [                    5
@@ -450,45 +448,75 @@
                     <div class="contents">
                         <br>
                         <div class="work-item">
-                            5_1<a target="_top">Liber I</a><span>
+                            5.1<a target="_top">Liber I</a><span>
                                             &nbsp; f. 5r-17r</span>
                             <ul style="list-style-type:none"></ul>
-                            <a target="_top" style="" href="javascript:void(0)" onclick="performXSLTTransformation('TEITranscription.xsl','5_1', 'p21198-zz00294sqk');"><img src="../images/icon_text.jpg" width="20" height="20" alt="Text" style=""></a>
+                            <h4> Sub Work Transcription</h4>
+                            <div id="work-sub-item-transcription-5_1" class="work-item-transcription ">
+                                <div class="tan_divider">
+                                    <br>
+                                    <div class="transcriptionSource"></div>
+                                </div>
+                            </div>
                             <br>
                         </div>
                         <div class="work-item">
-                            5_2<a target="_top">Liber II</a><span>
+                            5.2<a target="_top">Liber II</a><span>
                                             &nbsp; f. 17v-34r</span>
                             <ul style="list-style-type:none"></ul>
-                            <a target="_top" style="" href="javascript:void(0)" onclick="performXSLTTransformation('TEITranscription.xsl','5_2', 'p21198-zz00294tk0');"><img src="../images/icon_text.jpg" width="20" height="20" alt="Text" style=""></a>
+                            <h4> Sub Work Transcription</h4>
+                            <div id="work-sub-item-transcription-5_2" class="work-item-transcription ">
+                                <div class="tan_divider">
+                                    <br>
+                                    <div class="transcriptionSource"></div>
+                                </div>
+                            </div>
                             <br>
                         </div>
                         <div class="work-item">
-                            5_3<a target="_top">Liber III</a><span>
+                            5.3<a target="_top">Liber III</a><span>
                                             &nbsp; f. 34r-57v</span>
                             <ul style="list-style-type:none"></ul>
-                            <a target="_top" style="" href="javascript:void(0)" onclick="performXSLTTransformation('TEITranscription.xsl','5_3', 'p21198-zz00294vqj');"><img src="../images/icon_text.jpg" width="20" height="20" alt="Text" style=""></a>
+                            <h4> Sub Work Transcription</h4>
+                            <div id="work-sub-item-transcription-5_3" class="work-item-transcription ">
+                                <div class="tan_divider">
+                                    <br>
+                                    <div class="transcriptionSource"></div>
+                                </div>
+                            </div>
                             <br>
                         </div>
                         <div class="work-item">
-                            5_4<a target="_top">Liber IIII</a><span>
+                            5.4<a target="_top">Liber IIII</a><span>
                                             &nbsp; f. 57v-77v</span>
                             <ul style="list-style-type:none"></ul>
-                            <a target="_top" style="" href="javascript:void(0)" onclick="performXSLTTransformation('TEITranscription.xsl','5_4', 'p21198-zz00294xbt');"><img src="../images/icon_text.jpg" width="20" height="20" alt="Text" style=""></a>
+                            <h4> Sub Work Transcription</h4>
+                            <div id="work-sub-item-transcription-5_4" class="work-item-transcription ">
+                                <div class="tan_divider">
+                                    <br>
+                                    <div class="transcriptionSource"></div>
+                                </div>
+                            </div>
                             <br>
                         </div>
                         <div class="work-item">
-                            5_5<a target="_top">LIber V</a><span>
+                            5.5<a target="_top">LIber V</a><span>
                                             &nbsp; f. 77v-92r</span>
                             <ul style="list-style-type:none"></ul>
-                            <a target="_top" style="" href="javascript:void(0)" onclick="performXSLTTransformation('TEITranscription.xsl','5_5', 'p21198-zz00294zkx');"><img src="../images/icon_text.jpg" width="20" height="20" alt="Text" style=""></a>
+                            <h4> Sub Work Transcription</h4>
+                            <div id="work-sub-item-transcription-5_5" class="work-item-transcription ">
+                                <div class="tan_divider">
+                                    <br>
+                                    <div class="transcriptionSource"></div>
+                                </div>
+                            </div>
                             <br>
                         </div>
                     </div>
                     <br>
                     <br>
                 </div>
-                <div class="work-item-transcription">
+                <div id="work-item-transcription-5" class="work-item-transcription toggleDivWorkItem">
                     <div class="tan_divider">
                         <br>
                         <div class="transcriptionSource"></div>
@@ -496,10 +524,9 @@
                 </div>
                 <br>
             </div>
-            <div class="work-item">
-                6
- .                        <a target="_top" href="https://digital.library.ucla.edu/catalog/xds49200zz-89112?cv=8">[Anonymus in Boetii Consolationem Philosophiae commentarius]</a><span>
-        &nbsp; f.
+            <div class="work-item ">
+                6 . <a target="_top" href="https://digital.library.ucla.edu/catalog/xds49200zz-89112?cv=8">[Anonymus in Boetii Consolationem Philosophiae commentarius]</a><span>
+							&nbsp; f.
                             5r-92r</span>
                 <ul style="list-style-type:none">
                     <li>
@@ -507,14 +534,14 @@
                     </li>
                 </ul>
                 <div class="sub-links">
-                    <a style="" href="javascript:void(0)" onclick="performXSLTTransformation('TEIWorkBibliography.xsl','6');">
-                                        Bibliograpghy
-                                    </a><a target="_top" style="" href="javascript:void(0)" onclick="performXSLTTransformation('TEITranscription.xsl','6','p21198-zz00294sqk')">
-                                   Text
-                                </a>
+                    <a href="#" class="toggleLinkWorkItem" data-target="work-item-bibliograghy-6">
+							Bibliograpghy
+											</a><a href="#" class="toggleLinkWorkItem" data-target="work-item-transcription-6">
+							Text
+										</a>
                     <div class="work-item-transcription"></div>
                 </div>
-                <div class="work-item-bibliography">
+                <div id="work-item-bibliograghy-6" class="work-item-bibliography toggleDivWorkItem">
                     <DIV class="tan_divider">
                         <span><b>f.
                             5r-92r</b>
@@ -547,8 +574,7 @@
                         <br>
                     </DIV>
                 </div>
-                                                Arkp21198-zz00294sqk
-                <div class="work-item-transcription">
+                <div id="work-item-transcription-6" class="work-item-transcription toggleDivWorkItem">
                     <div class="tan_divider">
                         <br>
                         <div class="transcriptionSource"></div>
@@ -556,10 +582,9 @@
                 </div>
                 <br>
             </div>
-            <div class="work-item">
-                7
- .                        <a target="_top" href="https://digital.library.ucla.edu/catalog/xds49200zz-89112?cv=183">Paulinus Aquileiensis, De nativitate domini [1-9]</a><span>
-        &nbsp; f.
+            <div class="work-item ">
+                7 . <a target="_top" href="https://digital.library.ucla.edu/catalog/xds49200zz-89112?cv=183">Paulinus Aquileiensis, De nativitate domini [1-9]</a><span>
+							&nbsp; f.
                             92r</span>
                 <ul style="list-style-type:none">
                     <li>
@@ -570,14 +595,14 @@
                     </li>
                 </ul>
                 <div class="sub-links">
-                    <a style="" href="javascript:void(0)" onclick="performXSLTTransformation('TEIWorkBibliography.xsl','7');">
-                                        Bibliograpghy
-                                    </a><a target="_top" style="" href="javascript:void(0)" onclick="performXSLTTransformation('TEITranscription.xsl','7','p21198-zz002950mc')">
-                                   Text
-                                </a>
+                    <a href="#" class="toggleLinkWorkItem" data-target="work-item-bibliograghy-7">
+							Bibliograpghy
+											</a><a href="#" class="toggleLinkWorkItem" data-target="work-item-transcription-7">
+							Text
+										</a>
                     <div class="work-item-transcription"></div>
                 </div>
-                <div class="work-item-bibliography">
+                <div id="work-item-bibliograghy-7" class="work-item-bibliography toggleDivWorkItem">
                     <DIV class="tan_divider">
                         <span><b>f.
                             92r</b>
@@ -608,8 +633,7 @@
                         <br>
                     </DIV>
                 </div>
-                                                Arkp21198-zz002950mc
-                <div class="work-item-transcription">
+                <div id="work-item-transcription-7" class="work-item-transcription toggleDivWorkItem">
                     <div class="tan_divider">
                         <br>
                         <div class="transcriptionSource"></div>
@@ -617,10 +641,9 @@
                 </div>
                 <br>
             </div>
-            <div class="work-item">
-                8
- .                        <a target="_top" href="https://digital.library.ucla.edu/catalog/xds49200zz-89112?cv=184">Boethius, De trinitate / Quomodo trinitas [Opusculum Sacrum I]</a><span>
-        &nbsp; f.
+            <div class="work-item ">
+                8 . <a target="_top" href="https://digital.library.ucla.edu/catalog/xds49200zz-89112?cv=184">Boethius, De trinitate / Quomodo trinitas [Opusculum Sacrum I]</a><span>
+							&nbsp; f.
                             93r-99r</span>
                 <ul style="list-style-type:none">
                     <li>
@@ -636,14 +659,14 @@
                     </li>
                 </ul>
                 <div class="sub-links">
-                    <a style="" href="javascript:void(0)" onclick="performXSLTTransformation('TEIWorkBibliography.xsl','8');">
-                                        Bibliograpghy
-                                    </a><a target="_top" style="" href="javascript:void(0)" onclick="performXSLTTransformation('TEITranscription.xsl','8','p21198-zz002950nw')">
-                                   Text
-                                </a>
+                    <a href="#" class="toggleLinkWorkItem" data-target="work-item-bibliograghy-8">
+							Bibliograpghy
+											</a><a href="#" class="toggleLinkWorkItem" data-target="work-item-transcription-8">
+							Text
+										</a>
                     <div class="work-item-transcription"></div>
                 </div>
-                <div class="work-item-bibliography">
+                <div id="work-item-bibliograghy-8" class="work-item-bibliography toggleDivWorkItem">
                     <DIV class="tan_divider">
                         <span><b>f.
                             93r-99r</b>
@@ -686,8 +709,7 @@
                         <br>
                     </DIV>
                 </div>
-                                                Arkp21198-zz002950nw
-                <div class="work-item-transcription">
+                <div id="work-item-transcription-8" class="work-item-transcription toggleDivWorkItem">
                     <div class="tan_divider">
                         <br>
                         <div class="transcriptionSource"></div>
@@ -695,10 +717,9 @@
                 </div>
                 <br>
             </div>
-            <div class="work-item">
-                9
- .                        <a target="_top" href="https://digital.library.ucla.edu/catalog/xds49200zz-89112?cv=196">Boethius, Utrum Pater et Filius [Opusculum Sacrum II]</a><span>
-        &nbsp; f.
+            <div class="work-item ">
+                9 . <a target="_top" href="https://digital.library.ucla.edu/catalog/xds49200zz-89112?cv=196">Boethius, Utrum Pater et Filius [Opusculum Sacrum II]</a><span>
+							&nbsp; f.
                             99r-100r</span>
                 <ul style="list-style-type:none">
                     <li>
@@ -715,14 +736,14 @@
                     </li>
                 </ul>
                 <div class="sub-links">
-                    <a style="" href="javascript:void(0)" onclick="performXSLTTransformation('TEIWorkBibliography.xsl','9');">
-                                        Bibliograpghy
-                                    </a><a target="_top" style="" href="javascript:void(0)" onclick="performXSLTTransformation('TEITranscription.xsl','9','p21198-zz0029512k')">
-                                   Text
-                                </a>
+                    <a href="#" class="toggleLinkWorkItem" data-target="work-item-bibliograghy-9">
+							Bibliograpghy
+											</a><a href="#" class="toggleLinkWorkItem" data-target="work-item-transcription-9">
+							Text
+										</a>
                     <div class="work-item-transcription"></div>
                 </div>
-                <div class="work-item-bibliography">
+                <div id="work-item-bibliograghy-9" class="work-item-bibliography toggleDivWorkItem">
                     <DIV class="tan_divider">
                         <span><b>f.
                             99r-100r</b>
@@ -765,8 +786,7 @@
                         <br>
                     </DIV>
                 </div>
-                                                Arkp21198-zz0029512k
-                <div class="work-item-transcription">
+                <div id="work-item-transcription-9" class="work-item-transcription toggleDivWorkItem">
                     <div class="tan_divider">
                         <br>
                         <div class="transcriptionSource"></div>
@@ -774,11 +794,10 @@
                 </div>
                 <br>
             </div>
-            <div class="work-item">
-                10
- .                        <a target="_top" href="">Boethius, Quomodo Substantiae / De hebdomadibus [Opusculum Sacrum
+            <div class="work-item ">
+                10 . <a target="_top" href="">Boethius, Quomodo Substantiae / De hebdomadibus [Opusculum Sacrum
                             III]</a><span>
-        &nbsp; f. 100r-103r</span>
+							&nbsp; f. 100r-103r</span>
                 <ul style="list-style-type:none">
                     <li>
                         <b>Rubric: </b>Item eiusdem ad eundem quomodo substantiae in eo quod si\n/t bonae
@@ -792,14 +811,14 @@
                     </li>
                 </ul>
                 <div class="sub-links">
-                    <a style="" href="javascript:void(0)" onclick="performXSLTTransformation('TEIWorkBibliography.xsl','10');">
-                                        Bibliograpghy
-                                    </a><a target="_top" style="" href="javascript:void(0)" onclick="performXSLTTransformation('TEITranscription.xsl','10','p21198-zz0029514m')">
-                                   Text
-                                </a>
+                    <a href="#" class="toggleLinkWorkItem" data-target="work-item-bibliograghy-10">
+							Bibliograpghy
+											</a><a href="#" class="toggleLinkWorkItem" data-target="work-item-transcription-10">
+							Text
+										</a>
                     <div class="work-item-transcription"></div>
                 </div>
-                <div class="work-item-bibliography">
+                <div id="work-item-bibliograghy-10" class="work-item-bibliography toggleDivWorkItem">
                     <DIV class="tan_divider">
                         <span><b>f. 100r-103r</b>
                             
@@ -842,8 +861,7 @@
                         <br>
                     </DIV>
                 </div>
-                                                Arkp21198-zz0029514m
-                <div class="work-item-transcription">
+                <div id="work-item-transcription-10" class="work-item-transcription toggleDivWorkItem">
                     <div class="tan_divider">
                         <br>
                         <div class="transcriptionSource"></div>
@@ -851,10 +869,9 @@
                 </div>
                 <br>
             </div>
-            <div class="work-item">
-                11
- .                        <a target="_top" href="">Walafridus Strabo, De carminum generibus summa</a><span>
-        &nbsp; f. 103v-106r</span>
+            <div class="work-item ">
+                11 . <a target="_top" href="">Walafridus Strabo, De carminum generibus summa</a><span>
+							&nbsp; f. 103v-106r</span>
                 <ul style="list-style-type:none">
                     <li>
                         <b>Rubric: </b>Dissyllabi iiii exemplis quadruplicibus comprehensi
@@ -867,14 +884,14 @@
                     </li>
                 </ul>
                 <div class="sub-links">
-                    <a style="" href="javascript:void(0)" onclick="performXSLTTransformation('TEIWorkBibliography.xsl','11');">
-                                        Bibliograpghy
-                                    </a><a target="_top" style="" href="javascript:void(0)" onclick="performXSLTTransformation('TEITranscription.xsl','11','p21198-zz002951c7')">
-                                   Text
-                                </a>
+                    <a href="#" class="toggleLinkWorkItem" data-target="work-item-bibliograghy-11">
+							Bibliograpghy
+											</a><a href="#" class="toggleLinkWorkItem" data-target="work-item-transcription-11">
+							Text
+										</a>
                     <div class="work-item-transcription"></div>
                 </div>
-                <div class="work-item-bibliography">
+                <div id="work-item-bibliograghy-11" class="work-item-bibliography toggleDivWorkItem">
                     <DIV class="tan_divider">
                         <span><b>f. 103v-106r</b>
                             
@@ -905,8 +922,7 @@
                         <br>
                     </DIV>
                 </div>
-                                                Arkp21198-zz002951c7
-                <div class="work-item-transcription">
+                <div id="work-item-transcription-11" class="work-item-transcription toggleDivWorkItem">
                     <div class="tan_divider">
                         <br>
                         <div class="transcriptionSource"></div>
@@ -914,10 +930,9 @@
                 </div>
                 <br>
             </div>
-            <div class="work-item">
-                12
- .                        <a target="_top" href="">[Argumentum anonymi de metris]</a><span>
-        &nbsp; f. 106r</span>
+            <div class="work-item ">
+                12 . <a target="_top" href="">[Argumentum anonymi de metris]</a><span>
+							&nbsp; f. 106r</span>
                 <ul style="list-style-type:none">
                     <li>
                         <b>Incipit: </b>Ęqua divisio est si .ii. ad .ii. ...
@@ -927,13 +942,12 @@
                     </li>
                 </ul>
                 <div class="sub-links">
-                    <a target="_top" style="" href="javascript:void(0)" onclick="performXSLTTransformation('TEITranscription.xsl','12','p21198-zz002951jt')">
-                                   Text
-                                </a>
+                    <a href="#" class="toggleLinkWorkItem" data-target="work-item-transcription-12">
+							Text
+										</a>
                     <div class="work-item-transcription"></div>
                 </div>
-                                                Arkp21198-zz002951jt
-                <div class="work-item-transcription">
+                <div id="work-item-transcription-12" class="work-item-transcription toggleDivWorkItem">
                     <div class="tan_divider">
                         <br>
                         <div class="transcriptionSource"></div>
@@ -941,10 +955,9 @@
                 </div>
                 <br>
             </div>
-            <div class="work-item">
-                13
- .                        <a target="_top" href="">[Anonymus, Versus]</a><span>
-        &nbsp; f. 106v</span>
+            <div class="work-item ">
+                13 . <a target="_top" href="">[Anonymus, Versus]</a><span>
+							&nbsp; f. 106v</span>
                 <ul style="list-style-type:none">
                     <li>
                         <b>Incipit: </b>Post erratus et excessus atque neglegentias...
@@ -954,14 +967,14 @@
                     </li>
                 </ul>
                 <div class="sub-links">
-                    <a style="" href="javascript:void(0)" onclick="performXSLTTransformation('TEIWorkBibliography.xsl','13');">
-                                        Bibliograpghy
-                                    </a><a target="_top" style="" href="javascript:void(0)" onclick="performXSLTTransformation('TEITranscription.xsl','13','p21198-zz002951kb')">
-                                   Text
-                                </a>
+                    <a href="#" class="toggleLinkWorkItem" data-target="work-item-bibliograghy-13">
+							Bibliograpghy
+											</a><a href="#" class="toggleLinkWorkItem" data-target="work-item-transcription-13">
+							Text
+										</a>
                     <div class="work-item-transcription"></div>
                 </div>
-                <div class="work-item-bibliography">
+                <div id="work-item-bibliograghy-13" class="work-item-bibliography toggleDivWorkItem">
                     <DIV class="tan_divider">
                         <span><b>f. 106v</b>
                             
@@ -993,8 +1006,7 @@
                         <br>
                     </DIV>
                 </div>
-                                                Arkp21198-zz002951kb
-                <div class="work-item-transcription">
+                <div id="work-item-transcription-13" class="work-item-transcription toggleDivWorkItem">
                     <div class="tan_divider">
                         <br>
                         <div class="transcriptionSource"></div>
@@ -1002,10 +1014,9 @@
                 </div>
                 <br>
             </div>
-            <div class="work-item">
-                14
- .                        <a target="_top" href="">Boethius, De institutione arithmetica</a><span>
-        &nbsp; f. 107r-178v</span>
+            <div class="work-item ">
+                14 . <a target="_top" href="">Boethius, De institutione arithmetica</a><span>
+							&nbsp; f. 107r-178v</span>
                 <ul style="list-style-type:none">
                     <li>
                         <b>Rubric: </b>Domno Patri symmacho boetius
@@ -1020,14 +1031,14 @@
                     </li>
                 </ul>
                 <div class="sub-links">
-                    <a style="" href="javascript:void(0)" onclick="performXSLTTransformation('TEIWorkBibliography.xsl','14');">
-                                        Bibliograpghy
-                                    </a><a target="_top" style="" href="javascript:void(0)" onclick="performXSLTTransformation('TEITranscription.xsl','14','p21198-zz002951mv')">
-                                   Text
-                                </a>
+                    <a href="#" class="toggleLinkWorkItem" data-target="work-item-bibliograghy-14">
+							Bibliograpghy
+											</a><a href="#" class="toggleLinkWorkItem" data-target="work-item-transcription-14">
+							Text
+										</a>
                     <div class="work-item-transcription"></div>
                 </div>
-                <div class="work-item-bibliography">
+                <div id="work-item-bibliograghy-14" class="work-item-bibliography toggleDivWorkItem">
                     <DIV class="tan_divider">
                         <span><b>f. 107r-178v</b>
                             
@@ -1074,8 +1085,7 @@
                         <br>
                     </DIV>
                 </div>
-                                                Arkp21198-zz002951mv
-                <div class="work-item-transcription">
+                <div id="work-item-transcription-14" class="work-item-transcription toggleDivWorkItem">
                     <div class="tan_divider">
                         <br>
                         <div class="transcriptionSource"></div>
@@ -1083,10 +1093,9 @@
                 </div>
                 <br>
             </div>
-            <div class="work-item">
-                15
- .                        <a target="_top" href="">Beda venerabilis, De natura rerum [c. 36]</a><span>
-        &nbsp; f. 179r, l. 1-16</span>
+            <div class="work-item ">
+                15 . <a target="_top" href="">Beda venerabilis, De natura rerum [c. 36]</a><span>
+							&nbsp; f. 179r, l. 1-16</span>
                 <ul style="list-style-type:none">
                     <li>
                         <b>Rubric: </b>Signa tempestatum uel serenitatis
@@ -1100,14 +1109,14 @@
                     </li>
                 </ul>
                 <div class="sub-links">
-                    <a style="" href="javascript:void(0)" onclick="performXSLTTransformation('TEIWorkBibliography.xsl','15');">
-                                        Bibliograpghy
-                                    </a><a target="_top" style="" href="javascript:void(0)" onclick="performXSLTTransformation('TEITranscription.xsl','15','p21198-zz002956kr')">
-                                   Text
-                                </a>
+                    <a href="#" class="toggleLinkWorkItem" data-target="work-item-bibliograghy-15">
+							Bibliograpghy
+											</a><a href="#" class="toggleLinkWorkItem" data-target="work-item-transcription-15">
+							Text
+										</a>
                     <div class="work-item-transcription"></div>
                 </div>
-                <div class="work-item-bibliography">
+                <div id="work-item-bibliograghy-15" class="work-item-bibliography toggleDivWorkItem">
                     <DIV class="tan_divider">
                         <span><b>f. 179r, l. 1-16</b>
                             
@@ -1146,8 +1155,7 @@
                         <br>
                     </DIV>
                 </div>
-                                                Arkp21198-zz002956kr
-                <div class="work-item-transcription">
+                <div id="work-item-transcription-15" class="work-item-transcription toggleDivWorkItem">
                     <div class="tan_divider">
                         <br>
                         <div class="transcriptionSource"></div>
@@ -1155,10 +1163,9 @@
                 </div>
                 <br>
             </div>
-            <div class="work-item">
-                16
- .                        <a target="_top" href="">Publius Vergilius Maro, Georgica [I.438-449; I.427-435]</a><span>
-        &nbsp; f. 179r, l. 17-27</span>
+            <div class="work-item ">
+                16 . <a target="_top" href="">Publius Vergilius Maro, Georgica [I.438-449; I.427-435]</a><span>
+							&nbsp; f. 179r, l. 17-27</span>
                 <ul style="list-style-type:none">
                     <li>
                         <b>Rubric: </b>Vir[gilius]
@@ -1171,14 +1178,14 @@
                     </li>
                 </ul>
                 <div class="sub-links">
-                    <a style="" href="javascript:void(0)" onclick="performXSLTTransformation('TEIWorkBibliography.xsl','16');">
-                                        Bibliograpghy
-                                    </a><a target="_top" style="" href="javascript:void(0)" onclick="performXSLTTransformation('TEITranscription.xsl','16','p21198-zz002956kr')">
-                                   Text
-                                </a>
+                    <a href="#" class="toggleLinkWorkItem" data-target="work-item-bibliograghy-16">
+							Bibliograpghy
+											</a><a href="#" class="toggleLinkWorkItem" data-target="work-item-transcription-16">
+							Text
+										</a>
                     <div class="work-item-transcription"></div>
                 </div>
-                <div class="work-item-bibliography">
+                <div id="work-item-bibliograghy-16" class="work-item-bibliography toggleDivWorkItem">
                     <DIV class="tan_divider">
                         <span><b>f. 179r, l. 17-27</b>
                             
@@ -1210,8 +1217,7 @@
                         <br>
                     </DIV>
                 </div>
-                                                Arkp21198-zz002956kr
-                <div class="work-item-transcription">
+                <div id="work-item-transcription-16" class="work-item-transcription toggleDivWorkItem">
                     <div class="tan_divider">
                         <br>
                         <div class="transcriptionSource"></div>
@@ -1219,10 +1225,9 @@
                 </div>
                 <br>
             </div>
-            <div class="work-item">
-                17
- .                        <a target="_top" href="">Aurelius Prudentius Clemens, Psychomachia</a><span>
-        &nbsp; f. 179v-204r</span>
+            <div class="work-item ">
+                17 . <a target="_top" href="">Aurelius Prudentius Clemens, Psychomachia</a><span>
+							&nbsp; f. 179v-204r</span>
                 <ul style="list-style-type:none">
                     <li>
                         <b>Rubric: </b>Incipit Praefatio sequentis operis
@@ -1235,14 +1240,14 @@
                     </li>
                 </ul>
                 <div class="sub-links">
-                    <a style="" href="javascript:void(0)" onclick="performXSLTTransformation('TEIWorkBibliography.xsl','17');">
-                                        Bibliograpghy
-                                    </a><a target="_top" style="" href="javascript:void(0)" onclick="performXSLTTransformation('TEITranscription.xsl','17','p21198-zz002956m8')">
-                                   Text
-                                </a>
+                    <a href="#" class="toggleLinkWorkItem" data-target="work-item-bibliograghy-17">
+							Bibliograpghy
+											</a><a href="#" class="toggleLinkWorkItem" data-target="work-item-transcription-17">
+							Text
+										</a>
                     <div class="work-item-transcription"></div>
                 </div>
-                <div class="work-item-bibliography">
+                <div id="work-item-bibliograghy-17" class="work-item-bibliography toggleDivWorkItem">
                     <DIV class="tan_divider">
                         <span><b>f. 179v-204r</b>
                             
@@ -1284,8 +1289,7 @@
                         <br>
                     </DIV>
                 </div>
-                                                Arkp21198-zz002956m8
-                <div class="work-item-transcription">
+                <div id="work-item-transcription-17" class="work-item-transcription toggleDivWorkItem">
                     <div class="tan_divider">
                         <br>
                         <div class="transcriptionSource"></div>
@@ -1293,20 +1297,19 @@
                 </div>
                 <br>
             </div>
-            <div class="work-item">
-                18
- .                        <a target="_top" href="">[Glossae super Prudentii Psychomachia]</a><span>
-        &nbsp; f. 182v-204r</span>
+            <div class="work-item ">
+                18 . <a target="_top" href="">[Glossae super Prudentii Psychomachia]</a><span>
+							&nbsp; f. 182v-204r</span>
                 <ul style="list-style-type:none"></ul>
                 <div class="sub-links">
-                    <a style="" href="javascript:void(0)" onclick="performXSLTTransformation('TEIWorkBibliography.xsl','18');">
-                                        Bibliograpghy
-                                    </a><a target="_top" style="" href="javascript:void(0)" onclick="performXSLTTransformation('TEITranscription.xsl','18','p21198-zz002956tc')">
-                                   Text
-                                </a>
+                    <a href="#" class="toggleLinkWorkItem" data-target="work-item-bibliograghy-18">
+							Bibliograpghy
+											</a><a href="#" class="toggleLinkWorkItem" data-target="work-item-transcription-18">
+							Text
+										</a>
                     <div class="work-item-transcription"></div>
                 </div>
-                <div class="work-item-bibliography">
+                <div id="work-item-bibliograghy-18" class="work-item-bibliography toggleDivWorkItem">
                     <DIV class="tan_divider">
                         <span><b>f. 182v-204r</b>
                             
@@ -1333,8 +1336,7 @@
                         <br>
                     </DIV>
                 </div>
-                                                Arkp21198-zz002956tc
-                <div class="work-item-transcription">
+                <div id="work-item-transcription-18" class="work-item-transcription toggleDivWorkItem">
                     <div class="tan_divider">
                         <br>
                         <div class="transcriptionSource"></div>
@@ -1342,10 +1344,9 @@
                 </div>
                 <br>
             </div>
-            <div class="work-item">
-                19
- .                        <a target="_top" href="">[Glossarium latinum et germanicum super Prudentii Psychomachia]</a><span>
-        &nbsp; f. 204v-206v</span>
+            <div class="work-item ">
+                19 . <a target="_top" href="">[Glossarium latinum et germanicum super Prudentii Psychomachia]</a><span>
+							&nbsp; f. 204v-206v</span>
                 <ul style="list-style-type:none">
                     <li>
                         <b>Incipit: </b>Agresti rustico ...
@@ -1355,14 +1356,14 @@
                     </li>
                 </ul>
                 <div class="sub-links">
-                    <a style="" href="javascript:void(0)" onclick="performXSLTTransformation('TEIWorkBibliography.xsl','19');">
-                                        Bibliograpghy
-                                    </a><a target="_top" style="" href="javascript:void(0)" onclick="performXSLTTransformation('TEITranscription.xsl','19','p21198-zz002958b3')">
-                                   Text
-                                </a>
+                    <a href="#" class="toggleLinkWorkItem" data-target="work-item-bibliograghy-19">
+							Bibliograpghy
+											</a><a href="#" class="toggleLinkWorkItem" data-target="work-item-transcription-19">
+							Text
+										</a>
                     <div class="work-item-transcription"></div>
                 </div>
-                <div class="work-item-bibliography">
+                <div id="work-item-bibliograghy-19" class="work-item-bibliography toggleDivWorkItem">
                     <DIV class="tan_divider">
                         <span><b>f. 204v-206v</b>
                             
@@ -1395,8 +1396,7 @@
                         <br>
                     </DIV>
                 </div>
-                                                Arkp21198-zz002958b3
-                <div class="work-item-transcription">
+                <div id="work-item-transcription-19" class="work-item-transcription toggleDivWorkItem">
                     <div class="tan_divider">
                         <br>
                         <div class="transcriptionSource"></div>
@@ -1404,10 +1404,9 @@
                 </div>
                 <br>
             </div>
-            <div class="work-item">
-                20
- .                        <a target="_top" href="">[Hymnorum initia diversorum, cum neumis]</a><span>
-        &nbsp; f. 207r-v</span>
+            <div class="work-item ">
+                20 . <a target="_top" href="">[Hymnorum initia diversorum, cum neumis]</a><span>
+							&nbsp; f. 207r-v</span>
                 <ul style="list-style-type:none">
                     <li>
                         <b>Incipit: </b>Ante sęcula et mundi principium tu pater ...
@@ -1417,14 +1416,14 @@
                     </li>
                 </ul>
                 <div class="sub-links">
-                    <a style="" href="javascript:void(0)" onclick="performXSLTTransformation('TEIWorkBibliography.xsl','20');">
-                                        Bibliograpghy
-                                    </a><a target="_top" style="" href="javascript:void(0)" onclick="performXSLTTransformation('TEITranscription.xsl','20','p21198-zz002958hp')">
-                                   Text
-                                </a>
+                    <a href="#" class="toggleLinkWorkItem" data-target="work-item-bibliograghy-20">
+							Bibliograpghy
+											</a><a href="#" class="toggleLinkWorkItem" data-target="work-item-transcription-20">
+							Text
+										</a>
                     <div class="work-item-transcription"></div>
                 </div>
-                <div class="work-item-bibliography">
+                <div id="work-item-bibliograghy-20" class="work-item-bibliography toggleDivWorkItem">
                     <DIV class="tan_divider">
                         <span><b>f. 207r-v</b>
                             
@@ -1459,8 +1458,7 @@
                         <br>
                     </DIV>
                 </div>
-                                                Arkp21198-zz002958hp
-                <div class="work-item-transcription">
+                <div id="work-item-transcription-20" class="work-item-transcription toggleDivWorkItem">
                     <div class="tan_divider">
                         <br>
                         <div class="transcriptionSource"></div>
@@ -1468,11 +1466,10 @@
                 </div>
                 <br>
             </div>
-            <div class="work-item">
-                21
- .                        <a target="_top" href="">Martianus Minneus Felix Capella, De Nuptiis Philologiae et Mercurii
+            <div class="work-item ">
+                21 . <a target="_top" href="">Martianus Minneus Felix Capella, De Nuptiis Philologiae et Mercurii
                             [IV.327 - IV.423]</a><span>
-        &nbsp; f. 208r-231v</span>
+							&nbsp; f. 208r-231v</span>
                 <ul style="list-style-type:none">
                     <li>
                         <b>Rubric: </b>Liber martiani minei felicis capellae afri cartiginiensis de arte
@@ -1486,14 +1483,14 @@
                     </li>
                 </ul>
                 <div class="sub-links">
-                    <a style="" href="javascript:void(0)" onclick="performXSLTTransformation('TEIWorkBibliography.xsl','21');">
-                                        Bibliograpghy
-                                    </a><a target="_top" style="" href="javascript:void(0)" onclick="performXSLTTransformation('TEITranscription.xsl','21','p21198-zz002958kq')">
-                                   Text
-                                </a>
+                    <a href="#" class="toggleLinkWorkItem" data-target="work-item-bibliograghy-21">
+							Bibliograpghy
+											</a><a href="#" class="toggleLinkWorkItem" data-target="work-item-transcription-21">
+							Text
+										</a>
                     <div class="work-item-transcription"></div>
                 </div>
-                <div class="work-item-bibliography">
+                <div id="work-item-bibliograghy-21" class="work-item-bibliography toggleDivWorkItem">
                     <DIV class="tan_divider">
                         <span><b>f. 208r-231v</b>
                             
@@ -1530,8 +1527,7 @@
                         <br>
                     </DIV>
                 </div>
-                                                Arkp21198-zz002958kq
-                <div class="work-item-transcription">
+                <div id="work-item-transcription-21" class="work-item-transcription toggleDivWorkItem">
                     <div class="tan_divider">
                         <br>
                         <div class="transcriptionSource"></div>
@@ -1539,10 +1535,9 @@
                 </div>
                 <br>
             </div>
-            <div class="work-item">
-                22
- .                        <a target="_top" href="">[Glossae et annotationes ad Martianum Capellam] </a><span>
-        &nbsp; f. 208r-231v</span>
+            <div class="work-item ">
+                22 . <a target="_top" href="">[Glossae et annotationes ad Martianum Capellam] </a><span>
+							&nbsp; f. 208r-231v</span>
                 <ul style="list-style-type:none">
                     <li>
                         <b>Remarks: </b>Some of these glosses/annotations are taken from the Dunchad/Martin
@@ -1551,14 +1546,14 @@
                     </li>
                 </ul>
                 <div class="sub-links">
-                    <a style="" href="javascript:void(0)" onclick="performXSLTTransformation('TEIWorkBibliography.xsl','22');">
-                                        Bibliograpghy
-                                    </a><a target="_top" style="" href="javascript:void(0)" onclick="performXSLTTransformation('TEITranscription.xsl','22','p21198-zz002958kq')">
-                                   Text
-                                </a>
+                    <a href="#" class="toggleLinkWorkItem" data-target="work-item-bibliograghy-22">
+							Bibliograpghy
+											</a><a href="#" class="toggleLinkWorkItem" data-target="work-item-transcription-22">
+							Text
+										</a>
                     <div class="work-item-transcription"></div>
                 </div>
-                <div class="work-item-bibliography">
+                <div id="work-item-bibliograghy-22" class="work-item-bibliography toggleDivWorkItem">
                     <DIV class="tan_divider">
                         <span><b>f. 208r-231v</b>
                             
@@ -1585,8 +1580,7 @@
                         <br>
                     </DIV>
                 </div>
-                                                Arkp21198-zz002958kq
-                <div class="work-item-transcription">
+                <div id="work-item-transcription-22" class="work-item-transcription toggleDivWorkItem">
                     <div class="tan_divider">
                         <br>
                         <div class="transcriptionSource"></div>
@@ -1594,10 +1588,9 @@
                 </div>
                 <br>
             </div>
-            <div class="work-item">
-                23
- .                        <a target="_top" href="">[Hymni versusque diversi, cum neumis]</a><span>
-        &nbsp; f. 231v-233v</span>
+            <div class="work-item ">
+                23 . <a target="_top" href="">[Hymni versusque diversi, cum neumis]</a><span>
+							&nbsp; f. 231v-233v</span>
                 <ul style="list-style-type:none">
                     <li>
                         <b>Incipit: </b>Terrcio in flore mundus ...
@@ -1607,15 +1600,15 @@
                     </li>
                 </ul>
                 <div class="sub-links">
-                    <a style="" href="javascript:void(0)" onclick="performXSLTTransformation('TEIWorkBibliography.xsl','23');">
-                                        Bibliograpghy
-                                    </a><a target="_top" style="border-style:none" href="javascript:void(0)" onclick="performXSLTTransformation('TEIWorkContents.xsl','23');">
-                                Content
-                            </a><a target="_top" style="" href="javascript:void(0)" onclick="performXSLTTransformation('TEITranscription.xsl','23','p21198-zz00295b81')">
-                                   Text
-                                </a>
+                    <a href="#" class="toggleLinkWorkItem" data-target="work-item-bibliograghy-23">
+							Bibliograpghy
+											</a><a href="#" class="toggleLinkWorkItem" data-target="work-item-content-23">
+										Content
+									</a><a href="#" class="toggleLinkWorkItem" data-target="work-item-transcription-23">
+							Text
+										</a>
                 </div>
-                <div class="work-item-bibliography">
+                <div id="work-item-bibliograghy-23" class="work-item-bibliography toggleDivWorkItem">
                     <DIV class="tan_divider">
                         <span><b>f. 231v-233v</b>
                             
@@ -1647,7 +1640,7 @@
                         <br>
                     </DIV>
                 </div>
-                <div class="work-item-content">
+                <div id="work-item-content-23" class="work-item-content toggleDivWorkItem">
                     <div class="flex-container">
                         <div class="work-title">
                             <span> [                    23
@@ -1661,7 +1654,7 @@
                     <div class="contents">
                         <br>
                         <div class="work-item">
-                            23_1<a target="_top">[Paulinus Aquiliensis], Versus de Iacob et Ioseph</a><span>
+                            23.1<a target="_top">[Paulinus Aquiliensis], Versus de Iacob et Ioseph</a><span>
                                             &nbsp; f. 231v</span>
                             <ul style="list-style-type:none">
                                 <li>
@@ -1671,11 +1664,40 @@
                                     <b>Explicit: </b>... diffamari populus.
                                 </li>
                             </ul>
-                            <a style="" href="javascript:void(0)" onclick="performXSLTTransformation('TEISubWorkBibliography.xsl','23_1');"><img src="../images/icon_bibliography.jpg" width="20" height="20" alt="Bibliography"></a><a target="_top" style="" href="javascript:void(0)" onclick="performXSLTTransformation('TEITranscription.xsl','23_1', 'p21198-zz00295b81');"><img src="../images/icon_text.jpg" width="20" height="20" alt="Text" style=""></a>
+                            <h4>Sub Work Bibliograpghy</h4>
+                            <div id="work-item-sub-bibliograghy-23_1" class="work-item-bibliography">
+                                <div class="textAndImage">
+                                    <DIV class="tan_divider">
+                                        <p>
+                                            <ol style="list-style-type:none" id="WorkBibiliography">
+                                                <li>
+                                                    <b>Index Reference Numbers</b>
+                                                    <p>. </p>
+                                                </li>
+                                                <li>
+                                                    <b>Edition</b>
+                                                    <p>
+                                                        <i>Versus de Iacob et Ioseph</i>, ed. K. Strecker, MGH Poetae. Berlin: Weidmann, 1923.   <a target="_new" href="http://www.mgh.de/dmgh/resolving/MGH_Poetae_4,2.3_S._462">dMGH</a>. .  
+                                                    </p>
+                                                </li>
+                                            </ol>
+                                        </p>
+                                        <br>
+                                        <br>
+                                    </DIV>
+                                </div>
+                            </div>
+                            <h4> Sub Work Transcription</h4>
+                            <div id="work-sub-item-transcription-23_1" class="work-item-transcription ">
+                                <div class="tan_divider">
+                                    <br>
+                                    <div class="transcriptionSource"></div>
+                                </div>
+                            </div>
                             <br>
                         </div>
                         <div class="work-item">
-                            23_2<a target="_top">[Hymnus de Psalmis quindecim Canticorum Graduum]</a><span>
+                            23.2<a target="_top">[Hymnus de Psalmis quindecim Canticorum Graduum]</a><span>
                                             &nbsp; f. 232r, 231v</span>
                             <ul style="list-style-type:none">
                                 <li>
@@ -1685,11 +1707,40 @@
                                     <b>Explicit: </b>... possidere eximia.
                                 </li>
                             </ul>
-                            <a style="" href="javascript:void(0)" onclick="performXSLTTransformation('TEISubWorkBibliography.xsl','23_2');"><img src="../images/icon_bibliography.jpg" width="20" height="20" alt="Bibliography"></a><a target="_top" style="" href="javascript:void(0)" onclick="performXSLTTransformation('TEITranscription.xsl','23_2', 'p21198-zz00295b9j');"><img src="../images/icon_text.jpg" width="20" height="20" alt="Text" style=""></a>
+                            <h4>Sub Work Bibliograpghy</h4>
+                            <div id="work-item-sub-bibliograghy-23_2" class="work-item-bibliography">
+                                <div class="textAndImage">
+                                    <DIV class="tan_divider">
+                                        <p>
+                                            <ol style="list-style-type:none" id="WorkBibiliography">
+                                                <li>
+                                                    <b>Index Reference Numbers</b>
+                                                    <p>. </p>
+                                                </li>
+                                                <li>
+                                                    <b>Edition</b>
+                                                    <p>
+                                                        <i>Hymnus de Psalmis quindecim Canticorum Graduum</i>, ed. G.M. Dreves &amp; C. Blume  (Analecta Hymnica). Leipzig: O.R. Reisland, 1908.  <a target="_new" href="http://books.google.com/books?id=RCcPAAAAIAAJ&amp;pg=PA293">Google Books</a>. .  
+                                                    </p>
+                                                </li>
+                                            </ol>
+                                        </p>
+                                        <br>
+                                        <br>
+                                    </DIV>
+                                </div>
+                            </div>
+                            <h4> Sub Work Transcription</h4>
+                            <div id="work-sub-item-transcription-23_2" class="work-item-transcription ">
+                                <div class="tan_divider">
+                                    <br>
+                                    <div class="transcriptionSource"></div>
+                                </div>
+                            </div>
                             <br>
                         </div>
                         <div class="work-item">
-                            23_3<a target="_top">Christe salus mundi</a><span>
+                            23.3<a target="_top">Christe salus mundi</a><span>
                                             &nbsp; f. 232v</span>
                             <ul style="list-style-type:none">
                                 <li>
@@ -1699,11 +1750,42 @@
                                     <b>Explicit: </b>... suggessit credere christo.
                                 </li>
                             </ul>
-                            <a style="" href="javascript:void(0)" onclick="performXSLTTransformation('TEISubWorkBibliography.xsl','23_3');"><img src="../images/icon_bibliography.jpg" width="20" height="20" alt="Bibliography"></a><a target="_top" style="" href="javascript:void(0)" onclick="performXSLTTransformation('TEITranscription.xsl','23_3', 'p21198-zz00295bb2');"><img src="../images/icon_text.jpg" width="20" height="20" alt="Text" style=""></a>
+                            <h4>Sub Work Bibliograpghy</h4>
+                            <div id="work-item-sub-bibliograghy-23_3" class="work-item-bibliography">
+                                <div class="textAndImage">
+                                    <DIV class="tan_divider">
+                                        <p>
+                                            <ol style="list-style-type:none" id="WorkBibiliography">
+                                                <li>
+                                                    <b>Index Reference Numbers</b>
+                                                    <p>. </p>
+                                                </li>
+                                                <li>
+                                                    <b>Edition</b>
+                                                    <p>
+                                                        Schaller, Dieter. "Fr&uuml;hmittelalterliche lateinische Dichtung
+                                            in einer ehemals St. Galler Handschrift"<i>, Zeitschrift f&uuml;r deutsches Altertum und
+                                            deutsche Literatur</i>   <a target="_new" href="http://www.jstor.org/stable/20655207?seq=9">JSTOR</a>.  
+                                                    </p>
+                                                </li>
+                                            </ol>
+                                        </p>
+                                        <br>
+                                        <br>
+                                    </DIV>
+                                </div>
+                            </div>
+                            <h4> Sub Work Transcription</h4>
+                            <div id="work-sub-item-transcription-23_3" class="work-item-transcription ">
+                                <div class="tan_divider">
+                                    <br>
+                                    <div class="transcriptionSource"></div>
+                                </div>
+                            </div>
                             <br>
                         </div>
                         <div class="work-item">
-                            23_4<a target="_top">Versus de Syllogismis</a><span>
+                            23.4<a target="_top">Versus de Syllogismis</a><span>
                                             &nbsp; f. 232v</span>
                             <ul style="list-style-type:none">
                                 <li>
@@ -1716,11 +1798,42 @@
                                     <b>Explicit: </b>... increscere quartum.
                                 </li>
                             </ul>
-                            <a style="" href="javascript:void(0)" onclick="performXSLTTransformation('TEISubWorkBibliography.xsl','23_4');"><img src="../images/icon_bibliography.jpg" width="20" height="20" alt="Bibliography"></a><a target="_top" style="" href="javascript:void(0)" onclick="performXSLTTransformation('TEITranscription.xsl','23_4', 'p21198-zz00295bb2');"><img src="../images/icon_text.jpg" width="20" height="20" alt="Text" style=""></a>
+                            <h4>Sub Work Bibliograpghy</h4>
+                            <div id="work-item-sub-bibliograghy-23_4" class="work-item-bibliography">
+                                <div class="textAndImage">
+                                    <DIV class="tan_divider">
+                                        <p>
+                                            <ol style="list-style-type:none" id="WorkBibiliography">
+                                                <li>
+                                                    <b>Index Reference Numbers</b>
+                                                    <p>. </p>
+                                                </li>
+                                                <li>
+                                                    <b>Edition</b>
+                                                    <p>
+                                                        Schaller, Dieter. "Fr&uuml;hmittelalterliche lateinische Dichtung
+                                            in einer ehemals St. Galler Handschrift"<i>, Zeitschrift f&uuml;r deutsches Altertum und
+                                            deutsche Literatur</i>   <a target="_new" href="http://www.jstor.org/stable/20655207?seq=10">JSTOR</a>.  
+                                                    </p>
+                                                </li>
+                                            </ol>
+                                        </p>
+                                        <br>
+                                        <br>
+                                    </DIV>
+                                </div>
+                            </div>
+                            <h4> Sub Work Transcription</h4>
+                            <div id="work-sub-item-transcription-23_4" class="work-item-transcription ">
+                                <div class="tan_divider">
+                                    <br>
+                                    <div class="transcriptionSource"></div>
+                                </div>
+                            </div>
                             <br>
                         </div>
                         <div class="work-item">
-                            23_5<a target="_top">De sancto Paulo</a><span>
+                            23.5<a target="_top">De sancto Paulo</a><span>
                                             &nbsp; f. 233r-v</span>
                             <ul style="list-style-type:none">
                                 <li>
@@ -1730,14 +1843,43 @@
                                     <b>Explicit: </b>... coronam reportemus.
                                 </li>
                             </ul>
-                            <a style="" href="javascript:void(0)" onclick="performXSLTTransformation('TEISubWorkBibliography.xsl','23_5');"><img src="../images/icon_bibliography.jpg" width="20" height="20" alt="Bibliography"></a><a target="_top" style="" href="javascript:void(0)" onclick="performXSLTTransformation('TEITranscription.xsl','23_5', 'p21198-zz00295bck');"><img src="../images/icon_text.jpg" width="20" height="20" alt="Text" style=""></a>
+                            <h4>Sub Work Bibliograpghy</h4>
+                            <div id="work-item-sub-bibliograghy-23_5" class="work-item-bibliography">
+                                <div class="textAndImage">
+                                    <DIV class="tan_divider">
+                                        <p>
+                                            <ol style="list-style-type:none" id="WorkBibiliography">
+                                                <li>
+                                                    <b>Index Reference Numbers</b>
+                                                    <p>. </p>
+                                                </li>
+                                                <li>
+                                                    <b>Edition</b>
+                                                    <p>
+                                                        <i>De sancto Paulo</i>, ed. G.M. Dreves &amp; C. Blume  (Analecta Hymnica). Leipzig: O.R. Reisland, 1907.  <a target="_new" href="http://books.google.com/books?id=DioPAAAAIAAJ&amp;pg=PA276">Google Books</a>. .  
+                                                    </p>
+                                                </li>
+                                            </ol>
+                                        </p>
+                                        <br>
+                                        <br>
+                                    </DIV>
+                                </div>
+                            </div>
+                            <h4> Sub Work Transcription</h4>
+                            <div id="work-sub-item-transcription-23_5" class="work-item-transcription ">
+                                <div class="tan_divider">
+                                    <br>
+                                    <div class="transcriptionSource"></div>
+                                </div>
+                            </div>
                             <br>
                         </div>
                     </div>
                     <br>
                     <br>
                 </div>
-                <div class="work-item-transcription">
+                <div id="work-item-transcription-23" class="work-item-transcription toggleDivWorkItem">
                     <div class="tan_divider">
                         <br>
                         <div class="transcriptionSource"></div>
@@ -1745,10 +1887,9 @@
                 </div>
                 <br>
             </div>
-            <div class="work-item">
-                24
- .                        <a target="_top" href="">[Anonymus, Versus de Categoriis]</a><span>
-        &nbsp; f. 234r</span>
+            <div class="work-item ">
+                24 . <a target="_top" href="">[Anonymus, Versus de Categoriis]</a><span>
+							&nbsp; f. 234r</span>
                 <ul style="list-style-type:none">
                     <li>
                         <b>Incipit: </b>Proloquium incipiet quo pars ...[l. 13]
@@ -1761,14 +1902,14 @@
                     </li>
                 </ul>
                 <div class="sub-links">
-                    <a style="" href="javascript:void(0)" onclick="performXSLTTransformation('TEIWorkBibliography.xsl','24');">
-                                        Bibliograpghy
-                                    </a><a target="_top" style="" href="javascript:void(0)" onclick="performXSLTTransformation('TEITranscription.xsl','24','p21198-zz00295bfm')">
-                                   Text
-                                </a>
+                    <a href="#" class="toggleLinkWorkItem" data-target="work-item-bibliograghy-24">
+							Bibliograpghy
+											</a><a href="#" class="toggleLinkWorkItem" data-target="work-item-transcription-24">
+							Text
+										</a>
                     <div class="work-item-transcription"></div>
                 </div>
-                <div class="work-item-bibliography">
+                <div id="work-item-bibliograghy-24" class="work-item-bibliography toggleDivWorkItem">
                     <DIV class="tan_divider">
                         <span><b>f. 234r</b>
                             
@@ -1789,8 +1930,7 @@
                         <br>
                     </DIV>
                 </div>
-                                                Arkp21198-zz00295bfm
-                <div class="work-item-transcription">
+                <div id="work-item-transcription-24" class="work-item-transcription toggleDivWorkItem">
                     <div class="tan_divider">
                         <br>
                         <div class="transcriptionSource"></div>
@@ -1798,10 +1938,9 @@
                 </div>
                 <br>
             </div>
-            <div class="work-item">
-                25
- .                        <a target="_top" href="">[Excerpta diversa de rebus astronomicis et e poetis]</a><span>
-        &nbsp; f. 234v-236r</span>
+            <div class="work-item ">
+                25 . <a target="_top" href="">[Excerpta diversa de rebus astronomicis et e poetis]</a><span>
+							&nbsp; f. 234v-236r</span>
                 <ul style="list-style-type:none">
                     <li>
                         <b>Remarks: </b>Excerpts from the 'Ex Bedae Computo', Pliny, Nonius Marcellinus,
@@ -1809,13 +1948,12 @@
                     </li>
                 </ul>
                 <div class="sub-links">
-                    <a target="_top" style="" href="javascript:void(0)" onclick="performXSLTTransformation('TEITranscription.xsl','25','p21198-zz00295bg4')">
-                                   Text
-                                </a>
+                    <a href="#" class="toggleLinkWorkItem" data-target="work-item-transcription-25">
+							Text
+										</a>
                     <div class="work-item-transcription"></div>
                 </div>
-                                                Arkp21198-zz00295bg4
-                <div class="work-item-transcription">
+                <div id="work-item-transcription-25" class="work-item-transcription toggleDivWorkItem">
                     <div class="tan_divider">
                         <br>
                         <div class="transcriptionSource"></div>
@@ -1824,97 +1962,68 @@
                 <br>
             </div>
         </div>
-        <div class="contents manuscript-bibliography">
-            <div class="bibl-item">
-                <b>1 . Codicological Bibliography :</b>
-                <ul>
-                    <p>
-                        R. Bergmann and S. Stricker. <i>Katalog der althochdeutschen und alts&auml;chsischen Glossenhandschriften</i>. Berlin: de Gruyter, 2005.  <a target="_new" href="http://books.google.com/books?id=vTbN4z3ZlOIC&amp;lpg=PA1363&amp;pg=PA1363">Google Books</a>.  
-                    </p>
-                    <p>
-                        B. Bischoff. <i>Katalog der festl&auml;ndischen Handschriften des neunten Jahrhunderts</i>. Wiesbaden: Harrassowitz Verlag, 2004.
-                    </p>
-                    <p>
-                        M. Passalacqua and L. Smith. <i>Codices Boethiani</i>. London: The Warburg Institute, 2001.
-                    </p>
-                    <p>
-                        F. Sbordone. <i>Manoscritti Latini non compresi nel catalogo Iannelli</i> (I Quaderni della biblioteca nazionale di Napoli). Naples: Industria Tipografica Artistica, 1980.
-                    </p>
-                    <p>
-                        C. Leonardi. "I Codici di Marziano Capella"<i>, Aevum</i>   <a target="_new" href="http://gateway.proquest.com/openurl?url_ver=Z39.88-2004&amp;res_dat=xri:pao-us:&amp;rft_dat=xri:pao:article:4009-1960-034-05-000001:2">Periodicals Archive Online</a>.  
-                    </p>
-                    <p>
-                        R. Arnese. "Alcuini codici inediti della biblioteca nazionale
-                                    di Napoli"<i>, Archivio Storico per le Province Napoletane</i> 
-                    </p>
-                    <p>
-                        C.E. Lutz. <i>Dunchad: Glossae in Martianum</i> (Philological Monographs published by the American
-                                    Philological Association). Lancaster: American Philological Association, 1944.
-                    </p>
-                    <p>
-                        E.T. Silk. "Notes on Two Neglected Manuscripts of Boethius'
-                                    Consolatio Philosophiae"<i>, Transactions and Proceedings of the American
-                                    Philological Association</i>   <a target="_new" href="http://www.jstor.org/stable/283094">JSTOR</a>.  
-                    </p>
-                     <a target="_new" href="http://www.corimu.unisi.it/toolbarIntroductions.php?pagina=stoppacci">CORPUS RHYTHMORUM MUSICUM</a>. 
-                </ul>
-                <br>
-            </div>
-            <br>
-            <br>
-        </div>
-        <div class="contents manuscript-description">
-            <div class="manuscript-desc">
-                <p>
-                    <b>Material: </b>  Parchment, with paper flyleaves and leather and wood
-                                binding
-                </p>
-                <p>
-                    <b>Extent: </b> 237 ff (f. 218 doubled)
-                </p>
-                <p>
-                    <b>Dimensions: </b>212 x 147 mm
-                </p>
-                <p>
-                    <b>Collation: </b><span style="padding:2px;"></span>
-                </p>
-                <p>
-                    <b>Page Layout: </b> Single column, usually 24 lines per page, but 26 lines per page
-                                ff. 107-178. Written area 155 x 80&ndash;105 mm [Leonardi/Bischoff]
-                </p>
-                <p>
-                    <b>Script and Hand(s): </b> By multiple St Gall hands, perhaps 3 for the main texts. Poems sometimes
-                            in rustics, in red or black. Titles in large rustics and large red
-                            monumental capitals. Initials in red, yellow and green. Many
-                            illustrations such as the ornamented figure on 119r. Space left blank
-                            for (unrealised) images in the Prudentius (e.g. 189v), though we see
-                            sketches on 195r-v. Numerous glosses both contemporary and later, both
-                            Latin and OH German, and neumes. Many other additions, including: two
-                            lines by a south-Frankish (?) hand on 207v; 106r (s. X/XI); 233r-v (s.
-                            X); 235v (s. X). Pen trials (s. X) on 236r. [Bischoff/Leonardi/Arnese]
-                </p>
-                <p>
-                    <b>Additional Information:</b> Brownish-black ink. Dry point ruling. The first page of every quire is
-                        hair-side, and within the quires the pages of the flesh-side are always one
-                        against the other, and likewise for the hair-side. Recent numbering in
-                        arabic numerals. Nineteenth-century binding in red leather and boards. Many
-                        ownership marks from St Gall: 1r, 104r, 206v. Uncertain as to when the
-                        manuscript arrived in Naples; earliest modern bibliographical references
-                        appear in the 1930s. May appear in the 1461 catalogue of St Gall: 'H 11
-                        Boecius in pluribus et Prudencius' (Lehmann, MBKDS, p. 111.19)
-                        [Arnese/Bischoff/Leonardi/RMP] 
-                </p>
-                <p>
-                    <b>Date: </b> s. IX ⁴∕₄ and s. IX/X [Bischoff]
-                </p>
-                <p>
-                    <b>Origin: </b> St Gall
-                        [Bischoff]
-                </p>
-                <br>
-            </div>
-            <br>
-            <br>
-        </div>
+        <script>
+					// Get references to all toggle links and divs
+					const toggleLinksWorkItems =
+					document.querySelectorAll('.toggleLinkWorkItem')
+					const toggleLinks =
+					document.querySelectorAll('.toggleLink');
+					const toggleDivs = document.querySelectorAll('.toggleDiv');
+					const toggleDivsWorkItems = document.querySelectorAll('.toggleDivWorkItem');
+					// Add click event listeners to each toggle link
+					toggleLinks.forEach(link => {
+						link.addEventListener('click', function (e) {
+							e.preventDefault(); // Prevent the link from navigating
+		
+							// Get the target div id from the data attribute
+							const targetDivId = this.getAttribute('data-target');
+							const targetDiv = document.getElementById(targetDivId);
+		
+							// Hide all toggleDivs first
+							toggleDivs.forEach(div => {
+								div.style.display = 'none';
+							});
+		
+							// Toggle the visibility of the target div
+							// console.log(targetDivId)
+							// console.log(targetDiv)
+		
+							const computedStyle = window.getComputedStyle(targetDiv);
+		
+							if (computedStyle.display === 'none') {
+								targetDiv.style.display = 'block';
+							} else {
+								targetDiv.style.display = 'none';
+							}
+						});
+					});
+					
+					toggleLinksWorkItems.forEach(link => {
+						link.addEventListener('click', function (e) {
+							e.preventDefault(); // Prevent the link from navigating
+		
+							// Get the target div id from the data attribute
+							const targetDivId = this.getAttribute('data-target');
+							const targetDiv = document.getElementById(targetDivId);
+		
+							// Hide all toggleDivs first
+							/*toggleDivs.forEach(div => {
+							div.style.display = 'none';
+							});*/
+		
+							// Toggle the visibility of the target div
+							console.log(targetDivId)
+							console.log(targetDiv)
+		
+							const computedStyle = window.getComputedStyle(targetDiv);
+		
+							if (computedStyle.display === 'none') {
+								targetDiv.style.display = 'block';
+							} else {
+								targetDiv.style.display = 'none';
+							}
+						});
+					});
+				</script>
     </body>
 </html>
