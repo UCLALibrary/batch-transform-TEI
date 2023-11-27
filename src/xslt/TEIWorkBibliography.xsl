@@ -19,7 +19,7 @@
     <xsl:template match="/" name="generateWorkBibliography">
 		 <xsl:param name="count" />
        
-                    <DIV class="tan_divider">
+                    <DIV class="stgall-tan_divider">
 
                         <!-- heading information; manuscript number, etc. -->
 

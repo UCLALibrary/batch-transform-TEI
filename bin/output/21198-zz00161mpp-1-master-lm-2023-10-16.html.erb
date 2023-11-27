@@ -3,7 +3,7 @@
         <META http-equiv="Content-Type" content="text/html; charset=UTF-8">
         <style>
 					/* Add your CSS styles here */
-					.container {
+					.stgall-container {
 					display: flex;
 					flex-direction: column;
 					align-items: center;
@@ -12,34 +12,34 @@
 
 					}
 
-					.title {
+					.stgall-title {
 					font-size: 24px;
 					font-weight: bold;
 					margin: 20px 0;
 					}
-					.work-title {
+					.stgall-work-title {
 					font-size: 14px;
 					font-weight: bold;
 					}
 
-					.subnav {
+					.stgall-subnav {
 					display: flex;
 					justify-content: space-between;
 					width: 100%;
 					}
 
-					.subnav-item {
+					.stgall-subnav-item {
 					flex: 1;
 					background-color: #f0f0f0;
 					padding: 10px;
 					border: 1px solid #ccc;
 					}
 
-					.subnav-item:hover {
+					.stgall-subnav-item:hover {
 					background-color: #e0e0e0;
 					}
 
-					.flex-container {
+					.stagll-flex-container {
 					display: flex;
 					flex-direction: row;
 					align-items: center;
@@ -47,35 +47,35 @@
 					margin: 20px;
 					}
 
-					.title {
+					.stgall-title {
 					display: flex;
 					flex-direction: row;
 					align-items: center;
 					}
-					.contents {
+					.stgall-contents {
 					display: flex;
 					flex-direction: column;
 
 					justify-content: flex-start;
 					margin: 20px;
 					}
-					.sub-links {
+					.stgall-sub-links {
 					display: flex;
 					flex-direction: row;
 					justify-content: flex-start;
 					align-items: center;
 					gap: 8px;
 					}
-					.work-item-content {
+					.stgall-work-item-content {
 
 					}
-					.work-item-bibliography {
+					.stgall-work-item-bibliography {
 
 					}
-					.work-item-transcription {
+					.stgall-work-item-transcription {
 
 					}
-					.manuscript-bibliography {
+					/*.manuscript-bibliography {
 
 					}
 					.manuscript-description{
@@ -83,11 +83,11 @@
 					}
 					.toggleDiv {
 					display: none;
-					}
+					}*/
 					.toggleDivWorkItem{
 					display: none;
 					}
-					#manuscript-contents {
+					.stgall-manuscript-contents {
 					display: flex;
 					}
 					/* Add more styles as needed */
@@ -95,31 +95,31 @@
     </head>
     <body>
         <div class="flex-container">
-            <div class="title">Karlsruhe, Badische Landesbibliothek
+            <div class="stgall-title">Karlsruhe, Badische Landesbibliothek
 						: Codex Aug. 18</div>
         </div>
-        <div class="container">
-            <div class="subnav">
-                <div class="subnav-item">
+        <div class="stgall-container">
+            <div class="stgall-subnav">
+                <div class="stgall-subnav-item">
                     <h3>Manuscript Contents</h3>
                 </div>
             </div>
         </div>
-        <div id="manuscript-contents" class="contents toggleDiv">
-            <div class="work-item ">
+        <div class="stgall-contents stgall-manuscript-contents">
+            <div class="stgall-work-item ">
                 1 . <a target="_top" href="">De dominica oratione</a><span>
 							&nbsp; 1r-11v</span>
                 <ul style="list-style-type:none"></ul>
-                <div class="sub-links">
+                <div class="stgall-sub-links">
                     <a href="#" class="toggleLinkWorkItem" data-target="work-item-content-1">
 										Content
 									</a><a href="#" class="toggleLinkWorkItem" data-target="work-item-transcription-1">
 							Text
 										</a>
                 </div>
-                <div id="work-item-content-1" class="work-item-content toggleDivWorkItem">
-                    <div class="flex-container">
-                        <div class="work-title">
+                <div id="work-item-content-1" class="stgall-work-item-content toggleDivWorkItem">
+                    <div class="stgall-flex-container">
+                        <div class="stgall-work-title">
                             <span> [                    1
 ]                    
                         1r-11v</span><span>:                 
@@ -128,9 +128,9 @@
                             <br>
                         </div>
                     </div>
-                    <div class="contents">
+                    <div class="stgall-contents">
                         <br>
-                        <div class="work-item">
+                        <div class="stgall-work-item">
                             1.1<a target="_top">Cyprianus, De dominica oratione</a><span>
                                             &nbsp; 1r-5r</span>
                             <ul style="list-style-type:none">
@@ -145,9 +145,9 @@
                                 </li>
                             </ul>
                             <h4>Sub Work Bibliograpghy</h4>
-                            <div id="work-item-sub-bibliograghy-1_1" class="work-item-bibliography">
-                                <div class="textAndImage">
-                                    <DIV class="tan_divider">
+                            <div id="work-item-sub-bibliograghy-1_1" class="stgall-work-item-bibliography">
+                                <div class="stgall-textAndImage">
+                                    <DIV class="stgall-tan_divider">
                                         <p>
                                             <ol style="list-style-type:none" id="WorkBibiliography">
                                                 <li>
@@ -193,16 +193,9 @@
                                     </DIV>
                                 </div>
                             </div>
-                            <h4> Sub Work Transcription</h4>
-                            <div id="work-sub-item-transcription-1_1" class="work-item-transcription ">
-                                <div class="tan_divider">
-                                    <br>
-                                    <div class="transcriptionSource"></div>
-                                </div>
-                            </div>
                             <br>
                         </div>
-                        <div class="work-item">
+                        <div class="stgall-work-item">
                             1.2<a target="_top">Augustine, On the Sermon on the Mount (Liber 2, IV:15-XII:40)</a><span>
                                             &nbsp; 5r-8v</span>
                             <ul style="list-style-type:none">
@@ -218,9 +211,9 @@
                                 </li>
                             </ul>
                             <h4>Sub Work Bibliograpghy</h4>
-                            <div id="work-item-sub-bibliograghy-1_2" class="work-item-bibliography">
-                                <div class="textAndImage">
-                                    <DIV class="tan_divider">
+                            <div id="work-item-sub-bibliograghy-1_2" class="stgall-work-item-bibliography">
+                                <div class="stgall-textAndImage">
+                                    <DIV class="stgall-tan_divider">
                                         <p>
                                             <ol style="list-style-type:none" id="WorkBibiliography">
                                                 <li>
@@ -245,16 +238,9 @@
                                     </DIV>
                                 </div>
                             </div>
-                            <h4> Sub Work Transcription</h4>
-                            <div id="work-sub-item-transcription-1_2" class="work-item-transcription ">
-                                <div class="tan_divider">
-                                    <br>
-                                    <div class="transcriptionSource"></div>
-                                </div>
-                            </div>
                             <br>
                         </div>
-                        <div class="work-item">
+                        <div class="stgall-work-item">
                             1.3<a target="_top">Hieronymus, Commentariorum in Matheum (Liber I, C. 6:9-13)</a><span>
                                             &nbsp; 9r</span>
                             <ul style="list-style-type:none">
@@ -270,9 +256,9 @@
                                 </li>
                             </ul>
                             <h4>Sub Work Bibliograpghy</h4>
-                            <div id="work-item-sub-bibliograghy-1_3" class="work-item-bibliography">
-                                <div class="textAndImage">
-                                    <DIV class="tan_divider">
+                            <div id="work-item-sub-bibliograghy-1_3" class="stgall-work-item-bibliography">
+                                <div class="stgall-textAndImage">
+                                    <DIV class="stgall-tan_divider">
                                         <p>
                                             <ol style="list-style-type:none" id="WorkBibiliography">
                                                 <li>
@@ -306,16 +292,9 @@
                                     </DIV>
                                 </div>
                             </div>
-                            <h4> Sub Work Transcription</h4>
-                            <div id="work-sub-item-transcription-1_3" class="work-item-transcription ">
-                                <div class="tan_divider">
-                                    <br>
-                                    <div class="transcriptionSource"></div>
-                                </div>
-                            </div>
                             <br>
                         </div>
-                        <div class="work-item">
+                        <div class="stgall-work-item">
                             1.4<a target="_top">Beda, In Lucae evangelium expositio (Liber 3, c. 11)</a><span>
                                             &nbsp; 9r - 9v</span>
                             <ul style="list-style-type:none">
@@ -330,9 +309,9 @@
                                 </li>
                             </ul>
                             <h4>Sub Work Bibliograpghy</h4>
-                            <div id="work-item-sub-bibliograghy-1_4" class="work-item-bibliography">
-                                <div class="textAndImage">
-                                    <DIV class="tan_divider">
+                            <div id="work-item-sub-bibliograghy-1_4" class="stgall-work-item-bibliography">
+                                <div class="stgall-textAndImage">
+                                    <DIV class="stgall-tan_divider">
                                         <p>
                                             <ol style="list-style-type:none" id="WorkBibiliography">
                                                 <li>
@@ -366,16 +345,9 @@
                                     </DIV>
                                 </div>
                             </div>
-                            <h4> Sub Work Transcription</h4>
-                            <div id="work-sub-item-transcription-1_4" class="work-item-transcription ">
-                                <div class="tan_divider">
-                                    <br>
-                                    <div class="transcriptionSource"></div>
-                                </div>
-                            </div>
                             <br>
                         </div>
-                        <div class="work-item">
+                        <div class="stgall-work-item">
                             1.5<a target="_top">Oratio Dominica Exposita</a><span>
                                             &nbsp; 9v</span>
                             <ul style="list-style-type:none">
@@ -390,16 +362,9 @@
                                     <b>Explicit: </b>...presenti et futuro
                                 </li>
                             </ul>
-                            <h4> Sub Work Transcription</h4>
-                            <div id="work-sub-item-transcription-1_5" class="work-item-transcription ">
-                                <div class="tan_divider">
-                                    <br>
-                                    <div class="transcriptionSource"></div>
-                                </div>
-                            </div>
                             <br>
                         </div>
-                        <div class="work-item">
+                        <div class="stgall-work-item">
                             1.6<a target="_top">Oratio Dominica Exposita</a><span>
                                             &nbsp; 9v&ndash; 10r</span>
                             <ul style="list-style-type:none">
@@ -414,16 +379,9 @@
                                 inferno.
                                 </li>
                             </ul>
-                            <h4> Sub Work Transcription</h4>
-                            <div id="work-sub-item-transcription-1_6" class="work-item-transcription ">
-                                <div class="tan_divider">
-                                    <br>
-                                    <div class="transcriptionSource"></div>
-                                </div>
-                            </div>
                             <br>
                         </div>
-                        <div class="work-item">
+                        <div class="stgall-work-item">
                             1.7<a target="_top">Oratio Dominica Exposita</a><span>
                                             &nbsp; 10r-10v</span>
                             <ul style="list-style-type:none">
@@ -439,16 +397,9 @@
                                 omni inpugnatione diabolica
                                 </li>
                             </ul>
-                            <h4> Sub Work Transcription</h4>
-                            <div id="work-sub-item-transcription-1_7" class="work-item-transcription ">
-                                <div class="tan_divider">
-                                    <br>
-                                    <div class="transcriptionSource"></div>
-                                </div>
-                            </div>
                             <br>
                         </div>
-                        <div class="work-item">
+                        <div class="stgall-work-item">
                             1.8<a target="_top">Expositio super missam</a><span>
                                             &nbsp; 10r&ndash;10v</span>
                             <ul style="list-style-type:none">
@@ -463,9 +414,9 @@
                                 </li>
                             </ul>
                             <h4>Sub Work Bibliograpghy</h4>
-                            <div id="work-item-sub-bibliograghy-1_8" class="work-item-bibliography">
-                                <div class="textAndImage">
-                                    <DIV class="tan_divider">
+                            <div id="work-item-sub-bibliograghy-1_8" class="stgall-work-item-bibliography">
+                                <div class="stgall-textAndImage">
+                                    <DIV class="stgall-tan_divider">
                                         <p>
                                             <ol style="list-style-type:none" id="WorkBibiliography">
                                                 <li>
@@ -481,16 +432,9 @@
                                     </DIV>
                                 </div>
                             </div>
-                            <h4> Sub Work Transcription</h4>
-                            <div id="work-sub-item-transcription-1_8" class="work-item-transcription ">
-                                <div class="tan_divider">
-                                    <br>
-                                    <div class="transcriptionSource"></div>
-                                </div>
-                            </div>
                             <br>
                         </div>
-                        <div class="work-item">
+                        <div class="stgall-work-item">
                             1.9<a target="_top">Pseudo-Germanus, Expositio brevis antiquae liturgiae Gallicanae
                                 in duas epistolas digesta, Liber 3, Vetus Missale Gallicanum, C. 14</a><span>
                                             &nbsp; 10r-10v</span>
@@ -508,9 +452,9 @@
                                 </li>
                             </ul>
                             <h4>Sub Work Bibliograpghy</h4>
-                            <div id="work-item-sub-bibliograghy-1_9" class="work-item-bibliography">
-                                <div class="textAndImage">
-                                    <DIV class="tan_divider">
+                            <div id="work-item-sub-bibliograghy-1_9" class="stgall-work-item-bibliography">
+                                <div class="stgall-textAndImage">
+                                    <DIV class="stgall-tan_divider">
                                         <p>
                                             <ol style="list-style-type:none" id="WorkBibiliography">
                                                 <li>
@@ -556,16 +500,9 @@
                                     </DIV>
                                 </div>
                             </div>
-                            <h4> Sub Work Transcription</h4>
-                            <div id="work-sub-item-transcription-1_9" class="work-item-transcription ">
-                                <div class="tan_divider">
-                                    <br>
-                                    <div class="transcriptionSource"></div>
-                                </div>
-                            </div>
                             <br>
                         </div>
-                        <div class="work-item">
+                        <div class="stgall-work-item">
                             1.10<a target="_top">Expositio orationis Dominicae</a><span>
                                             &nbsp; 10v- 11r</span>
                             <ul style="list-style-type:none">
@@ -579,16 +516,9 @@
                                     <b>Explicit: </b>...quia omnia uera sunt quae promittit deus
                                 </li>
                             </ul>
-                            <h4> Sub Work Transcription</h4>
-                            <div id="work-sub-item-transcription-1_10" class="work-item-transcription ">
-                                <div class="tan_divider">
-                                    <br>
-                                    <div class="transcriptionSource"></div>
-                                </div>
-                            </div>
                             <br>
                         </div>
-                        <div class="work-item">
+                        <div class="stgall-work-item">
                             1.11<a target="_top">Explanatio Dominicae orationis</a><span>
                                             &nbsp; 11r - 11v</span>
                             <ul style="list-style-type:none">
@@ -602,24 +532,17 @@
                                     <b>Explicit: </b>...quattuor sequentia amorem proximi docent
                                 </li>
                             </ul>
-                            <h4> Sub Work Transcription</h4>
-                            <div id="work-sub-item-transcription-1_11" class="work-item-transcription ">
-                                <div class="tan_divider">
-                                    <br>
-                                    <div class="transcriptionSource"></div>
-                                </div>
-                            </div>
                             <br>
                         </div>
                     </div>
                     <br>
                     <br>
                 </div>
-                <div id="work-item-transcription-1" class="work-item-transcription toggleDivWorkItem">
-                    <div class="tan_divider">
+                <div id="work-item-transcription-1" class="stgall-work-item-transcription toggleDivWorkItem">
+                    <div class="stgall-tan_divider">
                         <br>
-                        <div class="transcriptionSource">
-                            <div class="transcription-title">
+                        <div class="stgall-transcriptionSource">
+                            <div class="stgall-transcription-title">
                                 <span> 
                                                 [        
                                                 1
@@ -628,9 +551,9 @@
                                                 :        
                                                 De dominica oratione</b>
                             </div>
-                            <div class="transcription-source"> (For transcription source, see bibliography)</div>
+                            <div class="stgall-transcription-source"> (For transcription source, see bibliography)</div>
                             <br>
-                            <div class="transcription-text">
+                            <div class="stgall-transcription-text">
                                  Incipit oratio dominica 
                                 <br>
                                  a
@@ -909,7 +832,7 @@
                 </div>
                 <br>
             </div>
-            <div class="work-item ">
+            <div class="stgall-work-item ">
                 2 . <a target="_top" href="">Carolus Magnus, Epistolae de gratia septiformis spiritus</a><span>
 							&nbsp; 12r&ndash;12v</span>
                 <ul style="list-style-type:none">
@@ -925,7 +848,7 @@
                         <b>Explicit: </b>...semper in arce poli.
                     </li>
                 </ul>
-                <div class="sub-links">
+                <div class="stgall-sub-links">
                     <a href="#" class="toggleLinkWorkItem" data-target="work-item-bibliograghy-2">
 							Bibliograpghy
 											</a><a href="#" class="toggleLinkWorkItem" data-target="work-item-content-2">
@@ -934,8 +857,8 @@
 							Text
 										</a>
                 </div>
-                <div id="work-item-bibliograghy-2" class="work-item-bibliography toggleDivWorkItem">
-                    <DIV class="tan_divider">
+                <div id="work-item-bibliograghy-2" class="stgall-work-item-bibliography toggleDivWorkItem">
+                    <DIV class="stgall-tan_divider">
                         <span><b>12r&ndash;12v</b>
                             
         :                           
@@ -964,9 +887,9 @@
                         <br>
                     </DIV>
                 </div>
-                <div id="work-item-content-2" class="work-item-content toggleDivWorkItem">
-                    <div class="flex-container">
-                        <div class="work-title">
+                <div id="work-item-content-2" class="stgall-work-item-content toggleDivWorkItem">
+                    <div class="stgall-flex-container">
+                        <div class="stgall-work-title">
                             <span> [                    2
 ]                    
                         12r&ndash;12v</span><span>:                 
@@ -975,9 +898,9 @@
                             <br>
                         </div>
                     </div>
-                    <div class="contents">
+                    <div class="stgall-contents">
                         <br>
-                        <div class="work-item">
+                        <div class="stgall-work-item">
                             2.1<a target="_top">Carolus Magnus, De gratia septiformis spiritus.</a><span>
                                             &nbsp; 12v</span>
                             <ul style="list-style-type:none">
@@ -992,9 +915,9 @@
                                 </li>
                             </ul>
                             <h4>Sub Work Bibliograpghy</h4>
-                            <div id="work-item-sub-bibliograghy-2_1" class="work-item-bibliography">
-                                <div class="textAndImage">
-                                    <DIV class="tan_divider">
+                            <div id="work-item-sub-bibliograghy-2_1" class="stgall-work-item-bibliography">
+                                <div class="stgall-textAndImage">
+                                    <DIV class="stgall-tan_divider">
                                         <p>
                                             <ol style="list-style-type:none" id="WorkBibiliography">
                                                 <li>
@@ -1010,24 +933,17 @@
                                     </DIV>
                                 </div>
                             </div>
-                            <h4> Sub Work Transcription</h4>
-                            <div id="work-sub-item-transcription-2_1" class="work-item-transcription ">
-                                <div class="tan_divider">
-                                    <br>
-                                    <div class="transcriptionSource"></div>
-                                </div>
-                            </div>
                             <br>
                         </div>
                     </div>
                     <br>
                     <br>
                 </div>
-                <div id="work-item-transcription-2" class="work-item-transcription toggleDivWorkItem">
-                    <div class="tan_divider">
+                <div id="work-item-transcription-2" class="stgall-work-item-transcription toggleDivWorkItem">
+                    <div class="stgall-tan_divider">
                         <br>
-                        <div class="transcriptionSource">
-                            <div class="transcription-title">
+                        <div class="stgall-transcriptionSource">
+                            <div class="stgall-transcription-title">
                                 <span> 
                                                 [        
                                                 2
@@ -1036,9 +952,9 @@
                                                 :        
                                                 Carolus Magnus, Epistolae de gratia septiformis spiritus</b>
                             </div>
-                            <div class="transcription-source"> (ed. Ernst Dummler, MGH: )</div>
+                            <div class="stgall-transcription-source"> (ed. Ernst Dummler, MGH: )</div>
                             <br>
-                            <div class="transcription-text">
+                            <div class="stgall-transcription-text">
                                  KAROLUS DIVINA MISERICORDIA REX
                         FRAN- 
                                 <br>
@@ -1322,21 +1238,21 @@
                 </div>
                 <br>
             </div>
-            <div class="work-item ">
+            <div class="stgall-work-item ">
                 3 . <a target="_top" href="">Super symbolum apostolorum quam plurimorum orthodoxorum tractationes
                             cum ceteris de fide tractantibus diuerso modo explanationibus</a><span>
 							&nbsp; 13v-66v</span>
                 <ul style="list-style-type:none"></ul>
-                <div class="sub-links">
+                <div class="stgall-sub-links">
                     <a href="#" class="toggleLinkWorkItem" data-target="work-item-content-3">
 										Content
 									</a><a href="#" class="toggleLinkWorkItem" data-target="work-item-transcription-3">
 							Text
 										</a>
                 </div>
-                <div id="work-item-content-3" class="work-item-content toggleDivWorkItem">
-                    <div class="flex-container">
-                        <div class="work-title">
+                <div id="work-item-content-3" class="stgall-work-item-content toggleDivWorkItem">
+                    <div class="stgall-flex-container">
+                        <div class="stgall-work-title">
                             <span> [                    3
 ]                    
                         13v-66v</span><span>:                 
@@ -1346,9 +1262,9 @@
                             <br>
                         </div>
                     </div>
-                    <div class="contents">
+                    <div class="stgall-contents">
                         <br>
-                        <div class="work-item">
+                        <div class="stgall-work-item">
                             3.1<a target="_top">Symbolum vel fides apostulorum</a><span>
                                             &nbsp; 13v</span>
                             <ul style="list-style-type:none">
@@ -1363,9 +1279,9 @@
                                 </li>
                             </ul>
                             <h4>Sub Work Bibliograpghy</h4>
-                            <div id="work-item-sub-bibliograghy-3_1" class="work-item-bibliography">
-                                <div class="textAndImage">
-                                    <DIV class="tan_divider">
+                            <div id="work-item-sub-bibliograghy-3_1" class="stgall-work-item-bibliography">
+                                <div class="stgall-textAndImage">
+                                    <DIV class="stgall-tan_divider">
                                         <p>
                                             <ol style="list-style-type:none" id="WorkBibiliography">
                                                 <li>
@@ -1382,16 +1298,9 @@
                                     </DIV>
                                 </div>
                             </div>
-                            <h4> Sub Work Transcription</h4>
-                            <div id="work-sub-item-transcription-3_1" class="work-item-transcription ">
-                                <div class="tan_divider">
-                                    <br>
-                                    <div class="transcriptionSource"></div>
-                                </div>
-                            </div>
                             <br>
                         </div>
-                        <div class="work-item">
+                        <div class="stgall-work-item">
                             3.2<a target="_top">Credo Niceni</a><span>
                                             &nbsp; 13v</span>
                             <ul style="list-style-type:none">
@@ -1406,9 +1315,9 @@
                                 </li>
                             </ul>
                             <h4>Sub Work Bibliograpghy</h4>
-                            <div id="work-item-sub-bibliograghy-3_2" class="work-item-bibliography">
-                                <div class="textAndImage">
-                                    <DIV class="tan_divider">
+                            <div id="work-item-sub-bibliograghy-3_2" class="stgall-work-item-bibliography">
+                                <div class="stgall-textAndImage">
+                                    <DIV class="stgall-tan_divider">
                                         <p>
                                             <ol style="list-style-type:none" id="WorkBibiliography">
                                                 <li>
@@ -1439,16 +1348,9 @@
                                     </DIV>
                                 </div>
                             </div>
-                            <h4> Sub Work Transcription</h4>
-                            <div id="work-sub-item-transcription-3_2" class="work-item-transcription ">
-                                <div class="tan_divider">
-                                    <br>
-                                    <div class="transcriptionSource"></div>
-                                </div>
-                            </div>
                             <br>
                         </div>
-                        <div class="work-item">
+                        <div class="stgall-work-item">
                             3.3<a target="_top">Damasus, Confessio Fidei Catholica (Epistula IV)</a><span>
                                             &nbsp; 13v &ndash; 14r</span>
                             <ul style="list-style-type:none">
@@ -1466,9 +1368,9 @@
                                 </li>
                             </ul>
                             <h4>Sub Work Bibliograpghy</h4>
-                            <div id="work-item-sub-bibliograghy-3_3" class="work-item-bibliography">
-                                <div class="textAndImage">
-                                    <DIV class="tan_divider">
+                            <div id="work-item-sub-bibliograghy-3_3" class="stgall-work-item-bibliography">
+                                <div class="stgall-textAndImage">
+                                    <DIV class="stgall-tan_divider">
                                         <p>
                                             <ol style="list-style-type:none" id="WorkBibiliography">
                                                 <li>
@@ -1496,16 +1398,9 @@
                                     </DIV>
                                 </div>
                             </div>
-                            <h4> Sub Work Transcription</h4>
-                            <div id="work-sub-item-transcription-3_3" class="work-item-transcription ">
-                                <div class="tan_divider">
-                                    <br>
-                                    <div class="transcriptionSource"></div>
-                                </div>
-                            </div>
                             <br>
                         </div>
-                        <div class="work-item">
+                        <div class="stgall-work-item">
                             3.4<a target="_top">Fidei Constantinopolitani concilii</a><span>
                                             &nbsp; 14r</span>
                             <ul style="list-style-type:none">
@@ -1520,9 +1415,9 @@
                                 </li>
                             </ul>
                             <h4>Sub Work Bibliograpghy</h4>
-                            <div id="work-item-sub-bibliograghy-3_4" class="work-item-bibliography">
-                                <div class="textAndImage">
-                                    <DIV class="tan_divider">
+                            <div id="work-item-sub-bibliograghy-3_4" class="stgall-work-item-bibliography">
+                                <div class="stgall-textAndImage">
+                                    <DIV class="stgall-tan_divider">
                                         <p>
                                             <ol style="list-style-type:none" id="WorkBibiliography">
                                                 <li>
@@ -1553,16 +1448,9 @@
                                     </DIV>
                                 </div>
                             </div>
-                            <h4> Sub Work Transcription</h4>
-                            <div id="work-sub-item-transcription-3_4" class="work-item-transcription ">
-                                <div class="tan_divider">
-                                    <br>
-                                    <div class="transcriptionSource"></div>
-                                </div>
-                            </div>
                             <br>
                         </div>
-                        <div class="work-item">
+                        <div class="stgall-work-item">
                             3.5<a target="_top">Regulae fidei catholicae</a><span>
                                             &nbsp; 14r</span>
                             <ul style="list-style-type:none">
@@ -1577,9 +1465,9 @@
                                 </li>
                             </ul>
                             <h4>Sub Work Bibliograpghy</h4>
-                            <div id="work-item-sub-bibliograghy-3_5" class="work-item-bibliography">
-                                <div class="textAndImage">
-                                    <DIV class="tan_divider">
+                            <div id="work-item-sub-bibliograghy-3_5" class="stgall-work-item-bibliography">
+                                <div class="stgall-textAndImage">
+                                    <DIV class="stgall-tan_divider">
                                         <p>
                                             <ol style="list-style-type:none" id="WorkBibiliography">
                                                 <li>
@@ -1601,16 +1489,9 @@
                                     </DIV>
                                 </div>
                             </div>
-                            <h4> Sub Work Transcription</h4>
-                            <div id="work-sub-item-transcription-3_5" class="work-item-transcription ">
-                                <div class="tan_divider">
-                                    <br>
-                                    <div class="transcriptionSource"></div>
-                                </div>
-                            </div>
                             <br>
                         </div>
-                        <div class="work-item">
+                        <div class="stgall-work-item">
                             3.6<a target="_top">Alia regula fidei concilii Toletanae civitatis</a><span>
                                             &nbsp; 14v-15v</span>
                             <ul style="list-style-type:none">
@@ -1625,9 +1506,9 @@
                                 </li>
                             </ul>
                             <h4>Sub Work Bibliograpghy</h4>
-                            <div id="work-item-sub-bibliograghy-3_6" class="work-item-bibliography">
-                                <div class="textAndImage">
-                                    <DIV class="tan_divider">
+                            <div id="work-item-sub-bibliograghy-3_6" class="stgall-work-item-bibliography">
+                                <div class="stgall-textAndImage">
+                                    <DIV class="stgall-tan_divider">
                                         <p>
                                             <ol style="list-style-type:none" id="WorkBibiliography">
                                                 <li>
@@ -1649,16 +1530,9 @@
                                     </DIV>
                                 </div>
                             </div>
-                            <h4> Sub Work Transcription</h4>
-                            <div id="work-sub-item-transcription-3_6" class="work-item-transcription ">
-                                <div class="tan_divider">
-                                    <br>
-                                    <div class="transcriptionSource"></div>
-                                </div>
-                            </div>
                             <br>
                         </div>
-                        <div class="work-item">
+                        <div class="stgall-work-item">
                             3.7<a target="_top">Fidei Athanasii</a><span>
                                             &nbsp; 15v-16r</span>
                             <ul style="list-style-type:none">
@@ -1673,9 +1547,9 @@
                                 </li>
                             </ul>
                             <h4>Sub Work Bibliograpghy</h4>
-                            <div id="work-item-sub-bibliograghy-3_7" class="work-item-bibliography">
-                                <div class="textAndImage">
-                                    <DIV class="tan_divider">
+                            <div id="work-item-sub-bibliograghy-3_7" class="stgall-work-item-bibliography">
+                                <div class="stgall-textAndImage">
+                                    <DIV class="stgall-tan_divider">
                                         <p>
                                             <ol style="list-style-type:none" id="WorkBibiliography">
                                                 <li>
@@ -1712,16 +1586,9 @@
                                     </DIV>
                                 </div>
                             </div>
-                            <h4> Sub Work Transcription</h4>
-                            <div id="work-sub-item-transcription-3_7" class="work-item-transcription ">
-                                <div class="tan_divider">
-                                    <br>
-                                    <div class="transcriptionSource"></div>
-                                </div>
-                            </div>
                             <br>
                         </div>
-                        <div class="work-item">
+                        <div class="stgall-work-item">
                             3.8<a target="_top">Expositio Fidei Catholicae</a><span>
                                             &nbsp; 16r</span>
                             <ul style="list-style-type:none">
@@ -1736,9 +1603,9 @@
                                 </li>
                             </ul>
                             <h4>Sub Work Bibliograpghy</h4>
-                            <div id="work-item-sub-bibliograghy-3_8" class="work-item-bibliography">
-                                <div class="textAndImage">
-                                    <DIV class="tan_divider">
+                            <div id="work-item-sub-bibliograghy-3_8" class="stgall-work-item-bibliography">
+                                <div class="stgall-textAndImage">
+                                    <DIV class="stgall-tan_divider">
                                         <p>
                                             <ol style="list-style-type:none" id="WorkBibiliography">
                                                 <li>
@@ -1760,16 +1627,9 @@
                                     </DIV>
                                 </div>
                             </div>
-                            <h4> Sub Work Transcription</h4>
-                            <div id="work-sub-item-transcription-3_8" class="work-item-transcription ">
-                                <div class="tan_divider">
-                                    <br>
-                                    <div class="transcriptionSource"></div>
-                                </div>
-                            </div>
                             <br>
                         </div>
-                        <div class="work-item">
+                        <div class="stgall-work-item">
                             3.9<a target="_top">Professio Fidei</a><span>
                                             &nbsp; 16r</span>
                             <ul style="list-style-type:none">
@@ -1784,9 +1644,9 @@
                                 </li>
                             </ul>
                             <h4>Sub Work Bibliograpghy</h4>
-                            <div id="work-item-sub-bibliograghy-3_9" class="work-item-bibliography">
-                                <div class="textAndImage">
-                                    <DIV class="tan_divider">
+                            <div id="work-item-sub-bibliograghy-3_9" class="stgall-work-item-bibliography">
+                                <div class="stgall-textAndImage">
+                                    <DIV class="stgall-tan_divider">
                                         <p>
                                             <ol style="list-style-type:none" id="WorkBibiliography">
                                                 <li>
@@ -1826,16 +1686,9 @@
                                     </DIV>
                                 </div>
                             </div>
-                            <h4> Sub Work Transcription</h4>
-                            <div id="work-sub-item-transcription-3_9" class="work-item-transcription ">
-                                <div class="tan_divider">
-                                    <br>
-                                    <div class="transcriptionSource"></div>
-                                </div>
-                            </div>
                             <br>
                         </div>
-                        <div class="work-item">
+                        <div class="stgall-work-item">
                             3.10<a target="_top">Hieronimus, Epistola 143</a><span>
                                             &nbsp; 16r-16r</span>
                             <ul style="list-style-type:none">
@@ -1851,9 +1704,9 @@
                                 </li>
                             </ul>
                             <h4>Sub Work Bibliograpghy</h4>
-                            <div id="work-item-sub-bibliograghy-3_10" class="work-item-bibliography">
-                                <div class="textAndImage">
-                                    <DIV class="tan_divider">
+                            <div id="work-item-sub-bibliograghy-3_10" class="stgall-work-item-bibliography">
+                                <div class="stgall-textAndImage">
+                                    <DIV class="stgall-tan_divider">
                                         <p>
                                             <ol style="list-style-type:none" id="WorkBibiliography">
                                                 <li>
@@ -1882,16 +1735,9 @@
                                     </DIV>
                                 </div>
                             </div>
-                            <h4> Sub Work Transcription</h4>
-                            <div id="work-sub-item-transcription-3_10" class="work-item-transcription ">
-                                <div class="tan_divider">
-                                    <br>
-                                    <div class="transcriptionSource"></div>
-                                </div>
-                            </div>
                             <br>
                         </div>
-                        <div class="work-item">
+                        <div class="stgall-work-item">
                             3.11<a target="_top">Definitio Fidei Symbolique Niceni concilii</a><span>
                                             &nbsp; 16v-18r</span>
                             <ul style="list-style-type:none">
@@ -1907,9 +1753,9 @@
                                 </li>
                             </ul>
                             <h4>Sub Work Bibliograpghy</h4>
-                            <div id="work-item-sub-bibliograghy-3_11" class="work-item-bibliography">
-                                <div class="textAndImage">
-                                    <DIV class="tan_divider">
+                            <div id="work-item-sub-bibliograghy-3_11" class="stgall-work-item-bibliography">
+                                <div class="stgall-textAndImage">
+                                    <DIV class="stgall-tan_divider">
                                         <p>
                                             <ol style="list-style-type:none" id="WorkBibiliography">
                                                 <li>
@@ -1934,16 +1780,9 @@
                                     </DIV>
                                 </div>
                             </div>
-                            <h4> Sub Work Transcription</h4>
-                            <div id="work-sub-item-transcription-3_11" class="work-item-transcription ">
-                                <div class="tan_divider">
-                                    <br>
-                                    <div class="transcriptionSource"></div>
-                                </div>
-                            </div>
                             <br>
                         </div>
-                        <div class="work-item">
+                        <div class="stgall-work-item">
                             3.12<a target="_top">Hieronymus, Epistola ad Damasum Papam</a><span>
                                             &nbsp; 18r&ndash;18v</span>
                             <ul style="list-style-type:none">
@@ -1959,9 +1798,9 @@
                                 </li>
                             </ul>
                             <h4>Sub Work Bibliograpghy</h4>
-                            <div id="work-item-sub-bibliograghy-3_12" class="work-item-bibliography">
-                                <div class="textAndImage">
-                                    <DIV class="tan_divider">
+                            <div id="work-item-sub-bibliograghy-3_12" class="stgall-work-item-bibliography">
+                                <div class="stgall-textAndImage">
+                                    <DIV class="stgall-tan_divider">
                                         <p>
                                             <ol style="list-style-type:none" id="WorkBibiliography">
                                                 <li>
@@ -2004,16 +1843,9 @@
                                     </DIV>
                                 </div>
                             </div>
-                            <h4> Sub Work Transcription</h4>
-                            <div id="work-sub-item-transcription-3_12" class="work-item-transcription ">
-                                <div class="tan_divider">
-                                    <br>
-                                    <div class="transcriptionSource"></div>
-                                </div>
-                            </div>
                             <br>
                         </div>
-                        <div class="work-item">
+                        <div class="stgall-work-item">
                             3.13<a target="_top">Fidei catholicae sancti Augustini episcopi</a><span>
                                             &nbsp; 18v</span>
                             <ul style="list-style-type:none">
@@ -2028,9 +1860,9 @@
                                 </li>
                             </ul>
                             <h4>Sub Work Bibliograpghy</h4>
-                            <div id="work-item-sub-bibliograghy-3_13" class="work-item-bibliography">
-                                <div class="textAndImage">
-                                    <DIV class="tan_divider">
+                            <div id="work-item-sub-bibliograghy-3_13" class="stgall-work-item-bibliography">
+                                <div class="stgall-textAndImage">
+                                    <DIV class="stgall-tan_divider">
                                         <p>
                                             <ol style="list-style-type:none" id="WorkBibiliography">
                                                 <li>
@@ -2058,16 +1890,9 @@
                                     </DIV>
                                 </div>
                             </div>
-                            <h4> Sub Work Transcription</h4>
-                            <div id="work-sub-item-transcription-3_13" class="work-item-transcription ">
-                                <div class="tan_divider">
-                                    <br>
-                                    <div class="transcriptionSource"></div>
-                                </div>
-                            </div>
                             <br>
                         </div>
-                        <div class="work-item">
+                        <div class="stgall-work-item">
                             3.14<a target="_top">Augustinus, De civitate dei, Liber 11, c. 24</a><span>
                                             &nbsp; 18v&ndash;19r</span>
                             <ul style="list-style-type:none">
@@ -2083,9 +1908,9 @@
                                 </li>
                             </ul>
                             <h4>Sub Work Bibliograpghy</h4>
-                            <div id="work-item-sub-bibliograghy-3_14" class="work-item-bibliography">
-                                <div class="textAndImage">
-                                    <DIV class="tan_divider">
+                            <div id="work-item-sub-bibliograghy-3_14" class="stgall-work-item-bibliography">
+                                <div class="stgall-textAndImage">
+                                    <DIV class="stgall-tan_divider">
                                         <p>
                                             <ol style="list-style-type:none" id="WorkBibiliography">
                                                 <li>
@@ -2110,16 +1935,9 @@
                                     </DIV>
                                 </div>
                             </div>
-                            <h4> Sub Work Transcription</h4>
-                            <div id="work-sub-item-transcription-3_14" class="work-item-transcription ">
-                                <div class="tan_divider">
-                                    <br>
-                                    <div class="transcriptionSource"></div>
-                                </div>
-                            </div>
                             <br>
                         </div>
-                        <div class="work-item">
+                        <div class="stgall-work-item">
                             3.15<a target="_top">Fides sancti Gregorii Majoris</a><span>
                                             &nbsp; 19r</span>
                             <ul style="list-style-type:none">
@@ -2134,9 +1952,9 @@
                                 </li>
                             </ul>
                             <h4>Sub Work Bibliograpghy</h4>
-                            <div id="work-item-sub-bibliograghy-3_15" class="work-item-bibliography">
-                                <div class="textAndImage">
-                                    <DIV class="tan_divider">
+                            <div id="work-item-sub-bibliograghy-3_15" class="stgall-work-item-bibliography">
+                                <div class="stgall-textAndImage">
+                                    <DIV class="stgall-tan_divider">
                                         <p>
                                             <ol style="list-style-type:none" id="WorkBibiliography">
                                                 <li>
@@ -2153,16 +1971,9 @@
                                     </DIV>
                                 </div>
                             </div>
-                            <h4> Sub Work Transcription</h4>
-                            <div id="work-sub-item-transcription-3_15" class="work-item-transcription ">
-                                <div class="tan_divider">
-                                    <br>
-                                    <div class="transcriptionSource"></div>
-                                </div>
-                            </div>
                             <br>
                         </div>
-                        <div class="work-item">
+                        <div class="stgall-work-item">
                             3.16<a target="_top">Faustinus, Confessio Fidei</a><span>
                                             &nbsp; 19r&ndash;19r</span>
                             <ul style="list-style-type:none">
@@ -2178,9 +1989,9 @@
                                 </li>
                             </ul>
                             <h4>Sub Work Bibliograpghy</h4>
-                            <div id="work-item-sub-bibliograghy-3_16" class="work-item-bibliography">
-                                <div class="textAndImage">
-                                    <DIV class="tan_divider">
+                            <div id="work-item-sub-bibliograghy-3_16" class="stgall-work-item-bibliography">
+                                <div class="stgall-textAndImage">
+                                    <DIV class="stgall-tan_divider">
                                         <p>
                                             <ol style="list-style-type:none" id="WorkBibiliography">
                                                 <li>
@@ -2202,16 +2013,9 @@
                                     </DIV>
                                 </div>
                             </div>
-                            <h4> Sub Work Transcription</h4>
-                            <div id="work-sub-item-transcription-3_16" class="work-item-transcription ">
-                                <div class="tan_divider">
-                                    <br>
-                                    <div class="transcriptionSource"></div>
-                                </div>
-                            </div>
                             <br>
                         </div>
-                        <div class="work-item">
+                        <div class="stgall-work-item">
                             3.17<a target="_top">Isidorus, De Ecclesiasticis Officiis (Liber II, Cap. 24)</a><span>
                                             &nbsp; 19r-19v</span>
                             <ul style="list-style-type:none">
@@ -2226,9 +2030,9 @@
                                 </li>
                             </ul>
                             <h4>Sub Work Bibliograpghy</h4>
-                            <div id="work-item-sub-bibliograghy-3_17" class="work-item-bibliography">
-                                <div class="textAndImage">
-                                    <DIV class="tan_divider">
+                            <div id="work-item-sub-bibliograghy-3_17" class="stgall-work-item-bibliography">
+                                <div class="stgall-textAndImage">
+                                    <DIV class="stgall-tan_divider">
                                         <p>
                                             <ol style="list-style-type:none" id="WorkBibiliography">
                                                 <li>
@@ -2259,16 +2063,9 @@
                                     </DIV>
                                 </div>
                             </div>
-                            <h4> Sub Work Transcription</h4>
-                            <div id="work-sub-item-transcription-3_17" class="work-item-transcription ">
-                                <div class="tan_divider">
-                                    <br>
-                                    <div class="transcriptionSource"></div>
-                                </div>
-                            </div>
                             <br>
                         </div>
-                        <div class="work-item">
+                        <div class="stgall-work-item">
                             3.18<a target="_top">Augustinus, De Trinitate (Liber XV, c. 3)</a><span>
                                             &nbsp; 19v-20r</span>
                             <ul style="list-style-type:none">
@@ -2284,9 +2081,9 @@
                                 </li>
                             </ul>
                             <h4>Sub Work Bibliograpghy</h4>
-                            <div id="work-item-sub-bibliograghy-3_18" class="work-item-bibliography">
-                                <div class="textAndImage">
-                                    <DIV class="tan_divider">
+                            <div id="work-item-sub-bibliograghy-3_18" class="stgall-work-item-bibliography">
+                                <div class="stgall-textAndImage">
+                                    <DIV class="stgall-tan_divider">
                                         <p>
                                             <ol style="list-style-type:none" id="WorkBibiliography">
                                                 <li>
@@ -2324,14 +2121,14 @@
                                 </div>
                             </div>
                             <h4>Sub Work Contents</h4>
-                            <div id="work-item-sub-content-3_18" class="sub-work-item-content">
-                                <DIV class="tan_divider">
+                            <div id="work-item-sub-content-3_18" class="stgall-work-item-content">
+                                <DIV class="stgall-tan_divider">
                                     <br>
                                     <ul style="list-style-type:none">
                                         <li>
                                             3_18_1 :  
                                     
-                                    <span class="float">19r-19v</span>
+                                    <span class="stgall-float">19r-19v</span>
                                             <p>Augustinus, De Trinitate, Liber XV, c. 3, 4-5</p>
                                             <li>
                                                 <b>Rubric: </b>Item de sancta Trinitate sancti Augustini in libro. XU.
@@ -2350,7 +2147,7 @@
                                         <li>
                                             3_18_2 :  
                                     
-                                    <span class="float">20r</span>
+                                    <span class="stgall-float">20r</span>
                                             <p>Augustinus, De Trinitate</p>
                                             <li>
                                                 <b>Incipit: </b>In quinto decimo de ęqualitate...
@@ -2365,7 +2162,7 @@
                                         <li>
                                             3_18_3 :  
                                     
-                                    <span class="float">20r</span>
+                                    <span class="stgall-float">20r</span>
                                             <p>Augustinus, De Trinitate, Book 15, Chapter 17, 28-29</p>
                                             <li>
                                                 <b>Incipit: </b>Sic enim... 
@@ -2380,16 +2177,9 @@
                                     </ul>
                                 </DIV>
                             </div>
-                            <h4> Sub Work Transcription</h4>
-                            <div id="work-sub-item-transcription-3_18" class="work-item-transcription ">
-                                <div class="tan_divider">
-                                    <br>
-                                    <div class="transcriptionSource"></div>
-                                </div>
-                            </div>
                             <br>
                         </div>
-                        <div class="work-item">
+                        <div class="stgall-work-item">
                             3.19<a target="_top">Boethius, De Trinitate, Prooemium &amp; c. 1-6</a><span>
                                             &nbsp; 20v-22r</span>
                             <ul style="list-style-type:none">
@@ -2405,9 +2195,9 @@
                                 </li>
                             </ul>
                             <h4>Sub Work Bibliograpghy</h4>
-                            <div id="work-item-sub-bibliograghy-3_19" class="work-item-bibliography">
-                                <div class="textAndImage">
-                                    <DIV class="tan_divider">
+                            <div id="work-item-sub-bibliograghy-3_19" class="stgall-work-item-bibliography">
+                                <div class="stgall-textAndImage">
+                                    <DIV class="stgall-tan_divider">
                                         <p>
                                             <ol style="list-style-type:none" id="WorkBibiliography">
                                                 <li>
@@ -2462,16 +2252,9 @@
                                     </DIV>
                                 </div>
                             </div>
-                            <h4> Sub Work Transcription</h4>
-                            <div id="work-sub-item-transcription-3_19" class="work-item-transcription ">
-                                <div class="tan_divider">
-                                    <br>
-                                    <div class="transcriptionSource"></div>
-                                </div>
-                            </div>
                             <br>
                         </div>
-                        <div class="work-item">
+                        <div class="stgall-work-item">
                             3.20<a target="_top">Boethius, Utrum Pater et Filius et Spiritus Sanctus de divinitate
                                 substantialiter praedicentur</a><span>
                                             &nbsp; 22r&ndash;22r</span>
@@ -2489,9 +2272,9 @@
                                 </li>
                             </ul>
                             <h4>Sub Work Bibliograpghy</h4>
-                            <div id="work-item-sub-bibliograghy-3_20" class="work-item-bibliography">
-                                <div class="textAndImage">
-                                    <DIV class="tan_divider">
+                            <div id="work-item-sub-bibliograghy-3_20" class="stgall-work-item-bibliography">
+                                <div class="stgall-textAndImage">
+                                    <DIV class="stgall-tan_divider">
                                         <p>
                                             <ol style="list-style-type:none" id="WorkBibiliography">
                                                 <li>
@@ -2536,16 +2319,9 @@
                                     </DIV>
                                 </div>
                             </div>
-                            <h4> Sub Work Transcription</h4>
-                            <div id="work-sub-item-transcription-3_20" class="work-item-transcription ">
-                                <div class="tan_divider">
-                                    <br>
-                                    <div class="transcriptionSource"></div>
-                                </div>
-                            </div>
                             <br>
                         </div>
-                        <div class="work-item">
+                        <div class="stgall-work-item">
                             3.21<a target="_top">Boethius, Quomodo substantiae in eo quod sint bonae sint cum non
                                 sint substantialia bona</a><span>
                                             &nbsp; 22r&ndash;23r</span>
@@ -2562,9 +2338,9 @@
                                 </li>
                             </ul>
                             <h4>Sub Work Bibliograpghy</h4>
-                            <div id="work-item-sub-bibliograghy-3_21" class="work-item-bibliography">
-                                <div class="textAndImage">
-                                    <DIV class="tan_divider">
+                            <div id="work-item-sub-bibliograghy-3_21" class="stgall-work-item-bibliography">
+                                <div class="stgall-textAndImage">
+                                    <DIV class="stgall-tan_divider">
                                         <p>
                                             <ol style="list-style-type:none" id="WorkBibiliography">
                                                 <li>
@@ -2609,16 +2385,9 @@
                                     </DIV>
                                 </div>
                             </div>
-                            <h4> Sub Work Transcription</h4>
-                            <div id="work-sub-item-transcription-3_21" class="work-item-transcription ">
-                                <div class="tan_divider">
-                                    <br>
-                                    <div class="transcriptionSource"></div>
-                                </div>
-                            </div>
                             <br>
                         </div>
-                        <div class="work-item">
+                        <div class="stgall-work-item">
                             3.22<a target="_top">Boethius, De Fide Catholica</a><span>
                                             &nbsp; 23r&ndash; 24r</span>
                             <ul style="list-style-type:none">
@@ -2633,9 +2402,9 @@
                                 </li>
                             </ul>
                             <h4>Sub Work Bibliograpghy</h4>
-                            <div id="work-item-sub-bibliograghy-3_22" class="work-item-bibliography">
-                                <div class="textAndImage">
-                                    <DIV class="tan_divider">
+                            <div id="work-item-sub-bibliograghy-3_22" class="stgall-work-item-bibliography">
+                                <div class="stgall-textAndImage">
+                                    <DIV class="stgall-tan_divider">
                                         <p>
                                             <ol style="list-style-type:none" id="WorkBibiliography">
                                                 <li>
@@ -2683,16 +2452,9 @@
                                     </DIV>
                                 </div>
                             </div>
-                            <h4> Sub Work Transcription</h4>
-                            <div id="work-sub-item-transcription-3_22" class="work-item-transcription ">
-                                <div class="tan_divider">
-                                    <br>
-                                    <div class="transcriptionSource"></div>
-                                </div>
-                            </div>
                             <br>
                         </div>
-                        <div class="work-item">
+                        <div class="stgall-work-item">
                             3.23<a target="_top">Pseudo-Chrysostomos, De Fide in Christo (Sermo 38)</a><span>
                                             &nbsp; 24r&ndash; 24v</span>
                             <ul style="list-style-type:none">
@@ -2707,9 +2469,9 @@
                                 </li>
                             </ul>
                             <h4>Sub Work Bibliograpghy</h4>
-                            <div id="work-item-sub-bibliograghy-3_23" class="work-item-bibliography">
-                                <div class="textAndImage">
-                                    <DIV class="tan_divider">
+                            <div id="work-item-sub-bibliograghy-3_23" class="stgall-work-item-bibliography">
+                                <div class="stgall-textAndImage">
+                                    <DIV class="stgall-tan_divider">
                                         <p>
                                             <ol style="list-style-type:none" id="WorkBibiliography">
                                                 <li>
@@ -2731,16 +2493,9 @@
                                     </DIV>
                                 </div>
                             </div>
-                            <h4> Sub Work Transcription</h4>
-                            <div id="work-sub-item-transcription-3_23" class="work-item-transcription ">
-                                <div class="tan_divider">
-                                    <br>
-                                    <div class="transcriptionSource"></div>
-                                </div>
-                            </div>
                             <br>
                         </div>
-                        <div class="work-item">
+                        <div class="stgall-work-item">
                             3.24<a target="_top">Augustinus, De fide et symbolo</a><span>
                                             &nbsp; 25r&ndash; 28r</span>
                             <ul style="list-style-type:none">
@@ -2755,9 +2510,9 @@
                                 </li>
                             </ul>
                             <h4>Sub Work Bibliograpghy</h4>
-                            <div id="work-item-sub-bibliograghy-3_24" class="work-item-bibliography">
-                                <div class="textAndImage">
-                                    <DIV class="tan_divider">
+                            <div id="work-item-sub-bibliograghy-3_24" class="stgall-work-item-bibliography">
+                                <div class="stgall-textAndImage">
+                                    <DIV class="stgall-tan_divider">
                                         <p>
                                             <ol style="list-style-type:none" id="WorkBibiliography">
                                                 <li>
@@ -2803,28 +2558,21 @@
                                     </DIV>
                                 </div>
                             </div>
-                            <h4> Sub Work Transcription</h4>
-                            <div id="work-sub-item-transcription-3_24" class="work-item-transcription ">
-                                <div class="tan_divider">
-                                    <br>
-                                    <div class="transcriptionSource"></div>
-                                </div>
-                            </div>
                             <br>
                         </div>
-                        <div class="work-item">
+                        <div class="stgall-work-item">
                             3.25<a target="_top">Pseudo-Augustinus, Sermones de symbolo</a><span>
                                             &nbsp; 28r&ndash;29r</span>
                             <ul style="list-style-type:none"></ul>
                             <h4>Sub Work Contents</h4>
-                            <div id="work-item-sub-content-3_25" class="sub-work-item-content">
-                                <DIV class="tan_divider">
+                            <div id="work-item-sub-content-3_25" class="stgall-work-item-content">
+                                <DIV class="stgall-tan_divider">
                                     <br>
                                     <ul style="list-style-type:none">
                                         <li>
                                             3_25_1 :  
                                     
-                                    <span class="float">28r&ndash;29r</span>
+                                    <span class="stgall-float">28r&ndash;29r</span>
                                             <p>Pseudo-Augustinus, Sermo 242</p>
                                             <li>
                                                 <b>Rubric: </b>Item Incipit traditio symboli beati Augustini episcopi.
@@ -2857,7 +2605,7 @@
                                         <li>
                                             3_25_2 :  
                                     
-                                    <span class="float">29r</span>
+                                    <span class="stgall-float">29r</span>
                                             <p>Pseudo-Augustinus, Sermo 212</p>
                                             <li>
                                                 <b>Incipit: </b>Hunc breuem sermonem de uniuerso symbulo... 
@@ -2887,7 +2635,7 @@
                                         <li>
                                             3_25_3 :  
                                     
-                                    <span class="float">29r&ndash;29v</span>
+                                    <span class="stgall-float">29r&ndash;29v</span>
                                             <p>Pseudo-Augustinus, Sermon 237: De Symbolo</p>
                                             <li>
                                                 <b>Rubric: </b>Item de symbulo et deitate et omnipotentia patris. Omelia sancti
@@ -2921,7 +2669,7 @@
                                         <li>
                                             3_25_4 :  
                                     
-                                    <span class="float">29v&ndash;30r</span>
+                                    <span class="stgall-float">29v&ndash;30r</span>
                                             <p>Pseudo-Augustinus, Sermo 238</p>
                                             <li>
                                                 <b>Rubric: </b>Item eiusdem de domino nostro Ihesu Χρisto. quod absque initio
@@ -2956,7 +2704,7 @@
                                         <li>
                                             3_25_5 :  
                                     
-                                    <span class="float">30r&ndash;30v</span>
+                                    <span class="stgall-float">30r&ndash;30v</span>
                                             <p>Pseudo-Augustinus, Sermo de symbolo</p>
                                             <li>
                                                 <b>Rubric: </b>Item eiusdem sancti Augustini de symbolo de spiritu sancto. quod
@@ -2990,16 +2738,9 @@
                                     </ul>
                                 </DIV>
                             </div>
-                            <h4> Sub Work Transcription</h4>
-                            <div id="work-sub-item-transcription-3_25" class="work-item-transcription ">
-                                <div class="tan_divider">
-                                    <br>
-                                    <div class="transcriptionSource"></div>
-                                </div>
-                            </div>
                             <br>
                         </div>
-                        <div class="work-item">
+                        <div class="stgall-work-item">
                             3.26<a target="_top">Pseudo-Ambrosius, Exhortatio ad neophytos de symbolo</a><span>
                                             &nbsp; 30v-32r</span>
                             <ul style="list-style-type:none">
@@ -3015,9 +2756,9 @@
                                 </li>
                             </ul>
                             <h4>Sub Work Bibliograpghy</h4>
-                            <div id="work-item-sub-bibliograghy-3_26" class="work-item-bibliography">
-                                <div class="textAndImage">
-                                    <DIV class="tan_divider">
+                            <div id="work-item-sub-bibliograghy-3_26" class="stgall-work-item-bibliography">
+                                <div class="stgall-textAndImage">
+                                    <DIV class="stgall-tan_divider">
                                         <p>
                                             <ol style="list-style-type:none" id="WorkBibiliography">
                                                 <li>
@@ -3033,16 +2774,9 @@
                                     </DIV>
                                 </div>
                             </div>
-                            <h4> Sub Work Transcription</h4>
-                            <div id="work-sub-item-transcription-3_26" class="work-item-transcription ">
-                                <div class="tan_divider">
-                                    <br>
-                                    <div class="transcriptionSource"></div>
-                                </div>
-                            </div>
                             <br>
                         </div>
-                        <div class="work-item">
+                        <div class="stgall-work-item">
                             3.27<a target="_top">Fulgentius, Epistola de fide ad Donatum</a><span>
                                             &nbsp; 32r&ndash; 34v</span>
                             <ul style="list-style-type:none">
@@ -3058,9 +2792,9 @@
                                 </li>
                             </ul>
                             <h4>Sub Work Bibliograpghy</h4>
-                            <div id="work-item-sub-bibliograghy-3_27" class="work-item-bibliography">
-                                <div class="textAndImage">
-                                    <DIV class="tan_divider">
+                            <div id="work-item-sub-bibliograghy-3_27" class="stgall-work-item-bibliography">
+                                <div class="stgall-textAndImage">
+                                    <DIV class="stgall-tan_divider">
                                         <p>
                                             <ol style="list-style-type:none" id="WorkBibiliography">
                                                 <li>
@@ -3088,16 +2822,9 @@
                                     </DIV>
                                 </div>
                             </div>
-                            <h4> Sub Work Transcription</h4>
-                            <div id="work-sub-item-transcription-3_27" class="work-item-transcription ">
-                                <div class="tan_divider">
-                                    <br>
-                                    <div class="transcriptionSource"></div>
-                                </div>
-                            </div>
                             <br>
                         </div>
-                        <div class="work-item">
+                        <div class="stgall-work-item">
                             3.28<a target="_top">Pseudo-Fulgentius, De fide ad Petrum seu de regula fidei (Ch.
                                 45:1-3)</a><span>
                                             &nbsp; 34v&ndash;35r</span>
@@ -3113,9 +2840,9 @@
                                 </li>
                             </ul>
                             <h4>Sub Work Bibliograpghy</h4>
-                            <div id="work-item-sub-bibliograghy-3_28" class="work-item-bibliography">
-                                <div class="textAndImage">
-                                    <DIV class="tan_divider">
+                            <div id="work-item-sub-bibliograghy-3_28" class="stgall-work-item-bibliography">
+                                <div class="stgall-textAndImage">
+                                    <DIV class="stgall-tan_divider">
                                         <p>
                                             <ol style="list-style-type:none" id="WorkBibiliography">
                                                 <li>
@@ -3137,16 +2864,9 @@
                                     </DIV>
                                 </div>
                             </div>
-                            <h4> Sub Work Transcription</h4>
-                            <div id="work-sub-item-transcription-3_28" class="work-item-transcription ">
-                                <div class="tan_divider">
-                                    <br>
-                                    <div class="transcriptionSource"></div>
-                                </div>
-                            </div>
                             <br>
                         </div>
-                        <div class="work-item">
+                        <div class="stgall-work-item">
                             3.29<a target="_top">Quodvultdeus (Pseudo-Augustinus); Contra Judaeos paganos et
                                 Arrianos</a><span>
                                             &nbsp; 35r-39v</span>
@@ -3164,9 +2884,9 @@
                                 </li>
                             </ul>
                             <h4>Sub Work Bibliograpghy</h4>
-                            <div id="work-item-sub-bibliograghy-3_29" class="work-item-bibliography">
-                                <div class="textAndImage">
-                                    <DIV class="tan_divider">
+                            <div id="work-item-sub-bibliograghy-3_29" class="stgall-work-item-bibliography">
+                                <div class="stgall-textAndImage">
+                                    <DIV class="stgall-tan_divider">
                                         <p>
                                             <ol style="list-style-type:none" id="WorkBibiliography">
                                                 <li>
@@ -3208,23 +2928,16 @@
                                     </DIV>
                                 </div>
                             </div>
-                            <h4> Sub Work Transcription</h4>
-                            <div id="work-sub-item-transcription-3_29" class="work-item-transcription ">
-                                <div class="tan_divider">
-                                    <br>
-                                    <div class="transcriptionSource"></div>
-                                </div>
-                            </div>
                             <br>
                         </div>
-                        <div class="work-item">
+                        <div class="stgall-work-item">
                             3.30<a target="_top">Fulgentius, De fide ad Petrum seu de regula fidei (excerpta)</a><span>
                                             &nbsp; 39v-46v</span>
                             <ul style="list-style-type:none"></ul>
                             <h4>Sub Work Bibliograpghy</h4>
-                            <div id="work-item-sub-bibliograghy-3_30" class="work-item-bibliography">
-                                <div class="textAndImage">
-                                    <DIV class="tan_divider">
+                            <div id="work-item-sub-bibliograghy-3_30" class="stgall-work-item-bibliography">
+                                <div class="stgall-textAndImage">
+                                    <DIV class="stgall-tan_divider">
                                         <p>
                                             <ol style="list-style-type:none" id="WorkBibiliography">
                                                 <li>
@@ -3259,14 +2972,14 @@
                                 </div>
                             </div>
                             <h4>Sub Work Contents</h4>
-                            <div id="work-item-sub-content-3_30" class="sub-work-item-content">
-                                <DIV class="tan_divider">
+                            <div id="work-item-sub-content-3_30" class="stgall-work-item-content">
+                                <DIV class="stgall-tan_divider">
                                     <br>
                                     <ul style="list-style-type:none">
                                         <li>
                                             3_30_1 :  
                                     
-                                    <span class="float">39v</span>
+                                    <span class="stgall-float">39v</span>
                                             <p>Fulgentius, De Fide, 3:43-44</p>
                                             <li>
                                                 <b>Incipit: </b>Et in eo quod coniugia non habent..
@@ -3281,7 +2994,7 @@
                                         <li>
                                             3_30_2 :  
                                     
-                                    <span class="float">39v&ndash;41v</span>
+                                    <span class="stgall-float">39v&ndash;41v</span>
                                             <p>Fulgentius, De Fide, 3:25-43</p>
                                             <li>
                                                 <b>Rubric: </b>Nunc de creatura quid absque dubitatione credere debeas
@@ -3300,7 +3013,7 @@
                                         <li>
                                             3_30_3 :  
                                     
-                                    <span class="float">42r&ndash;44r</span>
+                                    <span class="stgall-float">42r&ndash;44r</span>
                                             <p>Fulgentius, De Fide, Prologus&ndash;2:24</p>
                                             <li>
                                                 <b>Rubric: </b>Incipit expositio fidei catholicae sancti Agustini episcopi
@@ -3318,7 +3031,7 @@
                                         <li>
                                             3_30_4 :  
                                     
-                                    <span class="float">44r-46v</span>
+                                    <span class="stgall-float">44r-46v</span>
                                             <p>Fulgentius, De Fide, 4:45-44:85</p>
                                             <li>
                                                 <b>Incipit: </b>Firmissime itaque tene... 
@@ -3333,16 +3046,9 @@
                                     </ul>
                                 </DIV>
                             </div>
-                            <h4> Sub Work Transcription</h4>
-                            <div id="work-sub-item-transcription-3_30" class="work-item-transcription ">
-                                <div class="tan_divider">
-                                    <br>
-                                    <div class="transcriptionSource"></div>
-                                </div>
-                            </div>
                             <br>
                         </div>
-                        <div class="work-item">
+                        <div class="stgall-work-item">
                             3.31<a target="_top">Pseudo-Hieronymus, Regulae definitionum contra hereticos</a><span>
                                             &nbsp; 47r-49r</span>
                             <ul style="list-style-type:none">
@@ -3357,16 +3063,9 @@
                                     <b>Explicit: </b>... munere conlata credentibus conferebantur.
                                 </li>
                             </ul>
-                            <h4> Sub Work Transcription</h4>
-                            <div id="work-sub-item-transcription-3_31" class="work-item-transcription ">
-                                <div class="tan_divider">
-                                    <br>
-                                    <div class="transcriptionSource"></div>
-                                </div>
-                            </div>
                             <br>
                         </div>
-                        <div class="work-item">
+                        <div class="stgall-work-item">
                             3.32<a target="_top">Vigilius Thapsensis, Contra Arianos Sabellianos et Photinianos
                                 dialogus</a><span>
                                             &nbsp; 49v-51v</span>
@@ -3384,9 +3083,9 @@
                                 </li>
                             </ul>
                             <h4>Sub Work Bibliograpghy</h4>
-                            <div id="work-item-sub-bibliograghy-3_32" class="work-item-bibliography">
-                                <div class="textAndImage">
-                                    <DIV class="tan_divider">
+                            <div id="work-item-sub-bibliograghy-3_32" class="stgall-work-item-bibliography">
+                                <div class="stgall-textAndImage">
+                                    <DIV class="stgall-tan_divider">
                                         <p>
                                             <ol style="list-style-type:none" id="WorkBibiliography">
                                                 <li>
@@ -3411,16 +3110,9 @@
                                     </DIV>
                                 </div>
                             </div>
-                            <h4> Sub Work Transcription</h4>
-                            <div id="work-sub-item-transcription-3_32" class="work-item-transcription ">
-                                <div class="tan_divider">
-                                    <br>
-                                    <div class="transcriptionSource"></div>
-                                </div>
-                            </div>
                             <br>
                         </div>
-                        <div class="work-item">
+                        <div class="stgall-work-item">
                             3.33<a target="_top">Basilus, De Fide (Homilia VI)</a><span>
                                             &nbsp; 51v&ndash;52v</span>
                             <ul style="list-style-type:none">
@@ -3436,9 +3128,9 @@
                                 </li>
                             </ul>
                             <h4>Sub Work Bibliograpghy</h4>
-                            <div id="work-item-sub-bibliograghy-3_33" class="work-item-bibliography">
-                                <div class="textAndImage">
-                                    <DIV class="tan_divider">
+                            <div id="work-item-sub-bibliograghy-3_33" class="stgall-work-item-bibliography">
+                                <div class="stgall-textAndImage">
+                                    <DIV class="stgall-tan_divider">
                                         <p>
                                             <ol style="list-style-type:none" id="WorkBibiliography">
                                                 <li>
@@ -3457,16 +3149,9 @@
                                     </DIV>
                                 </div>
                             </div>
-                            <h4> Sub Work Transcription</h4>
-                            <div id="work-sub-item-transcription-3_33" class="work-item-transcription ">
-                                <div class="tan_divider">
-                                    <br>
-                                    <div class="transcriptionSource"></div>
-                                </div>
-                            </div>
                             <br>
                         </div>
-                        <div class="work-item">
+                        <div class="stgall-work-item">
                             3.34<a target="_top">Rufinus, Apologia ad Anastasium Romanae Urbis episcopum</a><span>
                                             &nbsp; 53r&ndash;53v</span>
                             <ul style="list-style-type:none">
@@ -3482,9 +3167,9 @@
                                 </li>
                             </ul>
                             <h4>Sub Work Bibliograpghy</h4>
-                            <div id="work-item-sub-bibliograghy-3_34" class="work-item-bibliography">
-                                <div class="textAndImage">
-                                    <DIV class="tan_divider">
+                            <div id="work-item-sub-bibliograghy-3_34" class="stgall-work-item-bibliography">
+                                <div class="stgall-textAndImage">
+                                    <DIV class="stgall-tan_divider">
                                         <p>
                                             <ol style="list-style-type:none" id="WorkBibiliography">
                                                 <li>
@@ -3516,16 +3201,9 @@
                                     </DIV>
                                 </div>
                             </div>
-                            <h4> Sub Work Transcription</h4>
-                            <div id="work-sub-item-transcription-3_34" class="work-item-transcription ">
-                                <div class="tan_divider">
-                                    <br>
-                                    <div class="transcriptionSource"></div>
-                                </div>
-                            </div>
                             <br>
                         </div>
-                        <div class="work-item">
+                        <div class="stgall-work-item">
                             3.35<a target="_top">Pseudo-Hieronymus, Epistola</a><span>
                                             &nbsp; 53v&ndash;56r</span>
                             <ul style="list-style-type:none">
@@ -3542,9 +3220,9 @@
                                 </li>
                             </ul>
                             <h4>Sub Work Bibliograpghy</h4>
-                            <div id="work-item-sub-bibliograghy-3_35" class="work-item-bibliography">
-                                <div class="textAndImage">
-                                    <DIV class="tan_divider">
+                            <div id="work-item-sub-bibliograghy-3_35" class="stgall-work-item-bibliography">
+                                <div class="stgall-textAndImage">
+                                    <DIV class="stgall-tan_divider">
                                         <p>
                                             <ol style="list-style-type:none" id="WorkBibiliography">
                                                 <li>
@@ -3566,16 +3244,9 @@
                                     </DIV>
                                 </div>
                             </div>
-                            <h4> Sub Work Transcription</h4>
-                            <div id="work-sub-item-transcription-3_35" class="work-item-transcription ">
-                                <div class="tan_divider">
-                                    <br>
-                                    <div class="transcriptionSource"></div>
-                                </div>
-                            </div>
                             <br>
                         </div>
-                        <div class="work-item">
+                        <div class="stgall-work-item">
                             3.36<a target="_top">Maximus Taurinensis, Homilia 83</a><span>
                                             &nbsp; 56v&ndash;57r</span>
                             <ul style="list-style-type:none">
@@ -3590,9 +3261,9 @@
                                 </li>
                             </ul>
                             <h4>Sub Work Bibliograpghy</h4>
-                            <div id="work-item-sub-bibliograghy-3_36" class="work-item-bibliography">
-                                <div class="textAndImage">
-                                    <DIV class="tan_divider">
+                            <div id="work-item-sub-bibliograghy-3_36" class="stgall-work-item-bibliography">
+                                <div class="stgall-textAndImage">
+                                    <DIV class="stgall-tan_divider">
                                         <p>
                                             <ol style="list-style-type:none" id="WorkBibiliography">
                                                 <li>
@@ -3617,16 +3288,9 @@
                                     </DIV>
                                 </div>
                             </div>
-                            <h4> Sub Work Transcription</h4>
-                            <div id="work-sub-item-transcription-3_36" class="work-item-transcription ">
-                                <div class="tan_divider">
-                                    <br>
-                                    <div class="transcriptionSource"></div>
-                                </div>
-                            </div>
                             <br>
                         </div>
-                        <div class="work-item">
+                        <div class="stgall-work-item">
                             3.37<a target="_top">Explanatio symboli cuiusdam</a><span>
                                             &nbsp; 57v&ndash;57v</span>
                             <ul style="list-style-type:none">
@@ -3641,16 +3305,9 @@
                                 regnat in saecula saeculorum amen
                                 </li>
                             </ul>
-                            <h4> Sub Work Transcription</h4>
-                            <div id="work-sub-item-transcription-3_37" class="work-item-transcription ">
-                                <div class="tan_divider">
-                                    <br>
-                                    <div class="transcriptionSource"></div>
-                                </div>
-                            </div>
                             <br>
                         </div>
-                        <div class="work-item">
+                        <div class="stgall-work-item">
                             3.38<a target="_top">Gennadius, De Ecclesiasticorum Dogmatum (I-LII)</a><span>
                                             &nbsp; f. 58r&ndash;60r; 66v</span>
                             <ul style="list-style-type:none">
@@ -3667,9 +3324,9 @@
                                 </li>
                             </ul>
                             <h4>Sub Work Bibliograpghy</h4>
-                            <div id="work-item-sub-bibliograghy-3_38" class="work-item-bibliography">
-                                <div class="textAndImage">
-                                    <DIV class="tan_divider">
+                            <div id="work-item-sub-bibliograghy-3_38" class="stgall-work-item-bibliography">
+                                <div class="stgall-textAndImage">
+                                    <DIV class="stgall-tan_divider">
                                         <p>
                                             <ol style="list-style-type:none" id="WorkBibiliography">
                                                 <li>
@@ -3695,16 +3352,9 @@
                                     </DIV>
                                 </div>
                             </div>
-                            <h4> Sub Work Transcription</h4>
-                            <div id="work-sub-item-transcription-3_38" class="work-item-transcription ">
-                                <div class="tan_divider">
-                                    <br>
-                                    <div class="transcriptionSource"></div>
-                                </div>
-                            </div>
                             <br>
                         </div>
-                        <div class="work-item">
+                        <div class="stgall-work-item">
                             3.39<a target="_top">Sententiae sanctorum patrum</a><span>
                                             &nbsp; 60r-63v</span>
                             <ul style="list-style-type:none">
@@ -3720,9 +3370,9 @@
                                 </li>
                             </ul>
                             <h4>Sub Work Bibliograpghy</h4>
-                            <div id="work-item-sub-bibliograghy-3_39" class="work-item-bibliography">
-                                <div class="textAndImage">
-                                    <DIV class="tan_divider">
+                            <div id="work-item-sub-bibliograghy-3_39" class="stgall-work-item-bibliography">
+                                <div class="stgall-textAndImage">
+                                    <DIV class="stgall-tan_divider">
                                         <p>
                                             <ol style="list-style-type:none" id="WorkBibiliography">
                                                 <li>
@@ -3746,16 +3396,9 @@
                                     </DIV>
                                 </div>
                             </div>
-                            <h4> Sub Work Transcription</h4>
-                            <div id="work-sub-item-transcription-3_39" class="work-item-transcription ">
-                                <div class="tan_divider">
-                                    <br>
-                                    <div class="transcriptionSource"></div>
-                                </div>
-                            </div>
                             <br>
                         </div>
-                        <div class="work-item">
+                        <div class="stgall-work-item">
                             3.40<a target="_top">Alcuin, De fide sanctae et individuae trinitatis (Liber III:
                                 fragmentum)</a><span>
                                             &nbsp; 64r&ndash;64r</span>
@@ -3772,9 +3415,9 @@
                                 </li>
                             </ul>
                             <h4>Sub Work Bibliograpghy</h4>
-                            <div id="work-item-sub-bibliograghy-3_40" class="work-item-bibliography">
-                                <div class="textAndImage">
-                                    <DIV class="tan_divider">
+                            <div id="work-item-sub-bibliograghy-3_40" class="stgall-work-item-bibliography">
+                                <div class="stgall-textAndImage">
+                                    <DIV class="stgall-tan_divider">
                                         <p>
                                             <ol style="list-style-type:none" id="WorkBibiliography">
                                                 <li>
@@ -3819,16 +3462,9 @@
                                     </DIV>
                                 </div>
                             </div>
-                            <h4> Sub Work Transcription</h4>
-                            <div id="work-sub-item-transcription-3_40" class="work-item-transcription ">
-                                <div class="tan_divider">
-                                    <br>
-                                    <div class="transcriptionSource"></div>
-                                </div>
-                            </div>
                             <br>
                         </div>
-                        <div class="work-item">
+                        <div class="stgall-work-item">
                             3.41<a target="_top">Junilius Africanus, Instituta regularia divinae legis 1:13-20</a><span>
                                             &nbsp; 65v&ndash; 66r</span>
                             <ul style="list-style-type:none">
@@ -3844,9 +3480,9 @@
                                 </li>
                             </ul>
                             <h4>Sub Work Bibliograpghy</h4>
-                            <div id="work-item-sub-bibliograghy-3_41" class="work-item-bibliography">
-                                <div class="textAndImage">
-                                    <DIV class="tan_divider">
+                            <div id="work-item-sub-bibliograghy-3_41" class="stgall-work-item-bibliography">
+                                <div class="stgall-textAndImage">
+                                    <DIV class="stgall-tan_divider">
                                         <p>
                                             <ol style="list-style-type:none" id="WorkBibiliography">
                                                 <li>
@@ -3871,16 +3507,9 @@
                                     </DIV>
                                 </div>
                             </div>
-                            <h4> Sub Work Transcription</h4>
-                            <div id="work-sub-item-transcription-3_41" class="work-item-transcription ">
-                                <div class="tan_divider">
-                                    <br>
-                                    <div class="transcriptionSource"></div>
-                                </div>
-                            </div>
                             <br>
                         </div>
-                        <div class="work-item">
+                        <div class="stgall-work-item">
                             3.42<a target="_top">Incipiunt similtudines per quas potest Χρistianus firmiter fidem
                                 catholicam credere et cognoscere&middot;; ~</a><span>
                                             &nbsp; 66r</span>
@@ -3898,9 +3527,9 @@
                                 </li>
                             </ul>
                             <h4>Sub Work Bibliograpghy</h4>
-                            <div id="work-item-sub-bibliograghy-3_42" class="work-item-bibliography">
-                                <div class="textAndImage">
-                                    <DIV class="tan_divider">
+                            <div id="work-item-sub-bibliograghy-3_42" class="stgall-work-item-bibliography">
+                                <div class="stgall-textAndImage">
+                                    <DIV class="stgall-tan_divider">
                                         <p>
                                             <ol style="list-style-type:none" id="WorkBibiliography">
                                                 <li>
@@ -3918,16 +3547,9 @@
                                     </DIV>
                                 </div>
                             </div>
-                            <h4> Sub Work Transcription</h4>
-                            <div id="work-sub-item-transcription-3_42" class="work-item-transcription ">
-                                <div class="tan_divider">
-                                    <br>
-                                    <div class="transcriptionSource"></div>
-                                </div>
-                            </div>
                             <br>
                         </div>
-                        <div class="work-item">
+                        <div class="stgall-work-item">
                             3.43<a target="_top">Interrogatio de fide catholica</a><span>
                                             &nbsp; 66v&ndash; 66v</span>
                             <ul style="list-style-type:none">
@@ -3942,9 +3564,9 @@
                                 </li>
                             </ul>
                             <h4>Sub Work Bibliograpghy</h4>
-                            <div id="work-item-sub-bibliograghy-3_43" class="work-item-bibliography">
-                                <div class="textAndImage">
-                                    <DIV class="tan_divider">
+                            <div id="work-item-sub-bibliograghy-3_43" class="stgall-work-item-bibliography">
+                                <div class="stgall-textAndImage">
+                                    <DIV class="stgall-tan_divider">
                                         <p>
                                             <ol style="list-style-type:none" id="WorkBibiliography">
                                                 <li>
@@ -3960,24 +3582,17 @@
                                     </DIV>
                                 </div>
                             </div>
-                            <h4> Sub Work Transcription</h4>
-                            <div id="work-sub-item-transcription-3_43" class="work-item-transcription ">
-                                <div class="tan_divider">
-                                    <br>
-                                    <div class="transcriptionSource"></div>
-                                </div>
-                            </div>
                             <br>
                         </div>
                     </div>
                     <br>
                     <br>
                 </div>
-                <div id="work-item-transcription-3" class="work-item-transcription toggleDivWorkItem">
-                    <div class="tan_divider">
+                <div id="work-item-transcription-3" class="stgall-work-item-transcription toggleDivWorkItem">
+                    <div class="stgall-tan_divider">
                         <br>
-                        <div class="transcriptionSource">
-                            <div class="transcription-title">
+                        <div class="stgall-transcriptionSource">
+                            <div class="stgall-transcription-title">
                                 <span> 
                                                 [        
                                                 3
@@ -3987,9 +3602,9 @@
                                                 Super symbolum apostolorum quam plurimorum orthodoxorum tractationes
                             cum ceteris de fide tractantibus diuerso modo explanationibus</b>
                             </div>
-                            <div class="transcription-source"> (For transcription source, see bibliography)</div>
+                            <div class="stgall-transcription-source"> (For transcription source, see bibliography)</div>
                             <br>
-                            <div class="transcription-text">
+                            <div class="stgall-transcription-text">
                                 
                                 <br>
                                 <span style="color:red"> INCIPIT SYMBOLUM UEL FIDES APOS- 
@@ -4272,7 +3887,7 @@
                 </div>
                 <br>
             </div>
-            <div class="work-item ">
+            <div class="stgall-work-item ">
                 4 . <a target="_top" href="">Expositio de missa et de ordine ecclesiastico missae et de ordinibus
                             ecclesiasticis, et de ratione sacramenti baptismatis. Diversi canones
                             (Graeciae, Africae, Galliae, Hispaniae). Decretales epistolae antistitum
@@ -4280,16 +3895,16 @@
                             postmodum diversi libri paenitentiarum</a><span>
 							&nbsp; 67r-90v</span>
                 <ul style="list-style-type:none"></ul>
-                <div class="sub-links">
+                <div class="stgall-sub-links">
                     <a href="#" class="toggleLinkWorkItem" data-target="work-item-content-4">
 										Content
 									</a><a href="#" class="toggleLinkWorkItem" data-target="work-item-transcription-4">
 							Text
 										</a>
                 </div>
-                <div id="work-item-content-4" class="work-item-content toggleDivWorkItem">
-                    <div class="flex-container">
-                        <div class="work-title">
+                <div id="work-item-content-4" class="stgall-work-item-content toggleDivWorkItem">
+                    <div class="stgall-flex-container">
+                        <div class="stgall-work-title">
                             <span> [                    4
 ]                    
                         67r-90v</span><span>:                 
@@ -4302,9 +3917,9 @@
                             <br>
                         </div>
                     </div>
-                    <div class="contents">
+                    <div class="stgall-contents">
                         <br>
-                        <div class="work-item">
+                        <div class="stgall-work-item">
                             4.1<a target="_top">Isidore, Etymologiarum, 7:1-4, 12</a><span>
                                             &nbsp; 67r-69v</span>
                             <ul style="list-style-type:none">
@@ -4320,9 +3935,9 @@
                                 </li>
                             </ul>
                             <h4>Sub Work Bibliograpghy</h4>
-                            <div id="work-item-sub-bibliograghy-4_1" class="work-item-bibliography">
-                                <div class="textAndImage">
-                                    <DIV class="tan_divider">
+                            <div id="work-item-sub-bibliograghy-4_1" class="stgall-work-item-bibliography">
+                                <div class="stgall-textAndImage">
+                                    <DIV class="stgall-tan_divider">
                                         <p>
                                             <ol style="list-style-type:none" id="WorkBibiliography">
                                                 <li>
@@ -4350,16 +3965,9 @@
                                     </DIV>
                                 </div>
                             </div>
-                            <h4> Sub Work Transcription</h4>
-                            <div id="work-sub-item-transcription-4_1" class="work-item-transcription ">
-                                <div class="tan_divider">
-                                    <br>
-                                    <div class="transcriptionSource"></div>
-                                </div>
-                            </div>
                             <br>
                         </div>
-                        <div class="work-item">
+                        <div class="stgall-work-item">
                             4.2<a target="_top">Armenius et Honorius, Diligentia</a><span>
                                             &nbsp; f. 69v</span>
                             <ul style="list-style-type:none">
@@ -4378,9 +3986,9 @@
                                 </li>
                             </ul>
                             <h4>Sub Work Bibliograpghy</h4>
-                            <div id="work-item-sub-bibliograghy-4_2" class="work-item-bibliography">
-                                <div class="textAndImage">
-                                    <DIV class="tan_divider">
+                            <div id="work-item-sub-bibliograghy-4_2" class="stgall-work-item-bibliography">
+                                <div class="stgall-textAndImage">
+                                    <DIV class="stgall-tan_divider">
                                         <p>
                                             <ol style="list-style-type:none" id="WorkBibiliography">
                                                 <li>
@@ -4396,16 +4004,9 @@
                                     </DIV>
                                 </div>
                             </div>
-                            <h4> Sub Work Transcription</h4>
-                            <div id="work-sub-item-transcription-4_2" class="work-item-transcription ">
-                                <div class="tan_divider">
-                                    <br>
-                                    <div class="transcriptionSource"></div>
-                                </div>
-                            </div>
                             <br>
                         </div>
-                        <div class="work-item">
+                        <div class="stgall-work-item">
                             4.3<a target="_top">Pseudo-Isidorus, Excerptae sententiae de synodicis</a><span>
                                             &nbsp; 70r-70v</span>
                             <ul style="list-style-type:none">
@@ -4422,9 +4023,9 @@
                                 </li>
                             </ul>
                             <h4>Sub Work Bibliograpghy</h4>
-                            <div id="work-item-sub-bibliograghy-4_3" class="work-item-bibliography">
-                                <div class="textAndImage">
-                                    <DIV class="tan_divider">
+                            <div id="work-item-sub-bibliograghy-4_3" class="stgall-work-item-bibliography">
+                                <div class="stgall-textAndImage">
+                                    <DIV class="stgall-tan_divider">
                                         <p>
                                             <ol style="list-style-type:none" id="WorkBibiliography">
                                                 <li>
@@ -4457,14 +4058,14 @@
                                 </div>
                             </div>
                             <h4>Sub Work Contents</h4>
-                            <div id="work-item-sub-content-4_3" class="sub-work-item-content">
-                                <DIV class="tan_divider">
+                            <div id="work-item-sub-content-4_3" class="stgall-work-item-content">
+                                <DIV class="stgall-tan_divider">
                                     <br>
                                     <ul style="list-style-type:none">
                                         <li>
                                             4_3_1 :  
                                     
-                                    <span class="float">70r</span>
+                                    <span class="stgall-float">70r</span>
                                             <p>Pseudo-Isidorus, Concilium Primum Toletanum (excerpta)</p>
                                             <li>
                                                 <b>Rubric: </b>Incipiunt nonnullae excerptae sententiae de synodicis
@@ -4493,7 +4094,7 @@
                                         <li>
                                             4_3_2 :  
                                     
-                                    <span class="float">70r</span>
+                                    <span class="stgall-float">70r</span>
                                             <p>Pseudo-Isidorus, Concilium Toletanum Tertium (excerpta)</p>
                                             <li>
                                                 <b>Rubric: </b>Item in alio concilio
@@ -4519,7 +4120,7 @@
                                         <li>
                                             4_3_3 :  
                                     
-                                    <span class="float">70v</span>
+                                    <span class="stgall-float">70v</span>
                                             <p>Pseudo-Isidorus, Concilium Bracarense Primum (excerpta)</p>
                                             <li>
                                                 <b>Rubric: </b>Item in alio concilio
@@ -4548,23 +4149,16 @@
                                     </ul>
                                 </DIV>
                             </div>
-                            <h4> Sub Work Transcription</h4>
-                            <div id="work-sub-item-transcription-4_3" class="work-item-transcription ">
-                                <div class="tan_divider">
-                                    <br>
-                                    <div class="transcriptionSource"></div>
-                                </div>
-                            </div>
                             <br>
                         </div>
-                        <div class="work-item">
+                        <div class="stgall-work-item">
                             4.4<a target="_top">Isidorus, Etymologiae (excerptae)</a><span>
                                             &nbsp; 71v-72v&gt;</span>
                             <ul style="list-style-type:none"></ul>
                             <h4>Sub Work Bibliograpghy</h4>
-                            <div id="work-item-sub-bibliograghy-4_4" class="work-item-bibliography">
-                                <div class="textAndImage">
-                                    <DIV class="tan_divider">
+                            <div id="work-item-sub-bibliograghy-4_4" class="stgall-work-item-bibliography">
+                                <div class="stgall-textAndImage">
+                                    <DIV class="stgall-tan_divider">
                                         <p>
                                             <ol style="list-style-type:none" id="WorkBibiliography">
                                                 <li>
@@ -4590,14 +4184,14 @@
                                 </div>
                             </div>
                             <h4>Sub Work Contents</h4>
-                            <div id="work-item-sub-content-4_4" class="sub-work-item-content">
-                                <DIV class="tan_divider">
+                            <div id="work-item-sub-content-4_4" class="stgall-work-item-content">
+                                <DIV class="stgall-tan_divider">
                                     <br>
                                     <ul style="list-style-type:none">
                                         <li>
                                             4_4_1 :  
                                     
-                                    <span class="float">71v-72v</span>
+                                    <span class="stgall-float">71v-72v</span>
                                             <p>Isidorus, Etymologiae 8:1 1-5, 70</p>
                                             <li>
                                                 <b>Rubric: </b>Item aliqua de aethimoligiarum, de ecclesia et synagoga.
@@ -4615,7 +4209,7 @@
                                         <li>
                                             4_4_2 :  
                                     
-                                    <span class="float">72v&ndash;73v</span>
+                                    <span class="stgall-float">72v&ndash;73v</span>
                                             <p>Isidorus, Etymologiae 7:12 1-14, 10</p>
                                             <li>
                                                 <b>Rubric: </b>De clericis
@@ -4633,7 +4227,7 @@
                                         <li>
                                             4_4_3 :  
                                     
-                                    <span class="float">73v&ndash;74v</span>
+                                    <span class="stgall-float">73v&ndash;74v</span>
                                             <p>Isidorus, Etymologiae 6:19 1-82</p>
                                             <li>
                                                 <b>Rubric: </b>De officiis
@@ -4651,16 +4245,9 @@
                                     </ul>
                                 </DIV>
                             </div>
-                            <h4> Sub Work Transcription</h4>
-                            <div id="work-sub-item-transcription-4_4" class="work-item-transcription ">
-                                <div class="tan_divider">
-                                    <br>
-                                    <div class="transcriptionSource"></div>
-                                </div>
-                            </div>
                             <br>
                         </div>
-                        <div class="work-item">
+                        <div class="stgall-work-item">
                             4.5<a target="_top">Collectio canonum Hibernensium, Liber XVII, Cap. 16(x) &ndash; Liber
                                 XLII Cap. 13</a><span>
                                             &nbsp; 83r&ndash;90v; 75r-82v</span>
@@ -4675,14 +4262,14 @@
                                 </li>
                             </ul>
                             <h4>Sub Work Contents</h4>
-                            <div id="work-item-sub-content-4_5" class="sub-work-item-content">
-                                <DIV class="tan_divider">
+                            <div id="work-item-sub-content-4_5" class="stgall-work-item-content">
+                                <DIV class="stgall-tan_divider">
                                     <br>
                                     <ul style="list-style-type:none">
                                         <li>
                                             4_5_1 :  
                                     
-                                    <span class="float">83r-83v</span>
+                                    <span class="stgall-float">83r-83v</span>
                                             <p>De Iure Sepulturae. Capitula VIII</p>
                                             <p></p>
                                         </li>
@@ -4691,7 +4278,7 @@
                                         <li>
                                             4_5_2 :  
                                     
-                                    <span class="float">83v</span>
+                                    <span class="stgall-float">83v</span>
                                             <p>De Ordine Inquisitionis Causarum. Capitulum Unum</p>
                                             <p></p>
                                         </li>
@@ -4700,7 +4287,7 @@
                                         <li>
                                             4_5_3 :  
                                     
-                                    <span class="float">83v</span>
+                                    <span class="stgall-float">83v</span>
                                             <p>De Provintia Capitulum VI</p>
                                             <p></p>
                                         </li>
@@ -4709,7 +4296,7 @@
                                         <li>
                                             4_5_4 :  
                                     
-                                    <span class="float">83v-85r</span>
+                                    <span class="stgall-float">83v-85r</span>
                                             <p>De Iudicio. Capitulum XXXII</p>
                                             <p></p>
                                         </li>
@@ -4718,7 +4305,7 @@
                                         <li>
                                             4_5_5 :  
                                     
-                                    <span class="float">85r</span>
+                                    <span class="stgall-float">85r</span>
                                             <p>De Veritate. Capitulum VI</p>
                                             <p></p>
                                         </li>
@@ -4727,7 +4314,7 @@
                                         <li>
                                             4_5_6 :  
                                     
-                                    <span class="float">85r-85v</span>
+                                    <span class="stgall-float">85r-85v</span>
                                             <p>De Dominatu et subiectione. Capitula IIII</p>
                                             <p></p>
                                         </li>
@@ -4736,7 +4323,7 @@
                                         <li>
                                             4_5_7 :  
                                     
-                                    <span class="float">85v-86v</span>
+                                    <span class="stgall-float">85v-86v</span>
                                             <p>De Regno. Capitula XXII</p>
                                             <p></p>
                                         </li>
@@ -4745,7 +4332,7 @@
                                         <li>
                                             4_5_8 :  
                                     
-                                    <span class="float">86v</span>
+                                    <span class="stgall-float">86v</span>
                                             <p>De Sorte. Capitula V</p>
                                             <p></p>
                                         </li>
@@ -4754,7 +4341,7 @@
                                         <li>
                                             4_5_9 :  
                                     
-                                    <span class="float">86v-88r</span>
+                                    <span class="stgall-float">86v-88r</span>
                                             <p>De Sceleribus et Vindictis Reorum. Capitula XXV</p>
                                             <p></p>
                                         </li>
@@ -4763,7 +4350,7 @@
                                         <li>
                                             4_5_10 :  
                                     
-                                    <span class="float">88r-89r</span>
+                                    <span class="stgall-float">88r-89r</span>
                                             <p>De Civitatibus Refugii. Capitula XII</p>
                                             <p></p>
                                         </li>
@@ -4772,7 +4359,7 @@
                                         <li>
                                             4_5_11 :  
                                     
-                                    <span class="float">89r-89v</span>
+                                    <span class="stgall-float">89r-89v</span>
                                             <p>De Furto. Capitula VIII</p>
                                             <p></p>
                                         </li>
@@ -4781,7 +4368,7 @@
                                         <li>
                                             4_5_12 :  
                                     
-                                    <span class="float">89v-90r</span>
+                                    <span class="stgall-float">89v-90r</span>
                                             <p>De Commendatis. Capitula V</p>
                                             <p></p>
                                         </li>
@@ -4790,7 +4377,7 @@
                                         <li>
                                             4_5_13 :  
                                     
-                                    <span class="float">90r-90v</span>
+                                    <span class="stgall-float">90r-90v</span>
                                             <p>De Patribus et Filiis. Capitula XV</p>
                                             <p></p>
                                         </li>
@@ -4799,7 +4386,7 @@
                                         <li>
                                             4_5_14 :  
                                     
-                                    <span class="float">90v; 75r-75v</span>
+                                    <span class="stgall-float">90v; 75r-75v</span>
                                             <p>De Parentibus et Eorum Heredibus. Capitula XXI</p>
                                             <p></p>
                                         </li>
@@ -4808,7 +4395,7 @@
                                         <li>
                                             4_5_15 :  
                                     
-                                    <span class="float">75v-76r</span>
+                                    <span class="stgall-float">75v-76r</span>
                                             <p>De Debitis et Pignoribus et Usuris. Capitula XI</p>
                                             <p></p>
                                         </li>
@@ -4817,7 +4404,7 @@
                                         <li>
                                             4_5_16 :  
                                     
-                                    <span class="float">76r-76v</span>
+                                    <span class="stgall-float">76r-76v</span>
                                             <p>De Fide Iussoribus et Ratis et Stipulationibus. Capitula VII</p>
                                             <p></p>
                                         </li>
@@ -4826,7 +4413,7 @@
                                         <li>
                                             4_5_17 :  
                                     
-                                    <span class="float">76v-77r</span>
+                                    <span class="stgall-float">76v-77r</span>
                                             <p>De Iuramento. Capitula XIIII</p>
                                             <p></p>
                                         </li>
@@ -4835,7 +4422,7 @@
                                         <li>
                                             4_5_18 :  
                                     
-                                    <span class="float">77r-77v</span>
+                                    <span class="stgall-float">77r-77v</span>
                                             <p>De Eubeleo. Capitula XI</p>
                                             <p></p>
                                         </li>
@@ -4844,7 +4431,7 @@
                                         <li>
                                             4_5_19 :  
                                     
-                                    <span class="float">77v-79r</span>
+                                    <span class="stgall-float">77v-79r</span>
                                             <p>De Principatu. Capitula XXXVIII</p>
                                             <p></p>
                                         </li>
@@ -4853,7 +4440,7 @@
                                         <li>
                                             4_5_20 :  
                                     
-                                    <span class="float">79r-80r</span>
+                                    <span class="stgall-float">79r-80r</span>
                                             <p>De Doctoribus Ecclesiae. Capitula XVIIII</p>
                                             <p></p>
                                         </li>
@@ -4862,7 +4449,7 @@
                                         <li>
                                             4_5_21 :  
                                     
-                                    <span class="float">80r-81r</span>
+                                    <span class="stgall-float">80r-81r</span>
                                             <p>De Monachis. Capitula XV</p>
                                             <p></p>
                                         </li>
@@ -4871,7 +4458,7 @@
                                         <li>
                                             4_5_22 :  
                                     
-                                    <span class="float">81r-81v</span>
+                                    <span class="stgall-float">81r-81v</span>
                                             <p>De Excommunicatione. Capitula XVI</p>
                                             <p></p>
                                         </li>
@@ -4880,7 +4467,7 @@
                                         <li>
                                             4_5_23 :  
                                     
-                                    <span class="float">81v-82r</span>
+                                    <span class="stgall-float">81v-82r</span>
                                             <p>De Comendationibus Mortuorum. Capitula XI</p>
                                             <p></p>
                                         </li>
@@ -4889,7 +4476,7 @@
                                         <li>
                                             4_5_24 :  
                                     
-                                    <span class="float">82r-82v</span>
+                                    <span class="stgall-float">82r-82v</span>
                                             <p>De Ecclesia et Mundo. Capitula XII</p>
                                             <p>
                                                 <li>
@@ -4946,23 +4533,16 @@
                                     </ul>
                                 </DIV>
                             </div>
-                            <h4> Sub Work Transcription</h4>
-                            <div id="work-sub-item-transcription-4_5" class="work-item-transcription ">
-                                <div class="tan_divider">
-                                    <br>
-                                    <div class="transcriptionSource"></div>
-                                </div>
-                            </div>
                             <br>
                         </div>
                     </div>
                     <br>
                     <br>
                 </div>
-                <div id="work-item-transcription-4" class="work-item-transcription toggleDivWorkItem">
-                    <div class="tan_divider">
+                <div id="work-item-transcription-4" class="stgall-work-item-transcription toggleDivWorkItem">
+                    <div class="stgall-tan_divider">
                         <br>
-                        <div class="transcriptionSource"></div>
+                        <div class="stgall-transcriptionSource"></div>
                     </div>
                 </div>
                 <br>

@@ -17,8 +17,8 @@
        
 			
            
-			<div class="flex-container">
-		    <div class="work-title">
+			<div class="stgall-flex-container">
+		    <div class="stgall-work-title">
 		       <!-- Contents for left view frame copy paste the DIV tag section to add more
                     content.
     The page numbers to the right are under span tags--><span> [                    <xsl:value-of select="$count" />
@@ -32,14 +32,14 @@
 
                     <br />
 		   	 </div>
-			</div>
+			
           
               
 
                     
 
 
-                    <div class="contents">
+                    <div class="stgall-contents">
                         <br />
                         <!--<img src="images/icon_content.jpg" width="20" height="20" alt="Content" />:-->
 						
@@ -68,7 +68,7 @@
                                         </div>
                                     </xsl:if>
 
-                                    <div class="work-item">
+                                    <div class="stgall-work-item">
 
                                         <xsl:value-of select="$count" />.<xsl:value-of select="position()" />
                                     <xsl:text></xsl:text>
@@ -154,7 +154,7 @@
                                                 <h4>Sub Work Bibliograpghy</h4>
                                                 <xsl:text></xsl:text>
                                                 <div id="work-item-sub-bibliograghy-{@n}"
-													class="work-item-bibliography">
+													class="stgall-work-item-bibliography">
 		
 		
 													<xsl:call-template
@@ -177,7 +177,7 @@
                                         <h4>Sub Work Contents</h4>
                                         <xsl:text></xsl:text>
                                         <div id="work-item-sub-content-{@n}"
-													class="sub-work-item-content">
+													class="stgall-work-item-content">
 		
 		
 													<xsl:call-template
@@ -217,7 +217,7 @@
                 <!-- Content table for left view frame END-->
                 <br />
                 <br />
-
+</div>
 
 </xsl:template>
 

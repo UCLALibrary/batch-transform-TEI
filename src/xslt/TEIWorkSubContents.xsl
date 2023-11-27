@@ -16,7 +16,7 @@
          
 
                     <DIV
-                        class="tan_divider">
+                        class="stgall-tan_divider">
                         <br />
                         <!--<img
                         src="images/icon_content.jpg" width="20" height="20" alt="Content" />:-->
@@ -28,7 +28,7 @@
                                     <xsl:value-of select="@n" /> : &#032;
                                     <!-- This link goes to the page of the transcription that is the
                                     first for this section -->
-                                    <span class="float">
+                                    <span class="stgall-float">
                                         <xsl:value-of select="tei:locus" />
                                     </span>
 

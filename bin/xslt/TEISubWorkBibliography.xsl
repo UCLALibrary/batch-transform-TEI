@@ -18,12 +18,12 @@
     <xsl:template match="/" name="generateSubWorkBibliography">
      <xsl:param name="count"/>
 
-        <div class="textAndImage">
+        <div class="stgall-textAndImage">
            
 
            
 
-                    <DIV class="tan_divider">
+                    <DIV class="stgall-tan_divider">
 
                         <!-- heading information; manuscript number, etc. -->
 

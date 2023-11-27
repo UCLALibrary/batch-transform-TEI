@@ -1,6 +1,11 @@
 
 import java.io.File;
 import java.io.FileOutputStream;
+
+import java.net.URLEncoder;
+import java.nio.charset.StandardCharsets;
+
+
 import javax.xml.transform.Transformer;
 import javax.xml.transform.TransformerFactory;
 import javax.xml.transform.stream.StreamResult;
@@ -11,7 +16,7 @@ public class BatchTransform {
 	public static void main(String[] args) {
 		// TODO Auto-generated method stub
 		System.out.println("Hello World!");
-		 String inputDir = "/Users/parinitamulak/stgallmss-vite/public";
+		 String inputDir = "/Users/parinitamulak/eclipse-workspace/BatchTransformTEI/src/xml";
 	        String outputDir = "/Users/parinitamulak/eclipse-workspace/BatchTransformTEI/src/output";
 
 	        // Create a directory for the output if it doesn't exist
@@ -28,13 +33,18 @@ public class BatchTransform {
 	                for (File xmlFile : xmlFiles) {
 	                    // Construct the paths for input and output files
 	                    String inputFilePath = xmlFile.getAbsolutePath();
-	                    String outputFilePath = outputDir + File.separator + xmlFile.getName().replace(".xml", ".html");
+						String encodedFilePath = URLEncoder.encode(inputFilePath, StandardCharsets.UTF_8.toString());
+	                    String fileName = xmlFile.getName().replace(".xml", ".html.erb");
+	                    String outputFilePath = outputDir + File.separator + fileName;
 
+						System.out.println("Input File Path: " + inputFilePath);
+						System.out.println("encodedFilePath: " + encodedFilePath);
+						System.out.println("Output File Path: " + outputFilePath);
 	                    // Create a Transformer for XSLT transformation
 	                    Transformer transformer = factory.newTransformer(new StreamSource("/Users/parinitamulak/eclipse-workspace/BatchTransformTEI/src/xslt/TEIManuscriptContents.xsl"));
 
 	                    // Perform the transformation
-	                    transformer.transform(new StreamSource(inputFilePath), new StreamResult(new FileOutputStream(outputFilePath)));
+	                    transformer.transform(new StreamSource(encodedFilePath), new StreamResult(new FileOutputStream(outputFilePath)));
 
 	                    System.out.println("Transformed: " + xmlFile.getName());
 	                }
