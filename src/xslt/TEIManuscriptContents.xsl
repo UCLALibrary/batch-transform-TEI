@@ -32,7 +32,7 @@
 
 					}
 
-					.stgall-title {
+					.item-page__title {
 					font-size: 24px;
 					font-weight: bold;
 					margin: 20px 0;
@@ -67,7 +67,7 @@
 					margin: 20px;
 					}
 
-					.stgall-title {
+					.item-page__title {
 					display: flex;
 					flex-direction: row;
 					align-items: center;
@@ -116,7 +116,7 @@
 			<body>
 				<!-- Your other HTML content generation here -->
 				<div class="flex-container">
-					<div class="stgall-title">
+					<div class="item-page__title">
 						<xsl:value-of
 							select="tei:TEI/tei:text/tei:body/tei:msDesc/tei:msIdentifier/tei:repository" />
 						: <xsl:value-of
