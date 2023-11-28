@@ -5,7 +5,7 @@
    
     <!-- below commented-out by RMP; only for testing -->
     <!-- <xsl:param name="count" select="1"></xsl:param> -->
-    <xsl:param name="fileId" />
+   
     <xsl:output method="html" />
     <!--xsl:include href="TEIBibliography.xsl" /-->
     <!-- <xsl:param name="count" select="8"></xsl:param>lisa needs to delete before uploading to
@@ -19,7 +19,7 @@
     <xsl:template match="/" name="generateWorkBibliography">
 		 <xsl:param name="count" />
        
-                    <DIV class="tan_divider">
+                    <DIV class="stgall-tan_divider">
 
                         <!-- heading information; manuscript number, etc. -->
 
@@ -43,13 +43,13 @@
                                 <!-- for each listBibl element under the msItem, do the following -->
                                 <xsl:for-each select="tei:listBibl">
                                     <li>
-                                        <xsl:if test="tei:nobib">
+                                        <!--xsl:if test="tei:nobib">
                                             <xsl:text>See </xsl:text>
                                             <a target="_top" style="border-style:none" href="/stgallmss/viewItem.do?xmlstylesheet=TEIWorkContents.xsl&amp;count={@n}&amp;pageArk={tei:locus/@facs}&amp;fileId={$fileId}">
         here.</a>
                                             <xsl:text></xsl:text>
 
-                                        </xsl:if>
+                                        </xsl:if-->
                                         <!-- /stgallmss/viewItem.do?xmlstylesheet=TEIWorkContents.xsl&amp;count={@n}&amp;pageArk={tei:locus/@facs}&amp;fileId={$fileId} -->
                                         <!-- print in bold the listBibl heading -->
                                         <b>

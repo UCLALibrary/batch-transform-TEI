@@ -5,7 +5,8 @@
 <xsl:stylesheet xmlns:xsl="http://www.w3.org/1999/XSL/Transform" version="1.0"
     xmlns:tei="http://www.tei-c.org/ns/1.0">
    
-   
+   <xsl:include href="TEISubWorkBibliography.xsl" />
+   <xsl:include href="TEIWorkSubContents.xsl" />
     <!-- line below only used for testing 
         <xsl:param name="count" select="4"/>  -->
     <!--xsl:include href="TEIBibliography.xsl" /-->
@@ -16,8 +17,8 @@
        
 			
            
-			<div class="flex-container">
-		    <div class="work-title">
+			<div class="stgall-flex-container">
+		    <div class="stgall-work-title">
 		       <!-- Contents for left view frame copy paste the DIV tag section to add more
                     content.
     The page numbers to the right are under span tags--><span> [                    <xsl:value-of select="$count" />
@@ -31,14 +32,14 @@
 
                     <br />
 		   	 </div>
-			</div>
+			
           
               
 
                     
 
 
-                    <div class="contents">
+                    <div class="stgall-contents">
                         <br />
                         <!--<img src="images/icon_content.jpg" width="20" height="20" alt="Content" />:-->
 						
@@ -67,9 +68,9 @@
                                         </div>
                                     </xsl:if>
 
-                                    <div class="work-item">
+                                    <div class="stgall-work-item">
 
-                                        <xsl:value-of select="$count" />_<xsl:value-of select="position()" />
+                                        <xsl:value-of select="$count" />.<xsl:value-of select="position()" />
                                     <xsl:text></xsl:text>
 
 
@@ -147,10 +148,21 @@
                                         <xsl:if test="count(tei:listBibl/tei:head[. = 'Related Texts'] | tei:listBibl/tei:head[. = 'Bibliography'] | tei:listBibl/tei:head[. = 'Editions']  |  tei:listBibl/tei:head[. = 'Edition']   | tei:listBibl/tei:head[. = 'Edition and Bibliography']  |   tei:listBibl/tei:head[. = 'Translation'])  > 0">
                                             <xsl:if test="count(tei:listBibl/tei:head[. = 'Related Texts'] | tei:listBibl/tei:head[. = 'Bibliography'] | tei:listBibl/tei:head[. = 'Editions'] |  tei:listBibl/tei:head[. = 'Translation'] | tei:listBibl/tei:head[. = 'Edition and Bibliography'] | tei:listBibl/tei:head[. = 'Edition']/following-sibling::tei:biblStruct) > 0">
                                                 <!-- href="/stgallmss/viewFile.do?xmlstylesheet=TEISubWorkBibliography.xsl&amp;count={@n}&amp;fileId={$fileId}"-->
-                                                <a style="" href="javascript:void(0)" onclick="performXSLTTransformation('TEISubWorkBibliography.xsl','{@n}');">
+                                                <!--a style="" href="javascript:void(0)" onclick="performXSLTTransformation('TEISubWorkBibliography.xsl','{@n}');">
                                                     <img src="../images/icon_bibliography.jpg" width="20" height="20" alt="Bibliography" />
-                                                </a>
+                                                </a-->
+                                                <h4>Sub Work Bibliograpghy</h4>
                                                 <xsl:text></xsl:text>
+                                                <div id="work-item-sub-bibliograghy-{@n}"
+													class="stgall-work-item-bibliography">
+		
+		
+													<xsl:call-template
+														name="generateSubWorkBibliography">
+														<xsl:with-param name="count"
+															select="@n" />
+													</xsl:call-template>
+												</div>
                                             </xsl:if>
                                         </xsl:if>
 
@@ -159,16 +171,39 @@
                                     <xsl:if test="count(tei:msItem) > 0">
                                         <!-- /stgallmss/viewItem.do?xmlstylesheet=TEIWorkSubContents.xsl&amp;count={@n}&amp;pageArk={tei:locus/@facs}&amp;fileId={$fileId} -->
 
-                                        <a target="_top" style="border-style:none" href="javascript:void(0)" onclick="performXSLTTransformation('TEIWorkSubContents.xsl','{@n}', '{tei:locus/@facs}');">
+                                        <!--a target="_top" style="border-style:none" href="javascript:void(0)" onclick="performXSLTTransformation('TEIWorkSubContents.xsl','{@n}', '{tei:locus/@facs}');">
                                             <img src="../images/icon_content.jpg" width="20" height="20" alt="Content" style="" />
-                                        </a>
+                                        </a-->
+                                        <h4>Sub Work Contents</h4>
                                         <xsl:text></xsl:text>
+                                        <div id="work-item-sub-content-{@n}"
+													class="stgall-work-item-content">
+		
+		
+													<xsl:call-template
+														name="generateSubWorkContent">
+														<xsl:with-param name="count"
+															select="@n" />
+													</xsl:call-template>
+												</div>
+                                        
                                     </xsl:if>
                                     <!-- href="/stgallmss/viewItem.do?xmlstylesheet=TEITranscription.xsl&amp;count={@n}&amp;pageArk={tei:locus/@facs}&amp;fileId={$fileId}" -->
-                                    <a target="_top" style="" href="javascript:void(0)" onclick="performXSLTTransformation('TEITranscription.xsl','{@n}', '{tei:locus/@facs}');">
+                                    <!--a target="_top" style="" href="javascript:void(0)" onclick="performXSLTTransformation('TEITranscription.xsl','{@n}', '{tei:locus/@facs}');">
                                         <img src="../images/icon_text.jpg" width="20" height="20" alt="Text" style="" />
-                                    </a>
-                                    <xsl:text></xsl:text>
+                                    </a-->
+                                    <!--xsl:text></xsl:text>
+                                    <h4> Sub Work Transcription</h4>
+                                    <div id="work-sub-item-transcription-{@n}"
+										class="work-item-transcription ">
+										<xsl:call-template
+											name="generateWorkTranscription">
+											<xsl:with-param name="count"
+												select="@n" />
+											<xsl:with-param name="ark"
+												select="tei:locus/@facs" />
+										</xsl:call-template>
+									</div-->
                                     <br />
                                 </div>
 
@@ -182,7 +217,7 @@
                 <!-- Content table for left view frame END-->
                 <br />
                 <br />
-
+</div>
 
 </xsl:template>
 

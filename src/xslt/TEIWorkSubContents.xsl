@@ -4,148 +4,31 @@
 <!-- edited by Richard Pollard to include bibliography 10/2010 -->
 <xsl:stylesheet xmlns:xsl="http://www.w3.org/1999/XSL/Transform" version="1.0"
     xmlns:tei="http://www.tei-c.org/ns/1.0">
-    <xsl:param name="count" />
-    <xsl:param name="fileId" />
-    <xsl:param name="ark" />
-    <!-- line below only used for testing  
-        <xsl:param name="count" select="4.3"></xsl:param> -->
-    <xsl:include href="TEIBibliography.xsl" />
+   
+   
     <xsl:output method="html" />
-    <xsl:template match="/">
+    <xsl:template match="/" name="generateSubWorkContent">
 
+ <xsl:param name="count" />
+       
 
-        <table width="95%" border="0" align="center" cellpadding="3" cellspacing="0"
-            bgcolor="#ffffff">
-
-            <tr>
-                <td class="title">
-                    <xsl:value-of
-                        select="tei:TEI/tei:text/tei:body/tei:msDesc/tei:msIdentifier/tei:repository"></xsl:value-of>
-        :  
-                    <xsl:value-of
-                        select="tei:TEI/tei:text/tei:body/tei:msDesc/tei:msIdentifier/tei:idno"></xsl:value-of>
-                </td>
-            </tr>
-            <tr>
-                <td>
-
-                    <!-- sub nav table for left view frame-->
-
-                    <table width="100%" border="0" cellspacing="5" cellpadding="5" bgcolor="#ffffff">
-                        <tr>
-                            <td width="33%" class="subnav_on">
-                                <a href="javascript:void(0)"
-                                    onclick="fetchFile('TEIManuscriptContents.xsl','{$fileId}');">
-        Contents</a>
-                            </td>
-                            <!--
-                            href="/stgallmss/viewFile.do?xmlstylesheet=TEIManuscriptBiblio.xsl&amp;fileId={$fileId}"-->
-                            <td width="33%" class="subnav_off">
-                                <a href="javascript:void(0)"
-                                    onclick="fetchFile('TEIManuscriptBiblio.xsl','{$fileId}');">Codicological
-        Bibliography</a>
-                            </td>
-                            <!--
-                            href="/stgallmss/viewFile.do?xmlstylesheet=TEIManuscriptDesc.xsl&amp;imageark={tei:TEI/tei:text/tei:body/tei:msDesc/tei:physDesc/tei:collation/@ark}&amp;fileId={$fileId}"-->
-                            <td class="subnav_off">
-                                <a href="javascript:void(0)"
-                                    onclick="fetchFile('TEIManuscriptDesc.xsl','{$fileId}','{tei:TEI/tei:text/tei:body/tei:msDesc/tei:physDesc/tei:collation/@ark}');">Codicological
-        Description</a>
-                            </td>
-                        </tr>
-                    </table>
-
-                    <!-- sub nav table for left view frame END  -->
-
-                </td>
-            </tr>
-            <!--<tr>
-    <td><table width="100%" border="0" cellspacing="0" cellpadding="3">
-        <tr>
-          <td width="10%" height="29" align="left" valign="middle" nowrap="nowrap">Legend:</td>
-          <td width="20%" align="left" valign="middle" nowrap="nowrap"><img
-            src="/images/icon_bibliography.jpg" width="20" height="20" alt=" Bibliography" />
-            Bibliography</td>
-          <td width="19%" align="left" valign="middle" nowrap="nowrap"><img
-            src="/images/icon_translation.jpg" width="20" height="20" alt="Translation" />
-            Translation</td>
-          <td width="16%" align="left" valign="middle" nowrap="nowrap"><img src="/images/icon_content.jpg"
-            width="20" height="20" alt="Content" /> Content</td>
-          <td width="35%" align="left" valign="middle" nowrap="nowrap"><img src="/images/icon_text.jpg"
-            width="20" height="20" alt="Text" /> Text </td>
-        </tr>
-    </table></td>
-  </tr>-->
-            <tr>
-                <td align="left" valign="top">
-
-                    <!-- Contents for left view frame copy paste the DIV tag section to add more
-                    content.
-    The page numbers to the right are under span tags--> [ <xsl:value-of select="$count" /> ] <b>
-                        <xsl:value-of
-                            select="tei:TEI/tei:text/tei:body/tei:msDesc/tei:msContents/tei:msItem/tei:msItem[@n = $count]/tei:locus" />
-                    </b>
-        :  
-                    <i>
-                        <xsl:value-of
-                            select="tei:TEI/tei:text/tei:body/tei:msDesc/tei:msContents/tei:msItem/tei:msItem[@n = $count]/tei:title" />
-                    </i>
-
-                    <br />
-                    <!--<ul>
-                    <xsl:choose>
-                        <xsl:when test="tei:TEI/tei:text/tei:body/tei:msDesc/tei:msContents/tei:msItem[@n =
-                    $count]/tei:rubric">
-                           <xsl:choose>
-                                <xsl:when test="tei:TEI/tei:text/tei:body/tei:msDesc/tei:msContents/tei:msItem[@n =
-                    $count]/tei:rubric[@rend='red']">
-                                    <li>Rubric:  <span style="color:#ff0000"><xsl:value-of
-                    select="tei:TEI/tei:text/tei:body/tei:msDesc/tei:msContents/tei:msItem[@n =
-                    $count]/tei:rubric"/></span></li>                             
-                                </xsl:when>
-                                <xsl:otherwise>
-                                    <li>Rubric:  <xsl:value-of select="tei:TEI/tei:text/tei:body/tei:msDesc/tei:msContents/tei:msItem[@n
-                    = $count]/tei:rubric"/></li>
-                               </xsl:otherwise>
-                            </xsl:choose>
-                        </xsl:when>
-                        <xsl:otherwise></xsl:otherwise>
-                    </xsl:choose>
-                    <li>Incipit: <xsl:value-of
-                    select="tei:TEI/tei:text/tei:body/tei:msDesc/tei:msContents/tei:msItem[@n =
-                    $count]/tei:incipit"/></li>
-                    <li>Explicit: <xsl:value-of
-                    select="tei:TEI/tei:text/tei:body/tei:msDesc/tei:msContents/tei:msItem[@n =
-                    $count]/tei:explicit"/></li>
-					
-                <br/>
-                <br/>
-                <a
-                    href="/stgallmss/viewFile.do?xmlstylesheet=http://www.stgallplan.org/stgallmss/xslt/workbibliography.xsl&amp;count={$count}&amp;fileId={$fileId}"><img
-                    src="/images/icon_bibliography.jpg" width="20" height="20" alt="Bibliography"
-                    /></a> &nbsp;
-                <a target="_top"
-                    href="/stgallmss/viewItem.do?xmlstylesheet=http://www.stgallplan.org/stgallmss/xslt/transcription.xsl&amp;count={$count}&amp;ark={text/body/msDesc/msContents/msItem[@n
-                    = $count]/locus/@ark}&amp;fileId={$fileId}"><img src="/images/icon_text.jpg"
-                    width="20" height="20" alt="Text" /></a>&nbsp;
-                
-          <img src="/images/icon_translation.jpg" width="20" height="20" alt="Translation" />
-          </ul>-->
+           
+         
 
                     <DIV
-                        class="tan_divider">
+                        class="stgall-tan_divider">
                         <br />
                         <!--<img
                         src="images/icon_content.jpg" width="20" height="20" alt="Content" />:-->
 
                         <ul style="list-style-type:none">                            <!-- Book-Level -->
                             <xsl:for-each
-                                select="tei:TEI/tei:text/tei:body/tei:msDesc/tei:msContents/tei:msItem/tei:msItem[@n = $count]">
+                                select="tei:msItem">
                                 <li>
-                                    <xsl:value-of select="$count" />
+                                    <xsl:value-of select="@n" /> : &#032;
                                     <!-- This link goes to the page of the transcription that is the
                                     first for this section -->
-                                    <span class="float">
+                                    <span class="stgall-float">
                                         <xsl:value-of select="tei:locus" />
                                     </span>
 
@@ -154,10 +37,11 @@
                                         <xsl:when test="tei:title">
 
                                             <p>
-                                                <a target="_top"
+                                                <!--a target="_top"
                                                     href="/stgallmss/viewItem.do?xmlstylesheet=TEITranscription.xsl&amp;count={@n}&amp;pageArk={tei:locus/@facs}&amp;fileId={$fileId}">
                                                     <xsl:value-of select="tei:title" />
-                                                </a>
+                                                </a-->
+                                                 <xsl:value-of select="tei:title" />
                                             </p>
 
 
@@ -326,11 +210,12 @@
 
                                     <xsl:for-each select="tei:msItem">
                                         <li>
+											 <xsl:value-of select="tei:locus" />
 
-                                            <a target="_top"
+                                            <!--a target="_top"
                                                 href="/stgallmss/viewItem.do?xmlstylesheet=TEITranscription.xsl&amp;count={@n}&amp;pageArk={tei:locus/@facs}&amp;fileId={$fileId}">
-                                                <xsl:value-of select="tei:locus" />
-                                            </a>
+                                               
+                                            </a-->
         :                                                                                          <!--
                                             This link goes to the page of the transcription that is
                                             the first for this sub-section-->
@@ -465,12 +350,7 @@
 
                     </DIV>
 
-                    <!-- Content table for left view frame END-->
-                    <br />
-                    <br />
-                </td>
-            </tr>
-        </table>
+                   
 
     </xsl:template>
 

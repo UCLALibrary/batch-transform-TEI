@@ -10,10 +10,10 @@
    
      <xsl:param name="count" />
    		<xsl:param name="ark" />
-   		 <div class="tan_divider">
+   		 <div class="stgall-tan_divider">
                         
             <br />
-            <div class="transcriptionSource">
+            <div class="stgall-transcriptionSource">
 				
 				 <xsl:for-each select="/tei:TEI/tei:text/tei:body/tei:div[@type = 'transcription']/tei:div">
 					
@@ -22,7 +22,7 @@
                         <xsl:variable name="workCount" select="@n" />
                         <xsl:if test="$count = '' or $workCount = $count">
 
-                                        <div class="transcription-title">
+                                        <div class="stgall-transcription-title">
                                            
                                            
                                             <!-- work title-->
@@ -37,7 +37,7 @@
                                                 <xsl:value-of select="/tei:TEI/tei:text/tei:body/tei:msDesc/tei:msContents/tei:msItem[@n = $workCount]/tei:title" />
                                             </b>
                                         </div>
-                                        <div class="transcription-source">
+                                        <div class="stgall-transcription-source">
                                             <xsl:if test="/tei:TEI/tei:text/tei:body/tei:msDesc/tei:msContents/tei:msItem[@n = $workCount]/tei:listBibl or /tei:TEI/tei:text/tei:body/tei:msDesc/tei:msContents/tei:msItem[@n = $workCount]/tei:msItem/tei:listBibl">
                                                 <xsl:choose>
                                                     <xsl:when test="not(/tei:TEI/tei:text/tei:body/tei:msDesc/tei:msContents/tei:msItem[@n = $workCount]/tei:msItem)">
@@ -186,7 +186,7 @@
                                         the transcription in question -->
                                         <br />
                                         <!-- Transcription section starts here-->
-                                        <div class="transcription-text">
+                                        <div class="stgall-transcription-text">
                                             <xsl:apply-templates select="/tei:TEI/tei:text/tei:body/tei:div[@type = 'transcription']/tei:div[@n = $workCount]">
 												<xsl:with-param name="ark" select="$ark" />
 											</xsl:apply-templates>
