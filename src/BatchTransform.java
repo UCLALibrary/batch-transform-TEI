@@ -33,18 +33,24 @@ public class BatchTransform {
 	                for (File xmlFile : xmlFiles) {
 	                    // Construct the paths for input and output files
 	                    String inputFilePath = xmlFile.getAbsolutePath();
-						String encodedFilePath = URLEncoder.encode(inputFilePath, StandardCharsets.UTF_8.toString());
+	                   
+						String encodedFileName = URLEncoder.encode(xmlFile.getName(), StandardCharsets.UTF_8.toString());
 	                    String fileName = xmlFile.getName().replace(".xml", ".html.erb");
 	                    String outputFilePath = outputDir + File.separator + fileName;
 
 						System.out.println("Input File Path: " + inputFilePath);
-						System.out.println("encodedFilePath: " + encodedFilePath);
+						System.out.println("encodedFileName: " + encodedFileName);
 						System.out.println("Output File Path: " + outputFilePath);
 	                    // Create a Transformer for XSLT transformation
 	                    Transformer transformer = factory.newTransformer(new StreamSource("/Users/parinitamulak/eclipse-workspace/BatchTransformTEI/src/xslt/TEIManuscriptContents.xsl"));
-
+	                    System.out.println("what is filename:"+ xmlFile.getName());
+	                    System.out.println("full encode file with parent path: " + xmlFile.getParent()+'/'+encodedFileName );
 	                    // Perform the transformation
-	                    transformer.transform(new StreamSource(encodedFilePath), new StreamResult(new FileOutputStream(outputFilePath)));
+	                    if(xmlFile.getName().indexOf("ark%3A21198%2F") == 0) {
+	                    transformer.transform(new StreamSource(xmlFile.getParent()+'/'+encodedFileName), new StreamResult(new FileOutputStream(outputFilePath)));
+	                    } else {
+	                    	transformer.transform(new StreamSource(inputFilePath), new StreamResult(new FileOutputStream(outputFilePath)));
+	                    }
 
 	                    System.out.println("Transformed: " + xmlFile.getName());
 	                }
