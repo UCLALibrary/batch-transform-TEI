@@ -69,6 +69,7 @@
                                     </xsl:if>
 
                                     <div class="stgall-work-item">
+										<div class="stgall-work-item-heading">
 
                                         <xsl:value-of select="$count" />.<xsl:value-of select="position()" />
                                     <xsl:text></xsl:text>
@@ -99,50 +100,51 @@
                                            >
                                             &#160; <xsl:value-of select="tei:locus" />
                                     </span>
-                                    <ul style="list-style-type:none">
+                                    </div>
+                                    <dl class="document-metadata document__list-metadata-group">
                                         <xsl:choose>
                                             <xsl:when test="tei:rubric">
 
-                                                <li>
-                                                    <b>Rubric: </b>
-                                                    <xsl:value-of select="tei:rubric" />
-                                                </li>
+                                                <dl class="document__list-metadata-key document__list-metadata-key--ursus blacklight-date_created_tesim">
+                                                   Rubric:  </dl>
+                                                   <dd class="document__list-metadata-value document__list-metadata-value--ursus blacklight-date_created_tesim"> <xsl:value-of select="tei:rubric" /> </dd>
+                                               
 
                                             </xsl:when>
                                             <xsl:otherwise></xsl:otherwise>
                                         </xsl:choose>
                                         <xsl:if test="tei:incipit">
-                                            <li>
-                                                <b>Incipit: </b>
-                                                <xsl:value-of select="tei:incipit" />
-                                            </li>
+                                            
+                                                <dl class="document__list-metadata-key document__list-metadata-key--ursus blacklight-date_created_tesim">Incipit: </dl>
+                                                <dd class="document__list-metadata-value document__list-metadata-value--ursus blacklight-date_created_tesim"><xsl:value-of select="tei:incipit" /></dd>
+                                            
                                         </xsl:if>
                                         <xsl:if test="tei:explicit">
-                                            <li>
-                                                <b>Explicit: </b>
-                                                <xsl:value-of select="tei:explicit" />
-                                            </li>
+                                            
+                                                <dl class="document__list-metadata-key document__list-metadata-key--ursus blacklight-date_created_tesim">Explicit: </dl>
+                                                <dd class="document__list-metadata-value document__list-metadata-value--ursus blacklight-date_created_tesim"><xsl:value-of select="tei:explicit" /></dd>
+                                           
                                         </xsl:if>
                                         <xsl:if test="tei:incipit2">
-                                            <br></br>
-                                            <li>
-                                                <b>Incipit: </b>
-                                                <xsl:value-of select="tei:incipit2" />
-                                            </li>
+                                           
+                                           
+                                                <dl class="document__list-metadata-key document__list-metadata-key--ursus blacklight-date_created_tesim">Incipit: </dl>
+                                                <dd class="document__list-metadata-value document__list-metadata-value--ursus blacklight-date_created_tesim"><xsl:value-of select="tei:incipit2" /></dd>
+                                            
                                         </xsl:if>
                                         <xsl:if test="tei:explicit2">
-                                            <li>
-                                                <b>Explicit: </b>
-                                                <xsl:value-of select="tei:explicit2" />
-                                            </li>
+                                           
+                                                <dl class="document__list-metadata-key document__list-metadata-key--ursus blacklight-date_created_tesim">Explicit: </dl>
+                                                <dd class="document__list-metadata-value document__list-metadata-value--ursus blacklight-date_created_tesim"><xsl:value-of select="tei:explicit2" /></dd>
+                                            
                                         </xsl:if>
                                         <xsl:if test="tei:note">
-                                            <li>
-                                                <b>Remarks: </b>
-                                                <xsl:value-of select="tei:note" />
-                                            </li>
+                                            
+                                                <dl class="document__list-metadata-key document__list-metadata-key--ursus blacklight-date_created_tesim">Remarks: </dl>
+                                                <dd class="document__list-metadata-value document__list-metadata-value--ursus blacklight-date_created_tesim"><xsl:value-of select="tei:note" /></dd>
+                                            
                                         </xsl:if>
-                                    </ul>
+                                    </dl>
 
                                     <xsl:if test="count(tei:listBibl) > 0">
                                         <xsl:if test="count(tei:listBibl/tei:head[. = 'Related Texts'] | tei:listBibl/tei:head[. = 'Bibliography'] | tei:listBibl/tei:head[. = 'Editions']  |  tei:listBibl/tei:head[. = 'Edition']   | tei:listBibl/tei:head[. = 'Edition and Bibliography']  |   tei:listBibl/tei:head[. = 'Translation'])  > 0">

@@ -43,7 +43,7 @@
                         
                         <p>
                             <!-- begin an ordered list -->
-                            <ol style="list-style-type:none" id="WorkBibiliography">
+                            <ol class="WorkBibiliography" id="WorkBibiliography">
 
                                 <!-- for each listBibl element under the msItem, do the following -->
                                 <xsl:for-each select="tei:listBibl">

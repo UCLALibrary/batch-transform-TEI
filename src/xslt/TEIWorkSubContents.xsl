@@ -17,201 +17,202 @@
 
                     <DIV
                         class="stgall-tan_divider">
-                        <br />
-                        <!--<img
-                        src="images/icon_content.jpg" width="20" height="20" alt="Content" />:-->
+                       
 
-                        <ul style="list-style-type:none">                            <!-- Book-Level -->
+                        <div class="book-level-section">                            <!-- Book-Level -->
                             <xsl:for-each
                                 select="tei:msItem">
-                                <li>
-                                    <xsl:value-of select="@n" /> : &#032;
-                                    <!-- This link goes to the page of the transcription that is the
-                                    first for this section -->
-                                    <span class="stgall-float">
-                                        <xsl:value-of select="tei:locus" />
-                                    </span>
-
-
-                                    <xsl:choose>
-                                        <xsl:when test="tei:title">
-
-                                            <p>
-                                                <!--a target="_top"
-                                                    href="/stgallmss/viewItem.do?xmlstylesheet=TEITranscription.xsl&amp;count={@n}&amp;pageArk={tei:locus/@facs}&amp;fileId={$fileId}">
-                                                    <xsl:value-of select="tei:title" />
-                                                </a-->
-                                                 <xsl:value-of select="tei:title" />
-                                            </p>
-
-
-
-                                            <xsl:if
-                                                test="tei:rubric">
-                                                <li>
-                                                    <b>Rubric: </b>
-                                                    <xsl:value-of select="tei:rubric" />
-                                                </li>
-                                            </xsl:if>
-                                            <xsl:if
-                                                test="tei:incipit">
-                                                <li>
-                                                    <b>Incipit: </b>
-                                                    <xsl:value-of select="tei:incipit" />
-                                                </li>
-                                            </xsl:if>
-                                            <xsl:if
-                                                test="tei:explicit">
-                                                <li>
-                                                    <b>Explicit: </b>
-                                                    <xsl:value-of select="tei:explicit" />
-                                                </li>
-                                            </xsl:if>
-                                            <xsl:if
-                                                test="tei:incipit2">
-                                                <br></br>
-                                                <li>
-                                                    <b>Incipit: </b>
-                                                    <xsl:value-of select="tei:incipit2" />
-                                                </li>
-                                            </xsl:if>
-                                            <xsl:if
-                                                test="tei:explicit2">
-                                                <li>
-                                                    <b>Explicit: </b>
-                                                    <xsl:value-of select="tei:explicit2" />
-                                                </li>
-                                            </xsl:if>
-                                            <xsl:if
-                                                test="tei:note">
-                                                <li>
-                                                    <b>Remarks: </b>
-                                                    <xsl:apply-templates select="tei:note" />
-                                                </li>
-                                            </xsl:if>
-
-                                            <p>
-                                                <xsl:if test="tei:listBibl">
-                                                    <xsl:for-each select="tei:listBibl">
-                                                        <li>
-                                                            <!-- print in bold the listBibl heading -->
-                                                            <b>
-                                                                <xsl:value-of
-                                                                    select="normalize-space(tei:head)" />
-        :</b>
-                                                            <!-- for each citation, do the following -->
-                                                            <xsl:for-each select="tei:biblStruct">
-                                                                <!-- each citation gets its own
-                                                                paragraph -->
-                                                                <p>
-                                                                    <xsl:call-template
-                                                                        name="lisabibliography" />
-                                                                </p>
-                                                            </xsl:for-each>
-
-                                                            <xsl:for-each select="tei:bibl">
-                                                                <p>
-                                                                    <xsl:call-template
-                                                                        name="lisaBibl" />
-                                                                </p>
-                                                            </xsl:for-each>
-                                                            <!-- end citation -->
-                                                        </li>
-                                                    </xsl:for-each>
-                                                </xsl:if>
-                                            </p>
-
-                                        </xsl:when>
-
-                                        <xsl:otherwise>
-                                            <br></br>
-                                            <xsl:if test="tei:rubric">
-                                                <li>
-                                                    <b>Rubric: </b>
-                                                    <xsl:value-of select="tei:rubric" />
-                                                </li>
-                                            </xsl:if>
-                                            <xsl:if
-                                                test="tei:incipit">
-                                                <li>
-                                                    <b>Incipit: </b>
-                                                    <xsl:value-of select="tei:incipit" />
-                                                </li>
-                                            </xsl:if>
-                                            <xsl:if
-                                                test="tei:explicit">
-                                                <li>
-                                                    <b>Explicit: </b>
-                                                    <xsl:value-of select="tei:explicit" />
-                                                </li>
-                                            </xsl:if>
-                                            <xsl:if
-                                                test="tei:incipit2">
-                                                <br></br>
-                                                <li>
-                                                    <b>Incipit: </b>
-                                                    <xsl:value-of select="tei:incipit2" />
-                                                </li>
-                                            </xsl:if>
-                                            <xsl:if
-                                                test="tei:explicit2">
-                                                <li>
-                                                    <b>Explicit: </b>
-                                                    <xsl:value-of select="tei:explicit2" />
-                                                </li>
-                                            </xsl:if>
-                                            <xsl:if
-                                                test="tei:note">
-                                                <li>
-                                                    <b>Remarks: </b>
-                                                    <xsl:apply-templates select="tei:note" />
-                                                </li>
-                                            </xsl:if>
-
-                                            <p>
-                                                <xsl:if test="tei:listBibl">
-                                                    <xsl:for-each select="tei:listBibl">
-                                                        <li>
-                                                            <!-- print in bold the listBibl heading -->
-                                                            <b>
-                                                                <xsl:value-of
-                                                                    select="normalize-space(tei:head)" />
-        :</b>
-                                                            <!-- for each citation, do the following -->
-
-
-                                                            <xsl:for-each select="tei:biblStruct">
-                                                                <!-- each citation gets its own
-                                                                paragraph -->
-                                                                <p>
-                                                                    <xsl:call-template
-                                                                        name="lisabibliography" />
-                                                                </p>
-                                                            </xsl:for-each>
-
-                                                            <xsl:for-each select="tei:bibl">
-                                                                <p>
-                                                                    <xsl:call-template
-                                                                        name="lisaBibl" />
-                                                                </p>
-                                                            </xsl:for-each>
-                                                            <!-- end citation -->
-                                                        </li>
-                                                    </xsl:for-each>
-                                                </xsl:if>
-                                            </p>
-
-                                        </xsl:otherwise>
-                                    </xsl:choose>
-                                </li>
-
-                                <ul
-                                    style="list-style-type:none">                                    <!--Chapter-Level-->
+                                <div class="book-level-item">
+	                                <div class="book-title">
+	                                    <xsl:value-of select="@n" /> : &#032;
+	                                    <!-- This link goes to the page of the transcription that is the
+	                                    first for this section -->
+	                                    <span class="stgall-float">
+	                                        <xsl:value-of select="tei:locus" />
+	                                    </span>
+									</div>
+									
+	
+	                                    <xsl:choose>
+	                                        <xsl:when test="tei:title">
+	
+	                                            <p>
+	                                                <!--a target="_top"
+	                                                    href="/stgallmss/viewItem.do?xmlstylesheet=TEITranscription.xsl&amp;count={@n}&amp;pageArk={tei:locus/@facs}&amp;fileId={$fileId}">
+	                                                    <xsl:value-of select="tei:title" />
+	                                                </a-->
+	                                                 <xsl:value-of select="tei:title" />
+	                                            </p>
+	
+												<dl class="document-metadata document__list-metadata-group">
+	
+	                                            <xsl:if
+	                                                test="tei:rubric">
+	                                               
+	                                                    <dt class="document__list-metadata-key document__list-metadata-key--ursus blacklight-date_created_tesim">Rubric: </dt>
+	                                                   <dd class="document__list-metadata-value document__list-metadata-value--ursus blacklight-date_created_tesim"> <xsl:value-of select="tei:rubric" /> </dd>
+	                                               
+	                                            </xsl:if>
+	                                            <xsl:if
+	                                                test="tei:incipit">
+	                                                
+	                                                    <dt class="document__list-metadata-key document__list-metadata-key--ursus blacklight-date_created_tesim">Incipit: </dt>
+	                                                   <dd class="document__list-metadata-value document__list-metadata-value--ursus blacklight-date_created_tesim"> <xsl:value-of select="tei:incipit" /> </dd>
+	                                                
+	                                            </xsl:if>
+	                                            <xsl:if
+	                                                test="tei:explicit">
+	                                                
+	                                                    <dt class="document__list-metadata-key document__list-metadata-key--ursus blacklight-date_created_tesim">Explicit: </dt>
+	                                                   <dd class="document__list-metadata-value document__list-metadata-value--ursus blacklight-date_created_tesim"> <xsl:value-of select="tei:explicit" /> </dd>
+	                                               
+	                                            </xsl:if>
+	                                            <xsl:if
+	                                                test="tei:incipit2">
+	                                               
+	                                               
+	                                                    <dt class="document__list-metadata-key document__list-metadata-key--ursus blacklight-date_created_tesim">Incipit: </dt>
+	                                                   <dd class="document__list-metadata-value document__list-metadata-value--ursus blacklight-date_created_tesim"> <xsl:value-of select="tei:incipit2" /> </dd>
+	                                                
+	                                            </xsl:if>
+	                                            <xsl:if
+	                                                test="tei:explicit2">
+	                                               
+	                                                    <dt class="document__list-metadata-key document__list-metadata-key--ursus blacklight-date_created_tesim">Explicit: </dt>
+	                                                   <dd class="document__list-metadata-value document__list-metadata-value--ursus blacklight-date_created_tesim"> <xsl:value-of select="tei:explicit2" /> </dd>
+	                                                
+	                                            </xsl:if>
+	                                            <xsl:if
+	                                                test="tei:note">
+	                                               
+	                                                    <dt class="document__list-metadata-key document__list-metadata-key--ursus blacklight-date_created_tesim">Remarks: </dt>
+	                                                   <dd class="document__list-metadata-value document__list-metadata-value--ursus blacklight-date_created_tesim"> <xsl:apply-templates select="tei:note" /> </dd>
+	                                                
+	                                            </xsl:if>
+												  </dl>
+	                                            <p>
+	                                                <xsl:if test="tei:listBibl">
+	                                                    <xsl:for-each select="tei:listBibl">
+	                                                        <li>
+	                                                            <!-- print in bold the listBibl heading -->
+	                                                            <b>
+	                                                                <xsl:value-of
+	                                                                    select="normalize-space(tei:head)" />:</b>
+	                                                            <!-- for each citation, do the following -->
+	                                                            <xsl:for-each select="tei:biblStruct">
+	                                                                <!-- each citation gets its own
+	                                                                paragraph -->
+	                                                                <p>
+	                                                                    <xsl:call-template
+	                                                                        name="lisabibliography" />
+	                                                                </p>
+	                                                            </xsl:for-each>
+	
+	                                                            <xsl:for-each select="tei:bibl">
+	                                                                <p>
+	                                                                    <xsl:call-template
+	                                                                        name="lisaBibl" />
+	                                                                </p>
+	                                                            </xsl:for-each>
+	                                                            <!-- end citation -->
+	                                                        </li>
+	                                                    </xsl:for-each>
+	                                                </xsl:if>
+	                                            </p>
+	
+	                                        </xsl:when>
+	
+	                                        <xsl:otherwise>
+	                                            <dl class="document-metadata document__list-metadata-group">
+	                                            <xsl:if test="tei:rubric">
+	                                               
+	                                                    <dt class="document__list-metadata-key document__list-metadata-key--ursus blacklight-date_created_tesim">Rubric: </dt>
+	                                                    <dd class="document__list-metadata-value document__list-metadata-value--ursus blacklight-date_created_tesim">
+	                                                    <xsl:value-of select="tei:rubric" />
+	                                                    </dd>
+	                                               
+	                                            </xsl:if>
+	                                            <xsl:if
+	                                                test="tei:incipit">
+	                                               
+	                                                    <dt class="document__list-metadata-key document__list-metadata-key--ursus blacklight-date_created_tesim">Incipit: </dt>
+	                                                   <dd class="document__list-metadata-value document__list-metadata-value--ursus blacklight-date_created_tesim"> <xsl:value-of select="tei:incipit" /> </dd>
+	                                                
+	                                            </xsl:if>
+	                                            <xsl:if
+	                                                test="tei:explicit">
+	                                               
+	                                                    <dt class="document__list-metadata-key document__list-metadata-key--ursus blacklight-date_created_tesim">Explicit: </dt>
+	                                                   <dd class="document__list-metadata-value document__list-metadata-value--ursus blacklight-date_created_tesim"> <xsl:value-of select="tei:explicit" /> </dd>
+	                                               
+	                                            </xsl:if>
+	                                            <xsl:if
+	                                                test="tei:incipit2">
+	                                                
+	                                               
+	                                                    <dt class="document__list-metadata-key document__list-metadata-key--ursus blacklight-date_created_tesim">Incipit: </dt>
+	                                                   <dd class="document__list-metadata-value document__list-metadata-value--ursus blacklight-date_created_tesim"> <xsl:value-of select="tei:incipit2" /> </dd>
+	                                                
+	                                            </xsl:if>
+	                                            <xsl:if
+	                                                test="tei:explicit2">
+	                                               
+	                                                    <dt class="document__list-metadata-key document__list-metadata-key--ursus blacklight-date_created_tesim">Explicit: </dt>
+	                                                   <dd class="document__list-metadata-value document__list-metadata-value--ursus blacklight-date_created_tesim"> <xsl:value-of select="tei:explicit2" /> </dd>
+	                                                
+	                                            </xsl:if>
+	                                            <xsl:if
+	                                                test="tei:note">
+	                                               
+	                                                    <dt class="document__list-metadata-key document__list-metadata-key--ursus blacklight-date_created_tesim">Remarks: </dt>
+	                                                    <dd class="document__list-metadata-value document__list-metadata-value--ursus blacklight-date_created_tesim"> <xsl:apply-templates select="tei:note" /> </dd>
+	                                                
+	                                            </xsl:if>
+	                                            </dl>
+	                                            <p>
+	                                                <xsl:if test="tei:listBibl">
+	                                                    <xsl:for-each select="tei:listBibl">
+	                                                        <li>
+	                                                            <!-- print in bold the listBibl heading -->
+	                                                            <b>
+	                                                                <xsl:value-of
+	                                                                    select="normalize-space(tei:head)" />
+	        :</b>
+	                                                            <!-- for each citation, do the following -->
+	
+	
+	                                                            <xsl:for-each select="tei:biblStruct">
+	                                                                <!-- each citation gets its own
+	                                                                paragraph -->
+	                                                                <p>
+	                                                                    <xsl:call-template
+	                                                                        name="lisabibliography" />
+	                                                                </p>
+	                                                            </xsl:for-each>
+	
+	                                                            <xsl:for-each select="tei:bibl">
+	                                                                <p>
+	                                                                    <xsl:call-template
+	                                                                        name="lisaBibl" />
+	                                                                </p>
+	                                                            </xsl:for-each>
+	                                                            <!-- end citation -->
+	                                                        </li>
+	                                                    </xsl:for-each>
+	                                                </xsl:if>
+	                                            </p>
+	
+	                                        </xsl:otherwise>
+	                                    </xsl:choose>
+	                              
+	
+	                                <div class="chapter-level-section">                                    <!--Chapter-Level-->
 
                                     <xsl:for-each select="tei:msItem">
-                                        <li>
+                                        <div class="chapter-level-item">
+											<span class="locus">
 											 <xsl:value-of select="tei:locus" />
-
+											</span>
                                             <!--a target="_top"
                                                 href="/stgallmss/viewItem.do?xmlstylesheet=TEITranscription.xsl&amp;count={@n}&amp;pageArk={tei:locus/@facs}&amp;fileId={$fileId}">
                                                
@@ -222,39 +223,33 @@
 
                                             <xsl:choose>
                                                 <xsl:when test="tei:title">
-                                                    <br />
+                                                   <span class="chapter-item-title">
                                                     <xsl:value-of select="tei:title" />
-                                                    <xsl:if
-                                                        test="tei:rubric">
-                                                        <ul style="list-style-type:none">
-
-                                                            <b>Rubric: </b>
-                                                            <xsl:value-of select="tei:rubric" />
-                                                            <br />
-
-                                                        </ul>
-                                                    </xsl:if>
-                                                    <xsl:if
-                                                        test="tei:incipit">
-                                                        <ul style="list-style-type:none">
-
-                                                            <b>Incipit: </b>
-                                                            <xsl:value-of select="tei:incipit" />
-                                                            <br />
-
-                                                        </ul>
-                                                    </xsl:if>
-                                                    <xsl:if
-                                                        test="tei:explicit">
-                                                        <ul style="list-style-type:none">
-
-                                                            <b>Explicit: </b>
-                                                            <xsl:value-of select="tei:explicit" />
-                                                            <br />
-
-                                                        </ul>
-                                                    </xsl:if>
-
+                                                   </span>
+                                                    <dl class="document-metadata document__list-metadata-group">
+                                                    <xsl:if test="tei:rubric">
+                                               
+                                                    <dt class="document__list-metadata-key document__list-metadata-key--ursus blacklight-date_created_tesim">Rubric: </dt>
+                                                    <dd class="document__list-metadata-value document__list-metadata-value--ursus blacklight-date_created_tesim">
+                                                    <xsl:value-of select="tei:rubric" />
+                                                    </dd>
+                                               
+                                            </xsl:if>
+                                            <xsl:if
+                                                test="tei:incipit">
+                                               
+                                                    <dt class="document__list-metadata-key document__list-metadata-key--ursus blacklight-date_created_tesim">Incipit: </dt>
+                                                   <dd class="document__list-metadata-value document__list-metadata-value--ursus blacklight-date_created_tesim"> <xsl:value-of select="tei:incipit" /> </dd>
+                                                
+                                            </xsl:if>
+                                            <xsl:if
+                                                test="tei:explicit">
+                                               
+                                                    <dt class="document__list-metadata-key document__list-metadata-key--ursus blacklight-date_created_tesim">Explicit: </dt>
+                                                   <dd class="document__list-metadata-value document__list-metadata-value--ursus blacklight-date_created_tesim"> <xsl:value-of select="tei:explicit" /> </dd>
+                                               
+                                            </xsl:if>
+                                                    </dl>
                                                     <p>
                                                         <xsl:if test="tei:listBibl">
                                                             <xsl:for-each select="tei:listBibl">
@@ -295,7 +290,16 @@
 
                                                 <xsl:otherwise>
 
+                                                   <dl class="document-metadata document__list-metadata-group">
+                                                    <xsl:if test="tei:rubric">
+                                               
+                                                    <dt class="document__list-metadata-key document__list-metadata-key--ursus blacklight-date_created_tesim">Rubric: </dt>
+                                                    <dd class="document__list-metadata-value document__list-metadata-value--ursus blacklight-date_created_tesim">
                                                     <xsl:value-of select="tei:rubric" />
+                                                    </dd>
+                                               
+                                            </xsl:if>
+                                            </dl>
 
                                                     <p>
                                                         <xsl:if test="tei:listBibl">
@@ -337,15 +341,15 @@
                                                 </xsl:otherwise>
 
                                             </xsl:choose>
-                                        </li>
-                                        <br />
+                                        </div>
+                                       
                                     </xsl:for-each>
-                                </ul>
-                                <br />
+                                </div>
+                                </div>
 
-
+	
                             </xsl:for-each>
-                        </ul>
+                        </div>
 
 
                     </DIV>
