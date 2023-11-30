@@ -140,8 +140,7 @@
 							<b>
 								<xsl:text>Temporary Summary of Contents:</xsl:text>
 							</b>
-							<br></br>
-							<br></br>
+							
 							<xsl:copy-of
 								select="tei:TEI/tei:text/tei:body/tei:msDesc/tei:msContents/tei:mini" />
 						</div>
@@ -237,9 +236,9 @@
 											<xsl:if test="count(tei:listBibl/tei:head[. = 'Related Texts'] | tei:listBibl/tei:head[. = 'Bibliography'] | tei:listBibl/tei:head[. = 'Editions'] |  tei:listBibl/tei:head[. = 'Translation'] | tei:listBibl/tei:head[. = 'Edition and Bibliography'] | tei:listBibl/tei:head[. = 'Edition']/following-sibling::tei:biblStruct) > 0">
 												<!--
 												href="/stgallmss/viewFile.do?xmlstylesheet=TEIWorkBibliography.xsl&amp;count={@n}&amp;fileId={$fileId}" -->
-												<a href="#" class="toggleLinkWorkItem" data-target="work-item-bibliograghy-{@n}">
+												<button class="toggleLinkWorkItem" onclick="toggleSection(this,{@n})" data-target="work-item-{@n}-bibliograghy">
 													Bibliograpghy
-												</a>
+												</button>
 												<xsl:text></xsl:text>
 											</xsl:if>
 										</xsl:if>
@@ -250,10 +249,10 @@
 									<!-- href="{$locusFacs}" locusFacs its th
 									msitem target variable created in this
 									xslt-->
-										<a href="#" class="toggleLinkWorkItem"
-											data-target="work-item-content-{@n}">
+										<button class="toggleLinkWorkItem"
+											data-target="work-item-{@n}-content" onclick="toggleSection(this,{@n})" >
 											Content
-										</a>
+										</button>
 										<xsl:text></xsl:text>
 									</xsl:if>
 									<!-- Transcription  -->
@@ -263,9 +262,9 @@
 										<xsl:when test="count(tei:msItem) = 0">
 	
 											<xsl:variable name="transcriptionFacs" select="normalize-space(tei:locus/@facs)" />
-											<a href="#" class="toggleLinkWorkItem" data-target="work-item-transcription-{@n}">
+											<button onclick="toggleSection(this,{@n})" class="toggleLinkWorkItem" data-target="work-item-{@n}-transcription">
 												Text
-											</a>
+											</button>
 											<xsl:text></xsl:text>
 											<div class="work-item-transcription"> </div>
 										</xsl:when>
@@ -274,9 +273,9 @@
 										<xsl:otherwise>
 	
 											<xsl:variable name="transcriptionFacs" select="normalize-space(tei:locus/@facs)" />
-											<a href="#" class="toggleLinkWorkItem" data-target="work-item-transcription-{@n}">
+											<button onclick="toggleSection(this,{@n})" class="toggleLinkWorkItem" data-target="work-item-{@n}-transcription">
 													Text
-											</a>
+											</button>
 											<xsl:text></xsl:text>
 	
 										</xsl:otherwise>
@@ -285,7 +284,7 @@
                          		<xsl:if test="count(tei:listBibl) > 0">
 									<xsl:if test="count(tei:listBibl/tei:head[. = 'Related Texts'] | tei:listBibl/tei:head[. = 'Bibliography'] | tei:listBibl/tei:head[. = 'Editions']  |  tei:listBibl/tei:head[. = 'Edition']   | tei:listBibl/tei:head[. = 'Edition and Bibliography']  |   tei:listBibl/tei:head[. = 'Translation'])  > 0">
 										<xsl:if test="count(tei:listBibl/tei:head[. = 'Related Texts'] | tei:listBibl/tei:head[. = 'Bibliography'] | tei:listBibl/tei:head[. = 'Editions'] |  tei:listBibl/tei:head[. = 'Translation'] | tei:listBibl/tei:head[. = 'Edition and Bibliography'] | tei:listBibl/tei:head[. = 'Edition']/following-sibling::tei:biblStruct) > 0">
-											<div id="work-item-bibliograghy-{@n}" class="stgall-work-item-bibliography toggleDivWorkItem">
+											<div id="work-item-{@n}-bibliograghy" class="stgall-work-item-bibliography toggleDivWorkItem">
 												<xsl:call-template name="generateWorkBibliography">
 													<xsl:with-param name="count" select="@n" />
 												</xsl:call-template>
@@ -294,7 +293,7 @@
 									</xsl:if>
 								</xsl:if>
 		                          <xsl:if test="count(tei:msItem) > 0">
-										<div id="work-item-content-{@n}" class="stgall-work-item-content toggleDivWorkItem">
+										<div id="work-item-{@n}-content" class="stgall-work-item-content toggleDivWorkItem">
 											<xsl:call-template
 												name="generateWorkContent">
 												<xsl:with-param name="count" select="@n" />
@@ -309,7 +308,7 @@
 										select="normalize-space(tei:locus/@facs)" />
 
 
-									<div id="work-item-transcription-{@n}"
+									<div id="work-item-{@n}-transcription"
 										class="stgall-work-item-transcription toggleDivWorkItem">
 										<xsl:call-template
 											name="generateWorkTranscription">
@@ -325,7 +324,7 @@
 								<xsl:otherwise>
 									<xsl:variable name="transcriptionFacs"
 										select="normalize-space(tei:locus/@facs)" />
-									<div id="work-item-transcription-{@n}"
+									<div id="work-item-{@n}-transcription"
 										class="stgall-work-item-transcription toggleDivWorkItem">
 										<xsl:call-template
 											name="generateWorkTranscription">
@@ -357,67 +356,40 @@
 					<xsl:call-template name="generateManuscriptDescription" />
 				</div-->
 				<script>
-					// Get references to all toggle links and divs
-					const toggleLinksWorkItems =
-					document.querySelectorAll('.toggleLinkWorkItem')
-					const toggleLinks =
-					document.querySelectorAll('.toggleLink');
-					const toggleDivs = document.querySelectorAll('.toggleDiv');
-					const toggleDivsWorkItems = document.querySelectorAll('.toggleDivWorkItem');
-					// Add click event listeners to each toggle link
-					toggleLinks.forEach(link => {
-						link.addEventListener('click', function (e) {
-							e.preventDefault(); // Prevent the link from navigating
-		
-							// Get the target div id from the data attribute
-							const targetDivId = this.getAttribute('data-target');
-							const targetDiv = document.getElementById(targetDivId);
-		
-							// Hide all toggleDivs first
-							toggleDivs.forEach(div => {
-								div.style.display = 'none';
-							});
-		
-							// Toggle the visibility of the target div
-							// console.log(targetDivId)
-							// console.log(targetDiv)
-		
-							const computedStyle = window.getComputedStyle(targetDiv);
-		
-							if (computedStyle.display === 'none') {
-								targetDiv.style.display = 'block';
-							} else {
-								targetDiv.style.display = 'none';
-							}
-						});
-					});
 					
-					toggleLinksWorkItems.forEach(link => {
-						link.addEventListener('click', function (e) {
-							e.preventDefault(); // Prevent the link from navigating
-		
-							// Get the target div id from the data attribute
-							const targetDivId = this.getAttribute('data-target');
-							const targetDiv = document.getElementById(targetDivId);
-		
-							// Hide all toggleDivs first
-							/*toggleDivs.forEach(div => {
-							div.style.display = 'none';
-							});*/
-		
-							// Toggle the visibility of the target div
-							console.log(targetDivId)
-							console.log(targetDiv)
-		
-							const computedStyle = window.getComputedStyle(targetDiv);
-		
-							if (computedStyle.display === 'none') {
-								targetDiv.style.display = 'block';
-							} else {
-								targetDiv.style.display = 'none';
-							}
-						});
-					});
+					function toggleSection(element, id){
+						
+						 // Prevent default action
+        				event.preventDefault();
+						
+						const targetDivId = element.getAttribute('data-target');
+						const targetDiv = document.getElementById(targetDivId);
+						
+						
+						// Get all divs (again, consider using a class to select only the relevant divs)
+   						 const allDivs = document.querySelectorAll(`div[id^="work-item-${id}"]`);
+
+				        // Hide all divs and check if the target div was already visible
+				        let wasTargetVisible = false;
+				        allDivs.forEach(div => {
+				            if (div.id === targetDivId ) {
+					            if(div.style.display === 'block'){
+					            	 wasTargetVisible = true;
+					            }
+				               
+				            }
+				            div.style.display = 'none';
+				        });
+
+				        // Toggle the target div based on its previous visibility state
+				        if (targetDiv) {
+				            targetDiv.style.display = wasTargetVisible ? 'none' : 'block';
+				        }
+
+						
+					}
+					
+					
 				</script>
 			</body>
 		</html>
