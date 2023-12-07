@@ -91,7 +91,7 @@
 	                                                
 	                                            </xsl:if>
 												  </dl>
-	                                            <p>
+	                                            <ol class="WorkBibliography">
 	                                                <xsl:if test="tei:listBibl">
 	                                                    <xsl:for-each select="tei:listBibl">
 	                                                        <li>
@@ -119,7 +119,7 @@
 	                                                        </li>
 	                                                    </xsl:for-each>
 	                                                </xsl:if>
-	                                            </p>
+	                                            </ol>
 	
 	                                        </xsl:when>
 	
