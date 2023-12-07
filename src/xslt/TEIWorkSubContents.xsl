@@ -24,7 +24,8 @@
                                 select="tei:msItem">
                                 <div class="book-level-item">
 	                                <div class="book-title">
-	                                    <xsl:value-of select="@n" /> : &#032;
+										<xsl:variable name="newTileNumber" select="translate(@n,'_','.')"/>
+	                                    <xsl:value-of select="$newTileNumber" /> : &#032;
 	                                    <!-- This link goes to the page of the transcription that is the
 	                                    first for this section -->
 	                                    <span class="stgall-float">
