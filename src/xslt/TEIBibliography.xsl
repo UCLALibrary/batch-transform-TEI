@@ -60,9 +60,11 @@
                 <xsl:apply-templates/>
                 <xsl:text>. </xsl:text> 
             </xsl:when> 
-            <xsl:when test="tei:ref">                 
+            <xsl:when test="tei:ref"> 
+				<ul class="bibliography-links">                
                 <xsl:apply-templates/>
-                <xsl:text>. </xsl:text>
+               
+                </ul>
             </xsl:when>          
             <xsl:otherwise>                                
                 <xsl:apply-templates/>
@@ -73,9 +75,12 @@
     
     <xsl:template match="tei:ref">
         <xsl:text> </xsl:text>        
+        <li>
         <a target="_new" href="{@target}">
             <xsl:value-of select="normalize-space(text())"/>
-        </a>        
+        </a>   
+        </li>     
+       
     </xsl:template>
     
     <xsl:template name="author">
