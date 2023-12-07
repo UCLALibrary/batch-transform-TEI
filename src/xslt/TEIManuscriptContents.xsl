@@ -368,6 +368,13 @@
 						
 						// Get all divs (again, consider using a class to select only the relevant divs)
    						 const allDivs = document.querySelectorAll(`div[id^="work-item-${id}"]`);
+   						 
+   						 const allButtons = document.querySelectorAll('.toggleLinkWorkItem');
+
+					     // Remove 'active' class from all buttons and hide all divs
+					     allButtons.forEach(btn => {
+					     	btn.classList.remove('active');
+					     });
 
 				        // Hide all divs and check if the target div was already visible
 				        let wasTargetVisible = false;
@@ -382,10 +389,13 @@
 				        });
 
 				        // Toggle the target div based on its previous visibility state
+				        // Add 'active' class to clicked button and toggle the target div
 				        if (targetDiv) {
 				            targetDiv.style.display = wasTargetVisible ? 'none' : 'block';
+				            if (!wasTargetVisible) {
+					            element.classList.add('active');
+					        }
 				        }
-
 						
 					}
 					
